@@ -67,7 +67,7 @@ leaving that decision up to the user.
 
 // Flickr
 
-// Read It Later - http://readitlaterlist.com/api/
+// Read It Later - http://readitlaterlist.com/api/?shk
 #define SHKReadItLaterKey			@""
 
 // Twitter - http://dev.twitter.com/apps/new
