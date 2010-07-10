@@ -26,14 +26,14 @@
 //
 
 
-#error Setup the SHKConfig.h file, then remove this error by commenting it out.
+//#error Setup the SHKConfig.h file, then remove this error by commenting it out.
 
 
 // App Description
 // These values are used by any service that shows 'shared from XYZ'
 
-#define SHKMyAppName			@"My App Name"
-#define SHKMyAppURL				@"http://example.com"
+#define SHKMyAppName			@"Test Tumblr ShareKit App"
+#define SHKMyAppURL				@"http://jamiepinkham.com"
 
 
 
