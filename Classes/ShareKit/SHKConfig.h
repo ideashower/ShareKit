@@ -59,7 +59,6 @@
 // Delicious - https://developer.apps.yahoo.com/projects
 #define SHKDeliciousConsumerKey		@""
 #define SHKDeliciousSecretKey		@""
-#define SHKDeliciousCallbackUrl		@""
 
 // Facebook - http://www.facebook.com/developers
 #define SHKFacebookKey				@""
