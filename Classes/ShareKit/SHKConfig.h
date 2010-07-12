@@ -38,21 +38,21 @@
 
 
 /*
-API Keys
---------
-This is the longest step to getting set up, it involves filling in API keys for the supported services.
-It should be pretty painless though and should hopefully take no more than a few minutes.
+ API Keys
+ --------
+ This is the longest step to getting set up, it involves filling in API keys for the supported services.
+ It should be pretty painless though and should hopefully take no more than a few minutes.
  
-Each key below as a link to a page where you can generate an api key.  Fill in the key for each service below.
+ Each key below as a link to a page where you can generate an api key.  Fill in the key for each service below.
  
-A note on services you don't need:
-If, for example, your app only shares URLs then you probably won't need image services like Flickr.
-In these cases it is safe to leave an API key blank.
+ A note on services you don't need:
+ If, for example, your app only shares URLs then you probably won't need image services like Flickr.
+ In these cases it is safe to leave an API key blank.
  
-However, it is STRONGLY recommended that you do your best to support all services for the types of sharing you support.
-The core principle behind ShareKit is to leave the service choices up to the user.  Thus, you should not remove any services,
-leaving that decision up to the user.
-*/
+ However, it is STRONGLY recommended that you do your best to support all services for the types of sharing you support.
+ The core principle behind ShareKit is to leave the service choices up to the user.  Thus, you should not remove any services,
+ leaving that decision up to the user.
+ */
 
 
 
@@ -105,6 +105,10 @@ leaving that decision up to the user.
 #define SHKFormBgColorGreen			-1 // Value between 0-255, set all to -1 for default
 #define SHKFormBgColorBlue			-1 // Value between 0-255, set all to -1 for default
 
+// iPad views
+#define SHKModalPresentationStyle	@"UIModalPresentationFormSheet" // See: http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIViewController_Class/Reference/Reference.html#//apple_ref/occ/instp/UIViewController/modalPresentationStyle
+#define SHKModalTransitionStyle		@"UIModalTransitionStyleCoverVertical" // See: http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIViewController_Class/Reference/Reference.html#//apple_ref/occ/instp/UIViewController/modalTransitionStyle
+
 
 /*
  UI Configuration : Advanced
@@ -113,6 +117,27 @@ leaving that decision up to the user.
  check out http://getsharekit.com/customize
  */
 
+
+
+/*
+ Debugging
+ ------
+ To show debug output in the console:
+ 1. uncomment section A below
+ 2. comment out section B below
+ 
+ To hide debug output in the console:
+ 1. uncomment section B below
+ 2. comment out section A below
+ */
+
+// A : show debug output
+//#define SHKDebugShowLogs			1
+//#define SHKLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+
+// B : hide debug output
+#define SHKDebugShowLogs			0
+#define SHKLog( s, ... ) 
 
 
 
