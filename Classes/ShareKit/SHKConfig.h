@@ -1,32 +1,14 @@
-//
-//  SHKConfig.h
-//  ShareKit
-//
-//  Created by Nathan Weiner on 6/23/10.
-
-//
-//  Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
-//
-//  The above copyright notice and this permission notice shall be included in
-//  all copies or substantial portions of the Software.
-//
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-//  THE SOFTWARE.
-//
-//
 
 
-#error Setup the SHKConfig.h file, then remove this error by commenting it out.
+
+
+
+// PLEASE SEE INSTALL/CONFIG INSTRUCTIONS:
+// http://getsharekit.com/install
+
+
+
+
 
 
 // App Description
@@ -64,15 +46,28 @@
 #define SHKFacebookKey				@""
 #define SHKFacebookSecret			@""
 
-// Flickr
-
 // Read It Later - http://readitlaterlist.com/api/?shk
 #define SHKReadItLaterKey			@""
 
 // Twitter - http://dev.twitter.com/apps/new
+/*
+ Important Twitter settings to get right:
+ 
+ Differences between OAuth and xAuth
+ --
+ There are two types of authentication provided for Twitter, OAuth and xAuth.  OAuth is the default and will
+ present a web view to log the user in.  xAuth presents a native entry form but requires Twitter to add xAuth to your app (you have to request it from them).
+ If your app has been approved for xAuth, set SHKTwitterUseXAuth to 1.
+ 
+ Callback URL (important to get right for OAuth users)
+ --
+ 1. Open your application settings at http://dev.twitter.com/apps/
+ 2. 'Application Type' should be set to BROWSER (not client)
+ 3. 'Callback URL' should match whatever you enter in SHKTwitterCallbackUrl.  The callback url doesn't have to be an actual existing url.  The user will never get to it because ShareKit intercepts it before the user is redirected.  It just needs to match.
+*/
 #define SHKTwitterConsumerKey		@""
 #define SHKTwitterSecret			@""
-#define SHKTwitterCallbackUrl		@"" // HOW-TO: In your Twitter application settings, use the "Callback URL" field.  If you do not have this field in the settings, set your application type to 'Browser'.
+#define SHKTwitterCallbackUrl		@"" // You need to set this if using OAuth, see note above (xAuth users can skip it)
 #define SHKTwitterUseXAuth			0 // To use xAuth, set to 1
 #define SHKTwitterUsername			@"" // Enter your app's twitter account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
 
