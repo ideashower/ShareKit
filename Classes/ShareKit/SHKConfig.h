@@ -141,6 +141,6 @@
  These settings can be left as is.  This only need to be changed for uber custom installs.
  */
 
-#define SHK_MAX_FAV_COUNT			4
+#define SHK_MAX_FAV_COUNT			3
 #define SHK_FAVS_PREFIX_KEY			@"SHK_FAVS_"
 #define SHK_AUTH_PREFIX				@"SHK_AUTH_"
