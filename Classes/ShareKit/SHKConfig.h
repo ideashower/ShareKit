@@ -43,8 +43,12 @@
 #define SHKDeliciousSecretKey		@""
 
 // Facebook - http://www.facebook.com/developers
+// If SHKFacebookUseSessionProxy is enabled then SHKFacebookSecret is ignored and should be left blank
+
+#define SHKFacebookUseSessionProxy  NO  
 #define SHKFacebookKey				@""
 #define SHKFacebookSecret			@""
+#define SHKFacebookSessionProxyURL  @""
 
 // Read It Later - http://readitlaterlist.com/api/?shk
 #define SHKReadItLaterKey			@""
