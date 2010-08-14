@@ -103,6 +103,9 @@
 #define SHKModalPresentationStyle	@"UIModalPresentationFormSheet" // See: http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIViewController_Class/Reference/Reference.html#//apple_ref/occ/instp/UIViewController/modalPresentationStyle
 #define SHKModalTransitionStyle		@"UIModalTransitionStyleCoverVertical" // See: http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIViewController_Class/Reference/Reference.html#//apple_ref/occ/instp/UIViewController/modalTransitionStyle
 
+// ShareMenu Ordering
+#define SHKShareMenuAlphabeticalOrder 0 // Setting this to 1 will show list in Alphabetical Order, setting to 0 will follow the order in SHKShares.plist
+
 
 /*
  UI Configuration : Advanced
