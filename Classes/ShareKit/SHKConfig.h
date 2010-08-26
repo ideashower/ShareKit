@@ -45,7 +45,7 @@
 // Facebook - http://www.facebook.com/developers
 // If SHKFacebookUseSessionProxy is enabled then SHKFacebookSecret is ignored and should be left blank
 
-#define SHKFacebookUseSessionProxy  NO  
+#define SHKFacebookUseSessionProxy  NO 
 #define SHKFacebookKey				@""
 #define SHKFacebookSecret			@""
 #define SHKFacebookSessionProxyURL  @""
@@ -68,7 +68,7 @@
  1. Open your application settings at http://dev.twitter.com/apps/
  2. 'Application Type' should be set to BROWSER (not client)
  3. 'Callback URL' should match whatever you enter in SHKTwitterCallbackUrl.  The callback url doesn't have to be an actual existing url.  The user will never get to it because ShareKit intercepts it before the user is redirected.  It just needs to match.
-*/
+ */
 #define SHKTwitterConsumerKey		@""
 #define SHKTwitterSecret			@""
 #define SHKTwitterCallbackUrl		@"" // You need to set this if using OAuth, see note above (xAuth users can skip it)
@@ -79,6 +79,11 @@
 #define SHKBitLyLogin				@""
 #define SHKBitLyKey					@""
 
+// ShareMenu Ordering
+#define SHKShareMenuAlphabeticalOrder 1 // Setting this to 1 will show list in Alphabetical Order, setting to 0 will follow the order in SHKShares.plist
+
+// Append 'Shared With 'Signature to Email (and related forms)
+#define SHKSharedWithSignature		0
 
 
 
@@ -108,8 +113,10 @@
 #define SHKModalTransitionStyle		@"UIModalTransitionStyleCoverVertical" // See: http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIViewController_Class/Reference/Reference.html#//apple_ref/occ/instp/UIViewController/modalTransitionStyle
 
 // ShareMenu Ordering
-#define SHKShareMenuAlphabeticalOrder 0 // Setting this to 1 will show list in Alphabetical Order, setting to 0 will follow the order in SHKShares.plist
+#define SHKShareMenuAlphabeticalOrder 1 // Setting this to 1 will show list in Alphabetical Order, setting to 0 will follow the order in SHKShares.plist
 
+// Append 'Shared With 'Signature to Email (and related forms)
+#define SHKSharedWithSignature		0
 
 /*
  UI Configuration : Advanced
