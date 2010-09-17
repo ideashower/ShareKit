@@ -157,6 +157,32 @@ static NSString * const kTumblrWriteURL = @"https://www.tumblr.com/api/write";
                                                       start:item.title]
                         atIndex:0];
     }
+
+    if([item shareType] == SHKShareTypeURL){
+        // Auto-detect Dailymotion links and generate an attached embed player
+        if ([item.URL.host hasSuffix:@"dailymotion.com"]){
+            NSString *videoId = nil;
+            BOOL idIsNextComponent = NO;
+            for (NSString *component in [item.URL.path componentsSeparatedByString:@"/"]){
+                if (idIsNextComponent){
+                    videoId = [[component componentsSeparatedByString:@"_"] objectAtIndex:0];
+                    break;
+                }else if ([component isEqualToString:@"video"]){
+                    idIsNextComponent = YES;
+                }
+            }
+
+            if (videoId){
+                [item setCustomValue:[NSString stringWithFormat:@"<iframe frameborder=\"0\" width=\"450\" height=\"330\" src=\"http://www.dailymotion.com/embed/video/%@\"></iframe>", videoId] forKey:@"iframe"];
+            }
+        }
+    }
+
+    if ([item customValueForKey:@"iframe"])
+    {
+        [baseArray insertObject:[SHKFormFieldSettings label:SHKLocalizedString(@"Text") key:@"text" type:SHKFormFieldTypeText start:item.text] atIndex:1];
+    }
+
     return baseArray;
 }
 
@@ -198,10 +224,18 @@ static NSString * const kTumblrWriteURL = @"https://www.tumblr.com/api/write";
             
             //set type param
             if ([item shareType] == SHKShareTypeURL){
-                [params appendString:@"&type=link"];
-                [params appendFormat:@"&url=%@",SHKEncodeURL([item URL])];
-                if([item title]){
-                    [params appendFormat:@"&name=%@", SHKEncode([item title])];   
+                if ([item customValueForKey:@"iframe"]){
+                    [params appendString:@"&type=regular"];
+                    if([item title]){
+                        [params appendFormat:@"&title=%@", SHKEncode([item title])];
+                    }
+                    [params appendFormat:@"&body=%@", SHKEncode([NSString stringWithFormat:@"%@<p>%@</p>", [item customValueForKey:@"iframe"], [item text]])];
+                }else{
+                    [params appendString:@"&type=link"];
+                    [params appendFormat:@"&url=%@",SHKEncodeURL([item URL])];
+                    if([item title]){
+                        [params appendFormat:@"&name=%@", SHKEncode([item title])];
+                    }
                 }
             }else{
                 [params appendString:@"&type=regular"];
