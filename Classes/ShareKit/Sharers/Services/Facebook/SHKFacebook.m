@@ -158,6 +158,36 @@
 			NSString *description = [[item customValueForKey:@"description"] stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
 			[additionnalData appendFormat:@"\"description\":\"%@\",", description];
 		}
+
+		// Auto-detect Dailymotion links and generate an attached embed player
+		if ([item.URL.host hasSuffix:@"dailymotion.com"])
+		{
+			BOOL idIsNextComponent = NO;
+			NSString *videoId = nil;
+			for (NSString *component in [item.URL.path componentsSeparatedByString:@"/"])
+			{
+				if (idIsNextComponent)
+				{
+					videoId = component;
+					break;
+				}
+				else if ([component isEqualToString:@"video"])
+				{
+					idIsNextComponent = YES;
+				}
+			}
+
+			if (videoId)
+			{
+				[additionnalData appendFormat:
+				 @"\"media\":[{"
+				 "\"type\":\"flash\","
+				 "\"imgsrc\":\"http://www.dailymotion.com/thumbnail/160x120/video/%@\","
+				 "\"swfsrc\":\"http://www.dailymotion.com/swf/%@?autoPlay=1\""
+				 "}],", videoId, videoId];
+			}
+		}
+
 		dialog.attachment = [NSString stringWithFormat:
 							 @"{%@\
 							 \"name\":\"%@\",\
