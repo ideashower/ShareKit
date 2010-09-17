@@ -147,11 +147,23 @@
 		SHKFBStreamDialog* dialog = [[[SHKFBStreamDialog alloc] init] autorelease];
 		dialog.delegate = self;
 		dialog.userMessagePrompt = SHKLocalizedString(@"Enter your message:");
+
+		NSMutableString *additionnalData = [NSMutableString string];
+		if ([item customValueForKey:@"caption"])
+		{
+			[additionnalData appendFormat:@"\"caption\":\"%@\",", [item customValueForKey:@"caption"]];
+		}
+		if ([item customValueForKey:@"description"])
+		{
+			NSString *description = [[item customValueForKey:@"description"] stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
+			[additionnalData appendFormat:@"\"description\":\"%@\",", description];
+		}
 		dialog.attachment = [NSString stringWithFormat:
-							 @"{\
+							 @"{%@\
 							 \"name\":\"%@\",\
 							 \"href\":\"%@\"\
 							 }",
+							 additionnalData,
 							 item.title == nil ? SHKEncodeURL(item.URL) : SHKEncode(item.title),
 							 SHKEncodeURL(item.URL)
 							 ];
