@@ -151,12 +151,12 @@
 		NSMutableString *additionnalData = [NSMutableString string];
 		if ([item customValueForKey:@"caption"])
 		{
-			[additionnalData appendFormat:@"\"caption\":\"%@\",", [item customValueForKey:@"caption"]];
+			[additionnalData appendFormat:@"\"caption\":\"%@\",", SHKEncode([item customValueForKey:@"caption"])];
 		}
 		if ([item customValueForKey:@"description"])
 		{
 			NSString *description = [[item customValueForKey:@"description"] stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
-			[additionnalData appendFormat:@"\"description\":\"%@\",", description];
+			[additionnalData appendFormat:@"\"description\":\"%@\",", SHKEncode(description)];
 		}
 
 		// Auto-detect Dailymotion links and generate an attached embed player
