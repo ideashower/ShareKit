@@ -37,7 +37,7 @@
 @implementation SHKItem
 
 @synthesize shareType;
-@synthesize URL, image, title, text, tags, data, mimeType, filename;
+@synthesize URL, image, video, title, text, tags, data, mimeType, filename;
 @synthesize custom;
 
 - (void)dealloc
@@ -45,6 +45,7 @@
 	[URL release];
 	
 	[image release];
+    [video release];
 	
 	[title release];
 	[text release];
@@ -88,6 +89,21 @@
 	item.title = title;
 	
 	return [item autorelease];
+}
+
++ (SHKItem *)video:(NSData *)fileData
+{
+    return [self video:fileData title:nil];
+}
+
++ (SHKItem *)video:(NSData *)fileData title:(NSString *)title
+{
+    SHKItem *item = [[SHKItem alloc] init];
+    item.shareType = SHKShareTypeVideo;
+    item.video = fileData;
+    item.title = title;
+    
+    return [item autorelease];
 }
 
 + (SHKItem *)text:(NSString *)text

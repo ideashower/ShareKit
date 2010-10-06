@@ -88,6 +88,11 @@
 	return NO;
 }
 
++ (BOOL)canShareVideo
+{
+    return NO;
+}
+
 + (BOOL)canShareFile
 {
 	return NO;
@@ -119,6 +124,10 @@
 		case SHKShareTypeImage:
 			return [self canShareImage];
 			break;
+            
+        case SHKShareTypeVideo:
+            return [self canShareVideo];
+            break;
 			
 		case SHKShareTypeText:
 			return [self canShareText];

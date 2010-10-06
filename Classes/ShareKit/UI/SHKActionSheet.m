@@ -89,6 +89,7 @@
 	// Sharers
 	if (buttonIndex >= 0 && buttonIndex < sharers.count)
 	{
+        NSLog(@"Sharing with %@", [sharers objectAtIndex:buttonIndex]);
 		[NSClassFromString([sharers objectAtIndex:buttonIndex]) performSelector:@selector(shareItem:) withObject:item];
 	}
 	

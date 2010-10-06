@@ -34,7 +34,8 @@ typedef enum
 	SHKFacebookPendingNone,
 	SHKFacebookPendingLogin,
 	SHKFacebookPendingStatus,
-	SHKFacebookPendingImage
+	SHKFacebookPendingImage,
+    SHKFacebookPendingVideo
 } SHKFacebookPendingAction;
 
 

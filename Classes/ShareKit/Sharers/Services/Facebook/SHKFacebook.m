@@ -66,6 +66,11 @@
 	return YES;
 }
 
++ (BOOL)canShareVideo
+{
+    return YES;
+}
+
 + (BOOL)canShareOffline
 {
 	return NO; // TODO - would love to make this work
@@ -187,6 +192,16 @@
 		dialog.permission = @"photo_upload";
 		[dialog show];		
 	}
+    
+    else if (item.shareType == SHKShareTypeVideo)
+    {
+        self.pendingFacebookAction = SHKFacebookPendingVideo;
+        
+        FBPermissionDialog* dialog = [[[FBPermissionDialog alloc] init] autorelease];
+        dialog.delegate = self;
+        dialog.permission = @"video_upload";
+        [dialog show];
+    }
 	
 	return YES;
 }
@@ -200,10 +215,21 @@
 	dataParam:UIImageJPEGRepresentation(item.image,1.0)];
 }
 
+- (void)sendVideo
+{
+    [self sendDidStart];
+	[[FBRequest requestWithDelegate:self] call:@"facebook.videos.upload"
+    params:[NSDictionary dictionaryWithObjectsAndKeys:item.title, @"caption", nil]
+    dataParam:UIImageJPEGRepresentation(item.image,1.0)];
+}
+
 - (void)dialogDidSucceed:(FBDialog*)dialog
 {
 	if (pendingFacebookAction == SHKFacebookPendingImage)
 		[self sendImage];
+    
+    else if (pendingFacebookAction == SHKFacebookPendingVideo)
+        [self sendVideo];
 	
 	// TODO - the dialog has a SKIP button.  Skipping still calls this even though it doesn't appear to post.
 	//		- need to intercept the skip and handle it as a cancel?
