@@ -95,12 +95,12 @@
 			break;
 			
 		case 1:
-			
 			[self.navigationController pushViewController:[[[ExampleShareImage alloc] initWithNibName:nil bundle:nil] autorelease] animated:YES];
 			break;
             
         case 2:
             [self.navigationController pushViewController:[[[ExampleShareVideo alloc] initWithNibName:nil bundle:nil] autorelease] animated:YES];
+            break;
 			
 		case 3:
 			[self.navigationController pushViewController:[[[ExampleShareText alloc] initWithNibName:nil bundle:nil] autorelease] animated:YES];

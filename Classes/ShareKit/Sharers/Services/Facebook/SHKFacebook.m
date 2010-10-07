@@ -199,7 +199,7 @@
         
         FBPermissionDialog* dialog = [[[FBPermissionDialog alloc] init] autorelease];
         dialog.delegate = self;
-        dialog.permission = @"video_upload";
+        dialog.permission = @"publish_stream";
         [dialog show];
     }
 	
@@ -218,9 +218,9 @@
 - (void)sendVideo
 {
     [self sendDidStart];
-	[[FBRequest requestWithDelegate:self] call:@"facebook.videos.upload"
-    params:[NSDictionary dictionaryWithObjectsAndKeys:item.title, @"caption", nil]
-    dataParam:UIImageJPEGRepresentation(item.image,1.0)];
+	[[FBRequest requestWithDelegate:self] call:@"facebook.video.upload"
+    params:[NSDictionary dictionaryWithObjectsAndKeys:item.title, @"title", nil]
+    dataParam:item.video];
 }
 
 - (void)dialogDidSucceed:(FBDialog*)dialog
@@ -271,7 +271,9 @@
 
 - (void)request:(FBRequest*)aRequest didLoad:(id)result 
 {
-	if ([aRequest.method isEqualToString:@"facebook.photos.upload"]) 
+    NSLog(@"A request %@", aRequest.method);
+	if ([aRequest.method isEqualToString:@"facebook.photos.upload"] || 
+            [aRequest.method isEqualToString:@"facebook.video.upload"]) 
 	{
 		// PID is in [result objectForKey:@"pid"];
 		[self sendDidFinish];

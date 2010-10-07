@@ -159,6 +159,13 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
       [self utfAppendBody:body
                      data:[NSString stringWithString:@"Content-Type: image/png\r\n\r\n"]];
       [body appendData:imageData];
+    } else if ([_method isEqualToString:@"facebook.video.upload"]) {
+        // Corner caes for video uploads
+        [self utfAppendBody:body
+                       data:[NSString stringWithFormat:@"Content-Disposition: form-data; filename=\"upload.mov\"\r\n"]];
+        [self utfAppendBody:body
+                       data:[NSString stringWithString:@"Content-Type: video/quicktime\r\n\r\n"]];
+        [body appendData:(NSData*)_dataParam];        
     } else {
       NSAssert([_dataParam isKindOfClass:[NSData class]], @"dataParam must be a UIImage or NSData");
       [self utfAppendBody:body
@@ -219,7 +226,7 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
 }
 
 - (void)connect {
-  FBLOG(@"Connecting to %@ %@", _url, _params);
+  NSLog(@"Connecting to %@ %@", _url, _params);
 
   if ([_delegate respondsToSelector:@selector(requestLoading:)]) {
     [_delegate requestLoading:self];

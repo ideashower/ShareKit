@@ -10,7 +10,7 @@
 
 
 @interface ExampleShareVideo : UIViewController {
-
 }
-
+@property(nonatomic, retain) NSMutableData *video;
+- (void)share;
 @end

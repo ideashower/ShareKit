@@ -280,6 +280,11 @@ BOOL SHKinit;
 			case SHKShareTypeImage:
 				favoriteSharers = [NSArray arrayWithObjects:@"SHKMail",@"SHKFacebook",@"SHKCopy",nil];
 				break;
+
+            case SHKShareTypeVideo:
+				favoriteSharers = [NSArray arrayWithObjects:@"SHKFacebook", @"SHKTwitter",nil];
+                break;
+
 				
 			case SHKShareTypeText:
 				favoriteSharers = [NSArray arrayWithObjects:@"SHKMail",@"SHKTwitter",@"SHKFacebook", nil];

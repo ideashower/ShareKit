@@ -88,8 +88,8 @@
 		43D1DEF011D5CDD200550D75 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1DEEF11D5CDD200550D75 /* SystemConfiguration.framework */; };
 		43EF406E11D3FFF800B1F700 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EF406D11D3FFF800B1F700 /* Security.framework */; };
 		43FF9C7412270E9F00ADE53C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FF9C7212270E9F00ADE53C /* Localizable.strings */; };
-		54596203125C490A0022D0DC /* IMG_0058.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 54596202125C490A0022D0DC /* IMG_0058.MOV */; };
 		54596206125C49A40022D0DC /* ExampleShareVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 54596205125C49A40022D0DC /* ExampleShareVideo.m */; };
+		54D91F8B125D37C0001E74A2 /* img_0058.mov in Resources */ = {isa = PBXBuildFile; fileRef = 54D91F8A125D37C0001E74A2 /* img_0058.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -247,9 +247,9 @@
 		43EF406D11D3FFF800B1F700 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		43FF9C7312270E9F00ADE53C /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Classes/ShareKit/Localization/en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		43FF9C7512270EB900ADE53C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Classes/ShareKit/Localization/de.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
-		54596202125C490A0022D0DC /* IMG_0058.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IMG_0058.MOV; sourceTree = "<group>"; };
 		54596204125C49A40022D0DC /* ExampleShareVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleShareVideo.h; sourceTree = "<group>"; };
 		54596205125C49A40022D0DC /* ExampleShareVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleShareVideo.m; sourceTree = "<group>"; };
+		54D91F8A125D37C0001E74A2 /* img_0058.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = img_0058.mov; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ShareKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShareKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -312,7 +312,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				54596202125C490A0022D0DC /* IMG_0058.MOV */,
+				54D91F8A125D37C0001E74A2 /* img_0058.mov */,
 				43A5382611DBE480004A1712 /* example.pdf */,
 				43A5382711DBE480004A1712 /* sanFran.jpg */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
@@ -796,7 +796,7 @@
 				43A5382911DBE480004A1712 /* sanFran.jpg in Resources */,
 				43C91D1D11EB963600F31FAE /* MainWindow-iPad.xib in Resources */,
 				43FF9C7412270E9F00ADE53C /* Localizable.strings in Resources */,
-				54596203125C490A0022D0DC /* IMG_0058.MOV in Resources */,
+				54D91F8B125D37C0001E74A2 /* img_0058.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

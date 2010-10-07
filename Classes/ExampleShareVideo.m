@@ -11,7 +11,7 @@
 #import "SHKActionSheet.h"
 
 @implementation ExampleShareVideo
-
+@synthesize video;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
 	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
@@ -27,16 +27,17 @@
 	return self;
 }
 
-/*
+
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
+    [super loadView];
+    self.video = [NSMutableData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"img_0058" ofType:@"mov"]];
 }
-*/
+
 
 - (void)share
 {
-    NSData *video = [NSData dataWithContentsOfFile:@"IMG_0058.MOV"];
-	SHKItem *item = [SHKItem video:video title:@"A video of a laptop"];
+	SHKItem *item = [SHKItem video:self.video title:@"A video of a laptop"];
 	SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
 	
 	[actionSheet showFromToolbar:self.navigationController.toolbar];
