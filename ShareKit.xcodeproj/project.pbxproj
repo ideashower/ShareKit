@@ -88,6 +88,7 @@
 		43D1DEF011D5CDD200550D75 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1DEEF11D5CDD200550D75 /* SystemConfiguration.framework */; };
 		43EF406E11D3FFF800B1F700 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EF406D11D3FFF800B1F700 /* Security.framework */; };
 		43FF9C7412270E9F00ADE53C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FF9C7212270E9F00ADE53C /* Localizable.strings */; };
+		CDBE73F5125E041A00FB53D2 /* SHKPastebot.m in Sources */ = {isa = PBXBuildFile; fileRef = CDBE73F4125E041A00FB53D2 /* SHKPastebot.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -247,6 +248,8 @@
 		43FF9C7512270EB900ADE53C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Classes/ShareKit/Localization/de.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* ShareKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShareKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		CDBE73E4125DF8CF00FB53D2 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = Classes/ShareKit/Localization/vi.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		CDBE73F0125E001D00FB53D2 /* SHKPastebot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHKPastebot.h; path = "Send to Pastebot/SHKPastebot.h"; sourceTree = "<group>"; };
+		CDBE73F4125E041A00FB53D2 /* SHKPastebot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHKPastebot.m; path = "Send to Pastebot/SHKPastebot.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -526,6 +529,7 @@
 				43A536B711DBE3B9004A1712 /* Copy */,
 				43A536BA11DBE3B9004A1712 /* Email */,
 				43A536BD11DBE3B9004A1712 /* Open in Safari */,
+				CDBE73E7125DFF8000FB53D2 /* Send to Pastebot */,
 				432B147911FF4B0700291B37 /* Save to Album */,
 			);
 			path = Actions;
@@ -731,6 +735,15 @@
 			name = Localization;
 			sourceTree = "<group>";
 		};
+		CDBE73E7125DFF8000FB53D2 /* Send to Pastebot */ = {
+			isa = PBXGroup;
+			children = (
+				CDBE73F0125E001D00FB53D2 /* SHKPastebot.h */,
+				CDBE73F4125E041A00FB53D2 /* SHKPastebot.m */,
+			);
+			name = "Send to Pastebot";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -869,6 +882,7 @@
 				43C91DF511EBAE4800F31FAE /* SHKTumblr.m in Sources */,
 				43B934B511FE682600C9D3F3 /* SHKFBStreamDialog.m in Sources */,
 				432B147C11FF4B0700291B37 /* SHKPhotoAlbum.m in Sources */,
+				CDBE73F5125E041A00FB53D2 /* SHKPastebot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 		<string>SHKCopy</string>
 		<string>SHKMail</string>
 		<string>SHKSafari</string>
+		<string>SHKPastebot</string>
 	</array>
 	<key>services</key>
 	<array>
