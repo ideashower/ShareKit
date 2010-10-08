@@ -505,8 +505,8 @@
 	// Start the request
 	OAAsynchronousDataFetcher *fetcher = [OAAsynchronousDataFetcher asynchronousFetcherWithRequest:oRequest
 																						  delegate:self
-																				 didFinishSelector:@selector(sendImageTicket:didFinishWithData:)
-																				   didFailSelector:@selector(sendImageTicket:didFailWithError:)];	
+																				 didFinishSelector:@selector(sendDataTicket:didFinishWithData:)
+																				   didFailSelector:@selector(sendDataTicket:didFailWithError:)];	
 	
 	[fetcher start];
 	
@@ -514,9 +514,9 @@
 	[oRequest release];
 }
 
-- (void)sendImageTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {
+- (void)sendDataTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {
 	// TODO better error handling here
-	NSLog([[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]);
+	//NSLog([[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]);
 	
 	if (ticket.didSucceed) {
 		[self sendDidFinish];
@@ -540,7 +540,7 @@
 	}
 }
 
-- (void)sendImageTicket:(OAServiceTicket *)ticket didFailWithError:(NSError*)error {
+- (void)sendDataTicket:(OAServiceTicket *)ticket didFailWithError:(NSError*)error {
 	[self sendDidFailWithError:error];
 }
 

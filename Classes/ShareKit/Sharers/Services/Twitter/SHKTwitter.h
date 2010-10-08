@@ -55,10 +55,11 @@
 - (void)sendStatusTicket:(OAServiceTicket *)ticket didFailWithError:(NSError*)error;
 - (void)sendImage;
 - (void)sendVideo;
-- (void)sendImageTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data;
-- (void)sendImageTicket:(OAServiceTicket *)ticket didFailWithError:(NSError*)error;
-
 - (void)sendData:(NSData *)data withFilename:(NSString *)filename withMimeType:(NSString *)mimeType;
+- (void)sendDataTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data;
+- (void)sendDataTicket:(OAServiceTicket *)ticket didFailWithError:(NSError*)error;
+
+
 
 - (void)followMe;
 
