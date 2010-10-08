@@ -711,6 +711,7 @@
 
 - (void)sendDidFailWithError:(NSError *)error
 {
+    NSLog(@"Error: %@", error);
 	[self sendDidFailWithError:error shouldRelogin:NO];	
 }
 

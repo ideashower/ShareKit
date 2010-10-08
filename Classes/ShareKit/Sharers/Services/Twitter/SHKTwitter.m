@@ -399,7 +399,7 @@
 	if([item customValueForKey:@"profile_update"]){
 		serviceURL = [NSURL URLWithString:@"http://api.twitter.com/1/account/update_profile_image.json"];
 	} else {
-		serviceURL = [NSURL URLWithString:@"https://api.twitter.com/1/account/verify_credentials.json"];
+		serviceURL = [NSURL URLWithString:@"https://api.twitter.com/1/account/verify_credentials.xml"];
 	}
 	
 	OAMutableURLRequest *oRequest = [[OAMutableURLRequest alloc] initWithURL:serviceURL
@@ -420,14 +420,16 @@
 		[oRequest release];
 		oRequest = nil;
 		
-		serviceURL = [NSURL URLWithString:@"http://img.ly/api/2/upload.xml"];
+
+//		serviceURL = [NSURL URLWithString:@"http://img.ly/api/2/upload.xml"];
+		serviceURL = [NSURL URLWithString:@"http://yfrog.com/api/xauth_upload"];
 		oRequest = [[OAMutableURLRequest alloc] initWithURL:serviceURL
 												   consumer:consumer
 													  token:accessToken
 													  realm:@"http://api.twitter.com/"
 										  signatureProvider:signatureProvider];
 		[oRequest setHTTPMethod:@"POST"];
-		[oRequest setValue:@"https://api.twitter.com/1/account/verify_credentials.json" forHTTPHeaderField:@"X-Auth-Service-Provider"];
+		[oRequest setValue:@"https://api.twitter.com/1/account/verify_credentials.xml" forHTTPHeaderField:@"X-Auth-Service-Provider"];
 		[oRequest setValue:oauthHeader forHTTPHeaderField:@"X-Verify-Credentials-Authorization"];
 	}
 		
@@ -496,15 +498,15 @@
 
 - (void)sendImageTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {
 	// TODO better error handling here
-	// NSLog([[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]);
+	NSLog([[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]);
 	
 	if (ticket.didSucceed) {
 		[self sendDidFinish];
 		// Finished uploading Image, now need to posh the message and url in twitter
 		NSString *dataString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
-		NSRange startingRange = [dataString rangeOfString:@"<url>" options:NSCaseInsensitiveSearch];
+		NSRange startingRange = [dataString rangeOfString:@"<mediaurl>" options:NSCaseInsensitiveSearch];
 		//NSLog(@"found start string at %d, len %d",startingRange.location,startingRange.length);
-		NSRange endingRange = [dataString rangeOfString:@"</url>" options:NSCaseInsensitiveSearch];
+		NSRange endingRange = [dataString rangeOfString:@"</mediaurl>" options:NSCaseInsensitiveSearch];
 		//NSLog(@"found end string at %d, len %d",endingRange.location,endingRange.length);
 		
 		if (startingRange.location != NSNotFound && endingRange.location != NSNotFound) {
