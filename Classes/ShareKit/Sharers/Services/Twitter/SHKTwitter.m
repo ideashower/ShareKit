@@ -83,6 +83,11 @@
 	return YES;
 }
 
++ (BOOL)canShareVideo
+{
+    return YES;
+}
+
 
 #pragma mark -
 #pragma mark Configuration : Dynamic Enable
@@ -190,7 +195,7 @@
 		[self shortenURL];
 	}
 	
-	else if (item.shareType == SHKShareTypeImage)
+	else if (item.shareType == SHKShareTypeImage || item.shareType == SHKShareTypeVideo)
 	{
 		[item setCustomValue:item.title forKey:@"status"];
 		[self showTwitterForm];
@@ -212,7 +217,11 @@
 	[rootView view];
 	
 	rootView.textView.text = [item customValueForKey:@"status"];
-	rootView.hasAttachment = item.image != nil;
+    if (item.image != nil) {
+        rootView.attachment = item.image;
+    } else if (item.video != nil) {
+        rootView.attachment = item.video;
+    }
 	
 	[self pushViewController:rootView animated:NO];
 	
@@ -294,6 +303,7 @@
 
 - (BOOL)send
 {	
+    NSLog(@"ShareType: %d", item.shareType);
 	// Check if we should send follow request too
 	if (xAuth && [item customBoolForSwitchKey:@"followMe"])
 		[self followMe];	
@@ -305,7 +315,9 @@
 	{	
 		if (item.shareType == SHKShareTypeImage) {
 			[self sendImage];
-		} else {
+		} else if (item.shareType == SHKShareTypeVideo) {
+            [self sendVideo];
+        } else {
 			[self sendStatus];
 		}
 		
@@ -394,6 +406,28 @@
 }
 
 - (void)sendImage {
+    CGFloat compression = 0.9f;
+	NSData *imageData = UIImageJPEGRepresentation([item image], compression);
+	
+	// TODO
+	// Note from Nate to creator of sendImage method - This seems like it could be a source of sluggishness.
+	// For example, if the image is large (say 3000px x 3000px for example), it would be better to resize the image
+	// to an appropriate size (max of img.ly) and then start trying to compress.
+	
+	while ([imageData length] > 700000 && compression > 0.1) {
+		// NSLog(@"Image size too big, compression more: current data size: %d bytes",[imageData length]);
+		compression -= 0.1;
+		imageData = UIImageJPEGRepresentation([item image], compression);
+	}
+    
+    [self sendData:imageData withFilename:@"upload.jpg" withMimeType:@"image/jpeg"];
+}
+
+- (void)sendVideo {
+    [self sendData:[item video] withFilename:@"upload.mov" withMimeType:@"video/quicktime"];
+}
+
+- (void)sendData:(NSData *)data withFilename:(NSString *)filename withMimeType:(NSString *)mimeType {
 	
 	NSURL *serviceURL = nil;
 	if([item customValueForKey:@"profile_update"]){
@@ -420,8 +454,6 @@
 		[oRequest release];
 		oRequest = nil;
 		
-
-//		serviceURL = [NSURL URLWithString:@"http://img.ly/api/2/upload.xml"];
 		serviceURL = [NSURL URLWithString:@"http://yfrog.com/api/xauth_upload"];
 		oRequest = [[OAMutableURLRequest alloc] initWithURL:serviceURL
 												   consumer:consumer
@@ -433,21 +465,7 @@
 		[oRequest setValue:oauthHeader forHTTPHeaderField:@"X-Verify-Credentials-Authorization"];
 	}
 		
-	CGFloat compression = 0.9f;
-	NSData *imageData = UIImageJPEGRepresentation([item image], compression);
-	
-	// TODO
-	// Note from Nate to creator of sendImage method - This seems like it could be a source of sluggishness.
-	// For example, if the image is large (say 3000px x 3000px for example), it would be better to resize the image
-	// to an appropriate size (max of img.ly) and then start trying to compress.
-	
-	while ([imageData length] > 700000 && compression > 0.1) {
-		// NSLog(@"Image size too big, compression more: current data size: %d bytes",[imageData length]);
-		compression -= 0.1;
-		imageData = UIImageJPEGRepresentation([item image], compression);
 		
-	}
-	
 	NSString *boundary = @"0xKhTmLbOuNdArY";
 	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
 	[oRequest setValue:contentType forHTTPHeaderField:@"Content-Type"];
@@ -455,16 +473,16 @@
 	NSMutableData *body = [NSMutableData data];
 	NSString *dispKey = @"";
 	if([item customValueForKey:@"profile_update"]){
-		dispKey = @"Content-Disposition: form-data; name=\"image\"; filename=\"upload.jpg\"\r\n";
+		dispKey = [NSString stringWithFormat:@"Content-Disposition: form-data; name=\"image\"; filename=\"%@\"\r\n", filename];
 	} else {
-		dispKey = @"Content-Disposition: form-data; name=\"media\"; filename=\"upload.jpg\"\r\n";
+		dispKey = [NSString stringWithFormat:@"Content-Disposition: form-data; name=\"media\"; filename=\"%@\"\r\n", filename];
 	}
 
-	
+	NSString *mimeT = [NSString stringWithFormat:@"Content-Type: %@\r\n\r\n", mimeType];
 	[body appendData:[[NSString stringWithFormat:@"--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[dispKey dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[@"Content-Type: image/jpg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:imageData];
+	[body appendData:[mimeT dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:data];
 	[body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
 	
 	if([item customValueForKey:@"profile_update"]){
