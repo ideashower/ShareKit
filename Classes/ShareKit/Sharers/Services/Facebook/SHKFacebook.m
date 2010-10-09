@@ -271,7 +271,7 @@
 
 - (void)request:(FBRequest*)aRequest didLoad:(id)result 
 {
-    NSLog(@"A request %@", aRequest.method);
+    //NSLog(@"A request %@", aRequest.method);
 	if ([aRequest.method isEqualToString:@"facebook.photos.upload"] || 
             [aRequest.method isEqualToString:@"facebook.video.upload"]) 
 	{

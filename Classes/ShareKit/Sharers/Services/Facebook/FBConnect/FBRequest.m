@@ -226,7 +226,7 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
 }
 
 - (void)connect {
-  NSLog(@"Connecting to %@ %@", _url, _params);
+  FBLOG2(@"Connecting to %@ %@", _url, _params);
 
   if ([_delegate respondsToSelector:@selector(requestLoading:)]) {
     [_delegate requestLoading:self];

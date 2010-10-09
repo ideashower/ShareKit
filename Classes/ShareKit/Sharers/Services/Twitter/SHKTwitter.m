@@ -302,8 +302,7 @@
 }
 
 - (BOOL)send
-{	
-    NSLog(@"ShareType: %d", item.shareType);
+{
 	// Check if we should send follow request too
 	if (xAuth && [item customBoolForSwitchKey:@"followMe"])
 		[self followMe];	
@@ -413,6 +412,7 @@
 	// Note from Nate to creator of sendImage method - This seems like it could be a source of sluggishness.
 	// For example, if the image is large (say 3000px x 3000px for example), it would be better to resize the image
 	// to an appropriate size (max of img.ly) and then start trying to compress.
+    // If anyone can actually tell me the max size of an imahe in yFrog I'm happy to do this. @whalec
 	
 	while ([imageData length] > 700000 && compression > 0.1) {
 		// NSLog(@"Image size too big, compression more: current data size: %d bytes",[imageData length]);

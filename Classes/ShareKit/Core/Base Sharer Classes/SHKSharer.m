@@ -711,13 +711,11 @@
 
 - (void)sendDidFailWithError:(NSError *)error
 {
-    NSLog(@"Error: %@", error);
 	[self sendDidFailWithError:error shouldRelogin:NO];	
 }
 
 - (void)sendDidFailWithError:(NSError *)error shouldRelogin:(BOOL)shouldRelogin
 {
-    NSLog(@"Err: %@", error);
 	self.lastError = error;
 		
 	if ([shareDelegate respondsToSelector:@selector(sharer:failedWithError:shouldRelogin:)])
