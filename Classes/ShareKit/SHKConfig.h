@@ -7,7 +7,8 @@
 // http://getsharekit.com/install
 
 
-
+#define kSHKEmailShouldShortenURLs NO
+#define kSHKCopyShouldShortenURLs  NO
 
 
 
