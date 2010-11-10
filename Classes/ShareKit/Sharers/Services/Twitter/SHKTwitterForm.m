@@ -113,22 +113,18 @@
 	CGFloat keyboardHeight;
 	
 	// 3.2 and above
-	/*if (UIKeyboardFrameEndUserInfoKey)
+	if (UIKeyboardFrameEndUserInfoKey)
 	 {		
-	 [[notification.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardFrame];		
-	 if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait || [[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown) 
-	 keyboardHeight = keyboardFrame.size.height;
-	 else
-	 keyboardHeight = keyboardFrame.size.width;
+    	 [[notification.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardFrame];
+    	 if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait 
+    	  || [[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown) {
+    	     keyboardHeight = keyboardFrame.size.height;
+    	 }
+	    else {
+	        keyboardHeight = keyboardFrame.size.width;
+	    }
 	 }
-	 
-	 // < 3.2
-	 else 
-	 {*/
-	[[notification.userInfo valueForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardFrame];
-	keyboardHeight = keyboardFrame.size.height;
-	//}
-	
+	 	
 	// Find the bottom of the screen (accounting for keyboard overlay)
 	// This is pretty much only for pagesheet's on the iPad
 	UIInterfaceOrientation orient = [[UIApplication sharedApplication] statusBarOrientation];
