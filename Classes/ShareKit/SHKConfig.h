@@ -85,7 +85,20 @@
 // Append 'Shared With 'Signature to Email (and related forms)
 #define SHKSharedWithSignature		0
 
-
+// Licorize - http://licorize.com
+/*
+ The configuration is very similar as Twitter
+ 
+ Callback URL (important to get right for OAuth users)
+ --
+ 1. Open your application settings at http://developer.licorize.com/apps/
+ 2. 'Application Type' should be set to BROWSER (not client)
+ 3. 'Callback URL' should match whatever you enter in SHKLicorizeCallbackUrl.  The callback url doesn't have to be an actual existing url.  The user will never get to it because ShareKit intercepts it before the user is redirected.  It just needs to match.
+ */
+#define SHKLicorizeConsumerKey		@""
+#define SHKLicorizeSecret			@""
+#define SHKLicorizeCallbackUrl		@"" // You need to set this if using OAuth, see note above (xAuth users can skip it)
+#define SHKLicorizeUseXAuth			0 // To use xAuth, set to 1
 
 /*
  UI Configuration : Basic
