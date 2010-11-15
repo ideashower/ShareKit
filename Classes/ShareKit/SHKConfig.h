@@ -95,7 +95,7 @@
  OAuth is the default and will present a web page to log the user in. 
  xAuth is a simplified version of OAuth: xAuth presents a native entry form but you have to email the Licorize API team to enable xAuth for your app.
  If your app has been approved for xAuth, set SHKLicorizeUseXAuth to 1.
- 
+
  Callback URL (it's important to get it right for OAuth users)
  --
  1. Fill the form to get your application keys at http://licorize.com/api/
