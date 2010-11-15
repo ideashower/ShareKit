@@ -7,6 +7,7 @@
 #import "SHKLicorize.h"
 
 @interface SHKLicorize ()
+NSString * StringOrDefault(NSString * value, NSString * defaultValue);
 NSString * UrlOrBlank(NSURL * value);
 BOOL SendDidSuccess(NSData * data);
 @end
@@ -164,7 +165,7 @@ BOOL SendDidSuccess(NSData * data);
 														   signatureProvider:nil];
 	
 	[oRequest setHTTPMethod:@"POST"];
-
+	
 	OARequestParameter *urlParam = [[OARequestParameter alloc] initWithName:@"url"
 																	  value:UrlOrBlank(item.URL)];
 	OARequestParameter *titleParam = [[OARequestParameter alloc] initWithName:@"title"
@@ -200,7 +201,7 @@ BOOL SendDidSuccess(NSData * data);
 	OARequestParameter *textParam = [[OARequestParameter alloc] initWithName:@"notes"
 																	   value:SHKStringOrBlank(item.text)];
 	OARequestParameter *typeParam = [[OARequestParameter alloc] initWithName:@"type"
-																	   value:@"NOTE"];
+																	   value:StringOrDefault([item customValueForKey:@"type"], @"NOTE")];
 	OARequestParameter *tagsParam = [[OARequestParameter alloc] initWithName:@"tags"
 																	   value:SHKStringOrBlank(item.tags)];
 	
@@ -262,20 +263,24 @@ BOOL SendDidSuccess(NSData * data);
 #pragma mark -
 #pragma mark Utilities
 
+NSString * StringOrDefault(NSString * value, NSString * defaultValue) {
+	return value == nil ? defaultValue : value;
+}
+
 NSString * UrlOrBlank(NSURL * value) {
 	return value == nil ? @"" : [value absoluteString];
 }
 
 BOOL SendDidSuccess(NSData * data) {
 	NSString *string = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
-
+	
 	NSScanner *scanner = [NSScanner scannerWithString:string];
-
+	
 	NSString *success = @"true";	
 	
 	// skip until success message
 	[scanner scanUpToString:@"\"ok\":" intoString:nil];
-
+	
 	if ([scanner scanString:@"\"ok\":" intoString:nil]) {
 		// get the message until the closing double quotes
 		[scanner scanUpToCharactersFromSet:[NSCharacterSet characterSetWithCharactersInString:@","] intoString:&success];
@@ -286,7 +291,7 @@ BOOL SendDidSuccess(NSData * data) {
 	} else {
 		return NO;
 	}
-
+	
 } 
 
 @end
