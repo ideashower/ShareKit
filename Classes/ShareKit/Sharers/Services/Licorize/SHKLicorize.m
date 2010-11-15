@@ -42,11 +42,11 @@ BOOL SendDidSuccess(NSData * data);
 #pragma mark -
 #pragma mark Authorization
 
-- (BOOL)isAuthorized {		
+- (BOOL)isAuthorized {
 	return [self restoreAccessToken];
 }
 
-- (void)promptAuthorization {		
+- (void)promptAuthorization {
 	if (xAuth) {
 		[super authorizationFormShow]; // xAuth process
 	} else {
@@ -70,7 +70,7 @@ BOOL SendDidSuccess(NSData * data);
 #pragma mark Authentication
 
 - (id)init {
-	if (self = [super init]) {		
+	if (self = [super init]) {
 		// OAUTH		
 		self.consumerKey = SHKLicorizeConsumerKey;		
 		self.secretKey = SHKLicorizeSecret;
@@ -89,11 +89,11 @@ BOOL SendDidSuccess(NSData * data);
 	    self.accessURL = [NSURL URLWithString:@"http://api.licorize.com/oauth/access_token"];
 		
 		self.signatureProvider = [[[OAHMAC_SHA1SignatureProvider alloc] init] autorelease];
-	}	
+	}
 	return self;
 }
 
-- (void)tokenAccessModifyRequest:(OAMutableURLRequest *)oRequest {	
+- (void)tokenAccessModifyRequest:(OAMutableURLRequest *)oRequest {
 	if (xAuth) {
 		NSDictionary *formValues = [pendingForm formValues];
 		
@@ -111,7 +111,7 @@ BOOL SendDidSuccess(NSData * data);
 }
 
 // Validate the user input on the share form
-- (void)shareFormValidate:(SHKCustomFormController *)form {	
+- (void)shareFormValidate:(SHKCustomFormController *)form {
 	/*
 	 
 	 Services should subclass this if they need to validate any data before sending.
@@ -136,7 +136,7 @@ BOOL SendDidSuccess(NSData * data);
 #pragma mark Implementation
 
 // Send the share item to the server
-- (BOOL)send {	
+- (BOOL)send {
 	if (![self validateItem])
 		return NO;
 	
