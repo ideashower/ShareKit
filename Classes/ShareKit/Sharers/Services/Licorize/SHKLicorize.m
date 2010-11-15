@@ -84,8 +84,8 @@ BOOL SendDidSuccess(NSData * data);
 		
 		
 		// You do not need to edit these, they are the same for everyone
-	    self.requestURL = [NSURL URLWithString:@"http://api.licorize.com/oauth/authorize"];
-	    self.authorizeURL = [NSURL URLWithString:@"http://api.licorize.com/oauth/request_token"];
+	    self.requestURL = [NSURL URLWithString:@"http://api.licorize.com/oauth/request_token"];
+	    self.authorizeURL = [NSURL URLWithString:@"http://api.licorize.com/oauth/authorize"];
 	    self.accessURL = [NSURL URLWithString:@"http://api.licorize.com/oauth/access_token"];
 		
 		self.signatureProvider = [[[OAHMAC_SHA1SignatureProvider alloc] init] autorelease];
