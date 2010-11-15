@@ -132,8 +132,6 @@ BOOL SendDidSuccess(NSData * data);
 	[form saveForm];
 }
 
-
-
 #pragma mark -
 #pragma mark Implementation
 
