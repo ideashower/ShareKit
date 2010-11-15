@@ -87,11 +87,18 @@
 
 // Licorize - http://licorize.com
 /*
- The configuration is very similar as Twitter
- 
- Callback URL (important to get right for OAuth users)
+ Important Licorize settings to get right:
+
+ Differences between OAuth and xAuth
  --
- 1. Open your application settings at http://developer.licorize.com/apps/
+ There are two types of authentication provided for Licorize clients, OAuth and xAuth, based on open standards.
+ OAuth is the default and will present a web page to log the user in. 
+ xAuth is a simplified version of OAuth: xAuth presents a native entry form but you have to email the Licorize API team to enable xAuth for your app.
+ If your app has been approved for xAuth, set SHKLicorizeUseXAuth to 1.
+ 
+ Callback URL (it's important to get it right for OAuth users)
+ --
+ 1. Fill the form to get your application keys at http://licorize.com/api/
  2. 'Application Type' should be set to BROWSER (not client)
  3. 'Callback URL' should match whatever you enter in SHKLicorizeCallbackUrl.  The callback url doesn't have to be an actual existing url.  The user will never get to it because ShareKit intercepts it before the user is redirected.  It just needs to match.
  */
@@ -153,12 +160,12 @@
  */
 
 // A : show debug output
-//#define SHKDebugShowLogs			1
-//#define SHKLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#define SHKDebugShowLogs			1
+#define SHKLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
 
 // B : hide debug output
-#define SHKDebugShowLogs			0
-#define SHKLog( s, ... ) 
+//#define SHKDebugShowLogs			0
+//#define SHKLog( s, ... ) 
 
 
 
