@@ -7,8 +7,7 @@
 // http://getsharekit.com/install
 
 
-#define kSHKEmailShouldShortenURLs NO
-#define kSHKCopyShouldShortenURLs  NO
+
 
 
 
@@ -37,21 +36,20 @@
  leaving that decision up to the user.
  */
 
-// Evernote - http://www.evernote.com/about/developer/api/
-
-#define kEvernoteUserStoreURL    @"https://sandbox.evernote.com/edam/user"
-#define kEvernoteNetStoreURLBase @"http://sandbox.evernote.com/edam/note/"
-#define SHKEvernoteConsumerKey   @""
-#define SHKEvernoteSecretKey     @""
-// If your Consumer Key is activated by Evernote support,
-// change these constants following.
-//#define kEvernoteUserStoreURL    @"https://www.evernote.com/edam/user"
-//#define kEvernoteNetStoreURLBase @"http://www.evernote.com/edam/note/"
 
 
 // Delicious - https://developer.apps.yahoo.com/projects
 #define SHKDeliciousConsumerKey		@""
 #define SHKDeliciousSecretKey		@""
+
+// Evernote - http://www.evernote.com/about/developer/api/
+#define SHKEvernoteConsumerKey @""
+#define SHKEvernoteSecretKey @""
+#define SHKEvernoteUserStoreURL @"https://sandbox.evernote.com/edam/user"
+#define SHKEvernoteNetStoreURLBase @"http://sandbox.evernote.com/edam/note/"
+// If your Consumer Key is activated by Evernote support, change these constants following:
+//#define SHKEvernoteUserStoreURL @"https://www.evernote.com/edam/user"
+//#define SHKEvernoteNetStoreURLBase @"http://www.evernote.com/edam/note/"
 
 // Facebook - http://www.facebook.com/developers
 // If SHKFacebookUseSessionProxy is enabled then SHKFacebookSecret is ignored and should be left blank
@@ -90,11 +88,14 @@
 #define SHKBitLyLogin				@""
 #define SHKBitLyKey					@""
 
-// ShareMenu Ordering
-#define SHKShareMenuAlphabeticalOrder 1 // Setting this to 1 will show list in Alphabetical Order, setting to 0 will follow the order in SHKShares.plist
 
-// Append 'Shared With 'Signature to Email (and related forms)
-#define SHKSharedWithSignature		0
+/*
+ Translations
+ */
+#warning Read this important note on included translations
+// Read http://getsharekit.com/translations and then you can remove this warning
+
+
 
 
 
