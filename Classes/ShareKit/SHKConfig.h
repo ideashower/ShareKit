@@ -46,8 +46,8 @@
 // If SHKFacebookUseSessionProxy is enabled then SHKFacebookSecret is ignored and should be left blank
 
 #define SHKFacebookUseSessionProxy  NO 
-#define SHKFacebookKey				@"159732750721807"
-#define SHKFacebookSecret			@"48f81d8efe131407bf1a77f8fbf351a1"
+#define SHKFacebookKey				@""
+#define SHKFacebookSecret			@""
 #define SHKFacebookSessionProxyURL  @""
 
 // Read It Later - http://readitlaterlist.com/api/?shk
@@ -69,9 +69,9 @@
  2. 'Application Type' should be set to BROWSER (not client)
  3. 'Callback URL' should match whatever you enter in SHKTwitterCallbackUrl.  The callback url doesn't have to be an actual existing url.  The user will never get to it because ShareKit intercepts it before the user is redirected.  It just needs to match.
  */
-#define SHKTwitterConsumerKey		@"ProZKo0zbGm19utNZt5rwQ"
-#define SHKTwitterSecret			@"YuykeCGSbv1smtYBXi6SHS89eadeabCVG89IQdOkKM"
-#define SHKTwitterCallbackUrl		@"http://test.sharekit.com/callback" // You need to set this if using OAuth, see note above (xAuth users can skip it)
+#define SHKTwitterConsumerKey		@""
+#define SHKTwitterSecret        @""
+#define SHKTwitterCallbackUrl		@"" // You need to set this if using OAuth, see note above (xAuth users can skip it)
 #define SHKTwitterUseXAuth			0 // To use xAuth, set to 1
 #define SHKTwitterUsername			@"" // Enter your app's twitter account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
 
@@ -80,7 +80,7 @@
 #define SHKBitLyKey					@""
 
 // yfrog.org for images and videos
-#define SHKYFrogKey                 @"BCDJKMNWbb9ed4cfce3ab930108af3b0e8a24679"
+#define SHKYFrogKey                 @""
 
 // ShareMenu Ordering
 #define SHKShareMenuAlphabeticalOrder 1 // Setting this to 1 will show list in Alphabetical Order, setting to 0 will follow the order in SHKShares.plist
