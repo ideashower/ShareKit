@@ -59,7 +59,7 @@ BOOL SendDidSuccess(NSData * data);
 #pragma mark xAuth
 
 + (NSString *)authorizationFormCaption {
-	return SHKLocalizedString(@"Create a free account at %@", @"Licorize.com");
+	return SHKLocalizedString(@"For a free account sign up at %@", @"Licorize.com");
 }
 
 - (void)authorizationFormValidate:(SHKFormController *)form {
