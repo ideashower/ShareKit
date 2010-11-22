@@ -40,7 +40,7 @@
 @implementation SHK
 
 @synthesize currentView, pendingView, isDismissingView;
-@synthesize rootViewController;
+@synthesize rootViewController, currentRootViewController;
 @synthesize offlineQueue;
 
 static SHK *currentHelper = nil;
@@ -91,7 +91,12 @@ BOOL SHKinit;
 
 - (void)showViewController:(UIViewController *)vc
 {	
-	if (rootViewController == nil)
+	if (rootViewController)
+    {
+        // If developer provieded a root view controler, use it
+        self.currentRootViewController = rootViewController;
+    }
+    else
 	{
 		// Try to find the root view controller programmically
 		
@@ -111,7 +116,7 @@ BOOL SHKinit;
 		id nextResponder = [rootView nextResponder];
 		
 		if ([nextResponder isKindOfClass:[UIViewController class]])
-			self.rootViewController = nextResponder;
+			self.currentRootViewController = nextResponder;
 		
 		else
 			NSAssert(NO, @"ShareKit: Could not find a root view controller.  You can assign one manually by calling [[SHK currentHelper] setRootViewController:YOURROOTVIEWCONTROLLER].");
@@ -203,9 +208,9 @@ BOOL SHKinit;
 	
 	if (currentView != nil)
 		currentView = nil;
-	
-    if (rootViewController != nil)
-        rootViewController = nil;
+
+    if (currentRootViewController != nil)
+        currentRootViewController = nil;
 
 	if (pendingView)
 	{
@@ -219,7 +224,7 @@ BOOL SHKinit;
 										   
 - (UIViewController *)getTopViewController
 {
-	UIViewController *topViewController = rootViewController;
+	UIViewController *topViewController = currentRootViewController;
 	while (topViewController.modalViewController != nil)
 		topViewController = topViewController.modalViewController;
 	return topViewController;
