@@ -88,7 +88,7 @@
 
 + (BOOL)canShare
 {
-	return [MFMailComposeViewController canSendMail];
+	return YES;
 }
 
 - (BOOL)shouldAutoShare
@@ -100,6 +100,20 @@
 
 #pragma mark -
 #pragma mark Share API Methods
+
+- (void)share
+{
+    if (![MFMailComposeViewController canSendMail]) {
+        [[[[UIAlertView alloc] initWithTitle:SHKLocalizedString(@"No Account")
+    								 message:SHKLocalizedString(@"Please set up an account in Mail.")
+    								delegate:nil
+    					   cancelButtonTitle:SHKLocalizedString(@"Close")
+    					   otherButtonTitles:nil] autorelease] show];
+    }
+    else {
+        [super tryToSend];
+    }
+}
 
 - (BOOL)send
 {

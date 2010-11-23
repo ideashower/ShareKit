@@ -80,6 +80,8 @@
 "There was a problem requesting authorization from %@" = "Beim Abfragen der Authorisation für %@ trat ein Fehler auf.";
 "Request Error" = "Anfragefehler";
 "There was an error while sharing" = "Beim Teilen trat ein Fehler auf.";
+"No Account" = "Kein Konto";
+"Please set up an account in Mail." = "Bitte richten Sie ein Konto in Mail.";
 
 "Authorize Error" = "Authorisierungsfehler";
 "There was an error while authorizing" = "Beim Authorisieren trat ein Fehler auf.";

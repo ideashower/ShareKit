@@ -80,6 +80,8 @@
 "There was a problem requesting authorization from %@" = "There was a problem requesting authorization from %@";
 "Request Error" = "Request Error";
 "There was an error while sharing" = "There was an error while sharing";
+"No Account" = "No Account";
+"Please set up an account in Mail." = "Please set up an account in Mail.";
 
 "Authorize Error" = "Authorize Error";
 "There was an error while authorizing" = "There was an error while authorizing";
