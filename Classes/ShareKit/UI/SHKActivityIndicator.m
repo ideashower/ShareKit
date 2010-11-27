@@ -36,6 +36,7 @@
 @synthesize spinner;
 
 static SHKActivityIndicator *currentIndicator = nil;
+static const CGFloat HideDelay = 2.0;
 
 
 + (SHKActivityIndicator *)currentIndicator
@@ -106,7 +107,7 @@ static SHKActivityIndicator *currentIndicator = nil;
 
 - (void)hideAfterDelay
 {
-	[self performSelector:@selector(hide) withObject:nil afterDelay:0.6];
+	[self performSelector:@selector(hide) withObject:nil afterDelay:HideDelay];
 }
 
 - (void)hide
