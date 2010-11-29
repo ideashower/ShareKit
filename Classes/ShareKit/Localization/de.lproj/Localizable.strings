@@ -26,6 +26,7 @@
 "Saving to %@" = "Nach %@ speichern";
 "Saved!" = "Gespeichert!";
 "Offline" = "Offline";
+"Offline: Queued" = "Offline: in der Warteschlange";
 "Error" = "Fehler";
 "Login" = "Login";
 "Logging In..." = "Einloggen...";

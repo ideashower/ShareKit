@@ -477,6 +477,7 @@ static NSDictionary *sharersDictionary = nil;
 						  nil]];
 	
 	[self saveOfflineQueueList:queueList];
+	[[SHKActivityIndicator currentIndicator] displayCompleted:SHKLocalizedString(@"Offline: Queued")];
 	
 	return YES;
 }

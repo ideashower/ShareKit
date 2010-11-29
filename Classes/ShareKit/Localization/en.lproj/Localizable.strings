@@ -26,6 +26,7 @@
 "Saving to %@" = "Saving to %@";
 "Saved!" = "Saved!";
 "Offline" = "Offline";
+"Offline: Queued" = "Offline: Queued";
 "Error" = "Error";
 "Login" = "Login";
 "Logging In..." = "Logging In...";
