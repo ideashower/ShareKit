@@ -70,7 +70,7 @@
 {
 	// Display an activity indicator
 	if (!quiet)
-		[[SHKActivityIndicator currentIndicator] displayActivity:SHKLocalizedString(@"Logging In...")];
+		[SHK displayActivity:SHKLocalizedString(@"Logging In...")];
 	
 	
 	// Authorize the user through the server
@@ -95,7 +95,7 @@
 - (void)authFinished:(SHKRequest *)aRequest
 {		
 	// Hide the activity indicator
-	[[SHKActivityIndicator currentIndicator] hide];
+	[SHK hideActivityIndicator];
 	
 	if (aRequest.success)
 		[pendingForm saveForm];

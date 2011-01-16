@@ -65,7 +65,7 @@ static NSString * const kTumblrWriteURL = @"https://www.tumblr.com/api/write";
 - (void)authorizationFormValidate:(SHKFormController *)form{
 	// Display an activity indicator
 	if (!quiet)
-		[[SHKActivityIndicator currentIndicator] displayActivity:SHKLocalizedString(@"Logging In...")];
+		[SHK displayActivity:SHKLocalizedString(@"Logging In...")];
 	
 	
 	// Authorize the user through the server
@@ -87,7 +87,7 @@ static NSString * const kTumblrWriteURL = @"https://www.tumblr.com/api/write";
 }
 
 - (void)authFinished:(SHKRequest *)aRequest{		
-	[[SHKActivityIndicator currentIndicator] hide];
+	[SHK hideActivityIndicator];
 	if (aRequest.success)
 		[pendingForm saveForm];
 	

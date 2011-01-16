@@ -72,7 +72,7 @@
 		UIImageWriteToSavedPhotosAlbum(item.image, nil, nil, nil);
 	
 	// Notify user
-	[[SHKActivityIndicator currentIndicator] displayCompleted:@"Saved!"];
+	[SHK displayCompleted:SHKLocalizedString(@"Saved")];
 	
 	return YES;
 }

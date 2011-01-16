@@ -76,7 +76,7 @@
 
 - (void)tokenRequest
 {
-	[[SHKActivityIndicator currentIndicator] displayActivity:SHKLocalizedString(@"Connecting...")];
+	[SHK displayActivity:SHKLocalizedString(@"Connecting...")];
 	
     OAMutableURLRequest *oRequest = [[OAMutableURLRequest alloc] initWithURL:requestURL
                                                                    consumer:consumer
@@ -107,7 +107,7 @@
 	if (SHKDebugShowLogs) // check so we don't have to alloc the string with the data if we aren't logging
 		SHKLog(@"tokenRequestTicket Response Body: %@", [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]);
 	
-	[[SHKActivityIndicator currentIndicator] hide];
+	[SHK hideActivityIndicator];
 	
 	if (ticket.didSucceed) 
 	{
@@ -126,7 +126,7 @@
 
 - (void)tokenRequestTicket:(OAServiceTicket *)ticket didFailWithError:(NSError*)error
 {
-	[[SHKActivityIndicator currentIndicator] hide];
+	[SHK hideActivityIndicator];
 	
 	[[[[UIAlertView alloc] initWithTitle:SHKLocalizedString(@"Request Error")
 								 message:error!=nil?[error localizedDescription]:SHKLocalizedString(@"There was an error while sharing")
@@ -184,7 +184,7 @@
 - (void)tokenAccess:(BOOL)refresh
 {
 	if (!refresh)
-		[[SHKActivityIndicator currentIndicator] displayActivity:SHKLocalizedString(@"Authenticating...")];
+		[SHK displayActivity:SHKLocalizedString(@"Authenticating...")];
 	
     OAMutableURLRequest *oRequest = [[OAMutableURLRequest alloc] initWithURL:accessURL
                                                                    consumer:consumer
@@ -214,7 +214,7 @@
 	if (SHKDebugShowLogs) // check so we don't have to alloc the string with the data if we aren't logging
 		SHKLog(@"tokenAccessTicket Response Body: %@", [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]);
 	
-	[[SHKActivityIndicator currentIndicator] hide];
+	[SHK hideActivityIndicator];
 	
 	if (ticket.didSucceed) 
 	{
@@ -236,7 +236,7 @@
 
 - (void)tokenAccessTicket:(OAServiceTicket *)ticket didFailWithError:(NSError*)error
 {
-	[[SHKActivityIndicator currentIndicator] hide];
+	[SHK hideActivityIndicator];
 	
 	[[[[UIAlertView alloc] initWithTitle:SHKLocalizedString(@"Access Error")
 								 message:error!=nil?[error localizedDescription]:SHKLocalizedString(@"There was an error while sharing")

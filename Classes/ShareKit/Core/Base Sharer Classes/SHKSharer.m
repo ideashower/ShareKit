@@ -26,7 +26,6 @@
 //
 
 #import "SHKSharer.h"
-#import "SHKActivityIndicator.h"
 
 @implementation SHKSharer
 
@@ -614,20 +613,21 @@
 - (void)sharerStartedSending:(SHKSharer *)sharer
 {
 	if (!quiet)
-		[[SHKActivityIndicator currentIndicator] displayActivity:SHKLocalizedString(@"Saving to %@", [[self class] sharerTitle])];
+		[SHK displayActivity:SHKLocalizedString(@"Saving to %@", [[self class] sharerTitle])];
 }
 
 - (void)sharerFinishedSending:(SHKSharer *)sharer
 {
-	if (!quiet)
-		[[SHKActivityIndicator currentIndicator] displayCompleted:SHKLocalizedString(@"Saved!")];
+	if (!quiet) {
+    	[SHK displayCompleted:SHKLocalizedString(@"Complete")];
+    }
 }
 
 - (void)sharer:(SHKSharer *)sharer failedWithError:(NSError *)error shouldRelogin:(BOOL)shouldRelogin
 {
 	if (!quiet)
 	{
-		[[SHKActivityIndicator currentIndicator] hide];
+		[SHK hideActivityIndicator];
 		
 		[[[[UIAlertView alloc] initWithTitle:SHKLocalizedString(@"Error")
 									 message:sharer.lastError!=nil?[sharer.lastError localizedDescription]:SHKLocalizedString(@"There was an error while sharing")
@@ -725,3 +725,4 @@
 
 
 @end
+

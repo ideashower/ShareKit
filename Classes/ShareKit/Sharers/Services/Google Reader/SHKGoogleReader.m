@@ -87,7 +87,7 @@ Google Reader API is unoffical, this was hobbled together from:
 {
 	// Display an activity indicator
 	if (!quiet)
-		[[SHKActivityIndicator currentIndicator] displayActivity:SHKLocalizedString(@"Logging In...")];
+		[SHK displayActivity:SHKLocalizedString(@"Logging In...")];
 	
 	
 	// Authorize the user through the server
@@ -122,7 +122,7 @@ Google Reader API is unoffical, this was hobbled together from:
 	
 	// Hide the activity indicator
 	if (!sendAfterLogin)
-		[[SHKActivityIndicator currentIndicator] hide];
+		[SHK hideActivityIndicator];
 	
 	// Parse Result
 	self.session = [NSMutableDictionary dictionaryWithCapacity:0];

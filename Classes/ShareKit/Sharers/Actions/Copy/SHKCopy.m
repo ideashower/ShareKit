@@ -80,7 +80,7 @@
 		[[UIPasteboard generalPasteboard] setImage:item.image];
 	
 	// Notify user
-	[[SHKActivityIndicator currentIndicator] displayCompleted:SHKLocalizedString(@"Copied!")];
+	[SHK displayCompleted:SHKLocalizedString(@"Copied")];
 	
 	// Notify delegate, but quietly
 	self.quiet = YES;

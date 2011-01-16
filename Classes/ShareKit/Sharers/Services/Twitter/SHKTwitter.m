@@ -244,7 +244,7 @@
 	}
 	
 	if (!quiet)
-		[[SHKActivityIndicator currentIndicator] displayActivity:SHKLocalizedString(@"Shortening URL...")];
+		[SHK displayActivity:SHKLocalizedString(@"Shortening URL...")];
 	
 	self.request = [[[SHKRequest alloc] initWithURL:[NSURL URLWithString:[NSMutableString stringWithFormat:@"http://api.bit.ly/v3/shorten?login=%@&apikey=%@&longUrl=%@&format=txt",
 																		 SHKBitLyLogin,
@@ -260,7 +260,7 @@
 
 - (void)shortenURLFinished:(SHKRequest *)aRequest
 {
-	[[SHKActivityIndicator currentIndicator] hide];
+	[SHK hideActivityIndicator];
 	
 	NSString *result = [[aRequest getResult] stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
 	
