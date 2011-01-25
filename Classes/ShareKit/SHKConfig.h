@@ -42,6 +42,9 @@
 #define SHKDeliciousConsumerKey		@""
 #define SHKDeliciousSecretKey		@""
 
+// Diigo - http://www.diigo.com/api_dev
+#define SHKDiigoKey					@""
+
 // Facebook - http://www.facebook.com/developers
 // If SHKFacebookUseSessionProxy is enabled then SHKFacebookSecret is ignored and should be left blank
 
