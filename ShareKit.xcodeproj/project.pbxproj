@@ -86,7 +86,8 @@
 		43C91DF511EBAE4800F31FAE /* SHKTumblr.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C91DF411EBAE4800F31FAE /* SHKTumblr.m */; };
 		43D1DEF011D5CDD200550D75 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1DEEF11D5CDD200550D75 /* SystemConfiguration.framework */; };
 		43EF406E11D3FFF800B1F700 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EF406D11D3FFF800B1F700 /* Security.framework */; };
-		43FF9C7412270E9F00ADE53C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FF9C7212270E9F00ADE53C /* Localizable.strings */; };
+		D819BF7F12F780F700BC4038 /* ShareKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = D819BF7D12F780F700BC4038 /* ShareKit.strings */; };
+		D819BF8312F7810200BC4038 /* ShareKit.strings in Resources */ = {isa = PBXBuildFile; fileRef = D819BF8112F7810200BC4038 /* ShareKit.strings */; };
 		D85D6B3112E37D8300FD0426 /* ShareKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D85D6B3012E37D8300FD0426 /* ShareKit.bundle */; };
 		D85D6BFE12E37EDC00FD0426 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D85D6BBC12E37EDC00FD0426 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
@@ -242,9 +243,9 @@
 		43C91DF411EBAE4800F31FAE /* SHKTumblr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKTumblr.m; sourceTree = "<group>"; };
 		43D1DEEF11D5CDD200550D75 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		43EF406D11D3FFF800B1F700 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		43FF9C7312270E9F00ADE53C /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Classes/ShareKit/Localization/en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
-		43FF9C7512270EB900ADE53C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Classes/ShareKit/Localization/de.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* ShareKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShareKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		D819BF7E12F780F700BC4038 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = ShareKit.strings; sourceTree = "<group>"; };
+		D819BF8212F7810200BC4038 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = ShareKit.strings; sourceTree = "<group>"; };
 		D85D6B3012E37D8300FD0426 /* ShareKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareKit.bundle; sourceTree = "<group>"; };
 		D85D6BBB12E37EDC00FD0426 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		D85D6BBC12E37EDC00FD0426 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
@@ -727,10 +728,29 @@
 		43FF9C7112270E7F00ADE53C /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				43FF9C7212270E9F00ADE53C /* Localizable.strings */,
+				D819BF8012F7810200BC4038 /* en.lproj */,
+				D819BF7C12F780F700BC4038 /* de.lproj */,
 			);
 			name = Localization;
 			sourceTree = "<group>";
+		};
+		D819BF7C12F780F700BC4038 /* de.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				D819BF7D12F780F700BC4038 /* ShareKit.strings */,
+			);
+			name = de.lproj;
+			path = Classes/ShareKit/Localization/de.lproj;
+			sourceTree = SOURCE_ROOT;
+		};
+		D819BF8012F7810200BC4038 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				D819BF8112F7810200BC4038 /* ShareKit.strings */,
+			);
+			name = en.lproj;
+			path = Classes/ShareKit/Localization/en.lproj;
+			sourceTree = SOURCE_ROOT;
 		};
 		D85D6B5512E37EDC00FD0426 /* ExternalLibraries */ = {
 			isa = PBXGroup;
@@ -807,8 +827,9 @@
 				43A5382811DBE480004A1712 /* example.pdf in Resources */,
 				43A5382911DBE480004A1712 /* sanFran.jpg in Resources */,
 				43C91D1D11EB963600F31FAE /* MainWindow-iPad.xib in Resources */,
-				43FF9C7412270E9F00ADE53C /* Localizable.strings in Resources */,
 				D85D6B3112E37D8300FD0426 /* ShareKit.bundle in Resources */,
+				D819BF7F12F780F700BC4038 /* ShareKit.strings in Resources */,
+				D819BF8312F7810200BC4038 /* ShareKit.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -892,13 +913,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		43FF9C7212270E9F00ADE53C /* Localizable.strings */ = {
+		D819BF7D12F780F700BC4038 /* ShareKit.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				43FF9C7312270E9F00ADE53C /* en */,
-				43FF9C7512270EB900ADE53C /* de */,
+				D819BF7E12F780F700BC4038 /* de */,
 			);
-			name = Localizable.strings;
+			name = ShareKit.strings;
+			sourceTree = "<group>";
+		};
+		D819BF8112F7810200BC4038 /* ShareKit.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D819BF8212F7810200BC4038 /* en */,
+			);
+			name = ShareKit.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
