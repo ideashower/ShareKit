@@ -44,7 +44,7 @@
 
 + (SHKActionSheet *)actionSheetForType:(SHKShareType)type
 {
-	SHKActionSheet *as = [[SHKActionSheet alloc] initWithTitle:SHKLocalizedString(@"Share")
+	SHKActionSheet *as = [[SHKActionSheet alloc] initWithTitle:nil
 													  delegate:self
 											 cancelButtonTitle:nil
 										destructiveButtonTitle:nil
