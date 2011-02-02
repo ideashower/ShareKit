@@ -21,7 +21,7 @@
 "Actions" = "Aktionen";
 "Services" = "Dienste";
 "Send to %@" = "Zu %@ senden";
-"Copy" = "Kopieren";
+"Copy Link" = "Kopieren Link";
 "Copied!" = "Kopiert!";
 "Saving to %@" = "Nach %@ speichern";
 "Saved!" = "Gespeichert!";

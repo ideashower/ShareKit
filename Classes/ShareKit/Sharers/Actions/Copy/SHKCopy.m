@@ -35,7 +35,7 @@
 
 + (NSString *)sharerTitle
 {
-	return SHKLocalizedString(@"Copy");
+	return SHKLocalizedString(@"Copy Link");
 }
 
 + (BOOL)canShareURL
