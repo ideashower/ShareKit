@@ -83,6 +83,11 @@
 	return YES;
 }
 
++ (BOOL)shareRequiresInternetConnection
+{
+	return NO;
+}
+
 
 #pragma mark -
 #pragma mark Configuration : Dynamic Enable
