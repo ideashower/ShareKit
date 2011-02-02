@@ -97,3 +97,6 @@
 "Sharing Text" = "Teile Text";
 "Sharing a File" = "Teile Datei";
 "Logout of All Services" = "Aus allen Services ausloggen";
+
+"NoConnection" = "Keine Internetverbindung";
+"ShareInternetRequired"		= "Eine Internetverbindung ist für die Freigabe auf %@ erforderlich."; 

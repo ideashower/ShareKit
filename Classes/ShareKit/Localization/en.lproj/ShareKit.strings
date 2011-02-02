@@ -92,3 +92,6 @@
 
 "Access Error" = "Access Error";
 "There was an error while sharing" = "There was an error while sharing";
+
+"NoConnection"				= "No Internet Connection";
+"ShareInternetRequired"		= "An Internet connection is required to share on %@."; 

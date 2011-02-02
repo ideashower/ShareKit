@@ -258,6 +258,16 @@
 
 - (void)share
 {
+	if(![SHK connected] && [[self class] shareRequiresInternetConnection]) {
+	   [[[[UIAlertView alloc] initWithTitle:SHKLocalizedString(@"NoConnection")
+									message:SHKLocalizedString(@"ShareInternetRequired", [self sharerTitle])
+								   delegate:nil
+						  cancelButtonTitle:SHKLocalizedString(@"Close")
+						  otherButtonTitles:nil] autorelease] show];
+		return;
+		   
+	}
+
 	// isAuthorized - If service requires login and details have not been saved, present login dialog	
 	if (![self authorize])
 		self.pendingAction = SHKPendingShare;
