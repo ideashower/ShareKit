@@ -31,6 +31,8 @@
 #import "SHKCustomShareMenu.h"
 #import <Foundation/NSObjCRuntime.h>
 
+static BOOL hasMoreButton = NO;
+
 @implementation SHKActionSheet
 
 @synthesize item, sharers;
@@ -67,8 +69,19 @@
 		}
 	}
 	
-	// Add More button
-	[as addButtonWithTitle:SHKLocalizedString(@"More...")];
+    int total_sharers = 0;
+    for (NSString *key in [SHK sharersDictionary]) {
+        total_sharers += [[[SHK sharersDictionary] objectForKey:key] count];
+    }
+
+    if (total_sharers > [favoriteSharers count]) {
+        hasMoreButton = YES;
+	    // Add More button
+	    [as addButtonWithTitle:SHKLocalizedString(@"More...")];
+    }
+    else {
+        hasMoreButton = NO;
+    }
 	
 	// Add Cancel button
 	[as addButtonWithTitle:SHKLocalizedString(@"Cancel")];
@@ -93,7 +106,7 @@
 	}
 	
 	// More
-	else if (buttonIndex == sharers.count)
+	else if (buttonIndex == sharers.count && hasMoreButton)
 	{
 		SHKShareMenu *shareMenu = [[SHKCustomShareMenu alloc] initWithStyle:UITableViewStyleGrouped];
 		shareMenu.item = item;
