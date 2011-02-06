@@ -106,6 +106,8 @@
 		43D1DEF011D5CDD200550D75 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1DEEF11D5CDD200550D75 /* SystemConfiguration.framework */; };
 		43EF406E11D3FFF800B1F700 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EF406D11D3FFF800B1F700 /* Security.framework */; };
 		43FF9C7412270E9F00ADE53C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FF9C7212270E9F00ADE53C /* Localizable.strings */; };
+		B61E9AE112FED78600EB044B /* SHKTwitPicForm.m in Sources */ = {isa = PBXBuildFile; fileRef = B61E9AE012FED78600EB044B /* SHKTwitPicForm.m */; };
+		B69E7E0B12FDA9C400EE23DC /* SHKTwitPic.m in Sources */ = {isa = PBXBuildFile; fileRef = B69E7E0A12FDA9C400EE23DC /* SHKTwitPic.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -311,6 +313,10 @@
 		43FF9C7312270E9F00ADE53C /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Classes/ShareKit/Localization/en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		43FF9C7512270EB900ADE53C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Classes/ShareKit/Localization/de.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* ShareKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShareKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		B61E9ADF12FED78600EB044B /* SHKTwitPicForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKTwitPicForm.h; sourceTree = "<group>"; };
+		B61E9AE012FED78600EB044B /* SHKTwitPicForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKTwitPicForm.m; sourceTree = "<group>"; };
+		B69E7E0912FDA9C400EE23DC /* SHKTwitPic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKTwitPic.h; sourceTree = "<group>"; };
+		B69E7E0A12FDA9C400EE23DC /* SHKTwitPic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKTwitPic.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -720,6 +726,7 @@
 		43A536C011DBE3B9004A1712 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B69E7E0812FDA9A800EE23DC /* TwitPic */,
 				43A536C111DBE3B9004A1712 /* Delicious */,
 				4379F2891291AC9700D2A41E /* Evernote */,
 				43A536C411DBE3B9004A1712 /* Facebook */,
@@ -891,6 +898,17 @@
 			name = Localization;
 			sourceTree = "<group>";
 		};
+		B69E7E0812FDA9A800EE23DC /* TwitPic */ = {
+			isa = PBXGroup;
+			children = (
+				B69E7E0912FDA9C400EE23DC /* SHKTwitPic.h */,
+				B69E7E0A12FDA9C400EE23DC /* SHKTwitPic.m */,
+				B61E9ADF12FED78600EB044B /* SHKTwitPicForm.h */,
+				B61E9AE012FED78600EB044B /* SHKTwitPicForm.m */,
+			);
+			path = TwitPic;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1052,6 +1070,8 @@
 				4379F2C11291AC9700D2A41E /* SHKEvernote.m in Sources */,
 				4379F2EA1291AE5700D2A41E /* NSData+md5.m in Sources */,
 				4379F3B21291C45700D2A41E /* SHKTextMessage.m in Sources */,
+				B69E7E0B12FDA9C400EE23DC /* SHKTwitPic.m in Sources */,
+				B61E9AE112FED78600EB044B /* SHKTwitPicForm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
