@@ -203,7 +203,7 @@
 - (void)sendImage {	
 	NSString * oauthHeader = [self oauthHeader];
 		
-	NSURL *serviceURL = [NSURL URLWithString:@"http://img.ly/api/2/upload.xml"];
+	NSURL *serviceURL = [NSURL URLWithString:@"http://api.twitpic.com/2/upload.json"];
 	OAMutableURLRequest *oRequest = [[OAMutableURLRequest alloc] initWithURL:serviceURL
 												   consumer:consumer
 													  token:accessToken
