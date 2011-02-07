@@ -11,6 +11,8 @@
 
 @implementation SHKTwitPic
 
+@synthesize twitPicAPIKey;
+
 - (id)init {
     self = [super init];
 	if (self) {	
@@ -24,6 +26,8 @@
 	    self.authorizeURL = [NSURL URLWithString:@"https://twitter.com/oauth/authorize"];
 	    self.requestURL = [NSURL URLWithString:@"https://twitter.com/oauth/request_token"];
 	    self.accessURL = [NSURL URLWithString:@"https://twitter.com/oauth/access_token"]; 
+        
+        self.twitPicAPIKey = SHKTwitPicAPIKey;
 	}	
 	return self;
 }
@@ -160,9 +164,8 @@
 	return NO;
 }
 
-- (void)sendImage {
-	
-	NSURL *serviceURL = [NSURL URLWithString:@"https://api.twitter.com/1/account/verify_credentials.json"];
+- (NSString*)oauthHeader {
+    NSURL *serviceURL = [NSURL URLWithString:@"https://api.twitter.com/1/account/verify_credentials.json"];
 	
 	OAMutableURLRequest *oRequest = [[OAMutableURLRequest alloc] initWithURL:serviceURL
 																	consumer:consumer
@@ -170,25 +173,17 @@
 																	   realm:@"http://api.twitter.com/"
 														   signatureProvider:signatureProvider];
 	[oRequest prepare];
-		
+    
 	NSDictionary * headerDict = [oRequest allHTTPHeaderFields];
 	NSString * oauthHeader = [NSString stringWithString:[headerDict valueForKey:@"Authorization"]];
-		
+    
 	[oRequest release];
 	oRequest = nil;
-		
-	serviceURL = [NSURL URLWithString:@"http://img.ly/api/2/upload.xml"];
-	oRequest = [[OAMutableURLRequest alloc] initWithURL:serviceURL
-												   consumer:consumer
-													  token:accessToken
-													  realm:@"http://api.twitter.com/"
-										  signatureProvider:signatureProvider];
-	[oRequest setHTTPMethod:@"POST"];
-	[oRequest setValue:@"https://api.twitter.com/1/account/verify_credentials.json" forHTTPHeaderField:@"X-Auth-Service-Provider"];
-	[oRequest setValue:oauthHeader forHTTPHeaderField:@"X-Verify-Credentials-Authorization"];
-	
-	
-	CGFloat compression = 0.9f;
+    return oauthHeader;
+}
+
+- (NSData*)imageData {
+    CGFloat compression = 0.9f;
 	NSData *imageData = UIImageJPEGRepresentation([item image], compression);
 	
 	// TODO
@@ -202,19 +197,38 @@
 		imageData = UIImageJPEGRepresentation([item image], compression);
 		
 	}
+    return imageData;
+}
+
+- (void)sendImage {	
+	NSString * oauthHeader = [self oauthHeader];
+		
+	NSURL *serviceURL = [NSURL URLWithString:@"http://img.ly/api/2/upload.xml"];
+	OAMutableURLRequest *oRequest = [[OAMutableURLRequest alloc] initWithURL:serviceURL
+												   consumer:consumer
+													  token:accessToken
+													  realm:@"http://api.twitter.com/"
+										  signatureProvider:signatureProvider];
+	[oRequest setHTTPMethod:@"POST"];
+	[oRequest setValue:@"https://api.twitter.com/1/account/verify_credentials.json" forHTTPHeaderField:@"X-Auth-Service-Provider"];
+	[oRequest setValue:oauthHeader forHTTPHeaderField:@"X-Verify-Credentials-Authorization"];
+    
 	
 	NSString *boundary = @"0xKhTmLbOuNdArY";
 	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
 	[oRequest setValue:contentType forHTTPHeaderField:@"Content-Type"];
 	
 	NSMutableData *body = [NSMutableData data];
-	NSString *dispKey = @"Content-Disposition: form-data; name=\"media\"; filename=\"upload.jpg\"\r\n";
-	
-	
+    
+    [body appendData:[[NSString stringWithFormat:@"--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[@"Content-Disposition: form-data; name=\"key\"\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[self.twitPicAPIKey dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+		
 	[body appendData:[[NSString stringWithFormat:@"--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:[dispKey dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[@"Content-Disposition: form-data; name=\"media\"; filename=\"upload.jpg\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
 	[body appendData:[@"Content-Type: image/jpg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-	[body appendData:imageData];
+	[body appendData:[self imageData]];
 	[body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
 	
 	[body appendData:[[NSString stringWithFormat:@"--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
@@ -224,17 +238,15 @@
 	
 	[body appendData:[[NSString stringWithFormat:@"--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
 	
-	// setting the body of the post to the reqeust
 	[oRequest setHTTPBody:body];
 	
-	// Notify delegate
 	[self sendDidStart];
 	
 	// Start the request
 	OAAsynchronousDataFetcher *fetcher = [OAAsynchronousDataFetcher asynchronousFetcherWithRequest:oRequest
 																						  delegate:self
-																				 didFinishSelector:@selector(sendImageTicket:didFinishWithData:)
-																				   didFailSelector:@selector(sendImageTicket:didFailWithError:)];	
+																				 didFinishSelector:@selector(sendImage:didFinishWithData:)
+																				   didFailSelector:@selector(sendImage:didFailWithError:)];	
 	
 	[fetcher start];
 	
@@ -242,29 +254,17 @@
 	[oRequest release];
 }
 
-- (void)sendImageTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {	
+- (void)sendImage:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {	
 	if (ticket.didSucceed) {
 		[self sendDidFinish];
-		// Finished uploading Image, now need to posh the message and url in twitter
-		NSString *dataString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
-		NSRange startingRange = [dataString rangeOfString:@"<url>" options:NSCaseInsensitiveSearch];
-		//NSLog(@"found start string at %d, len %d",startingRange.location,startingRange.length);
-		NSRange endingRange = [dataString rangeOfString:@"</url>" options:NSCaseInsensitiveSearch];
-		//NSLog(@"found end string at %d, len %d",endingRange.location,endingRange.length);
-		
-		if (startingRange.location != NSNotFound && endingRange.location != NSNotFound) {
-			NSString *urlString = [dataString substringWithRange:NSMakeRange(startingRange.location + startingRange.length, endingRange.location - (startingRange.location + startingRange.length))];
-			//NSLog(@"extracted string: %@",urlString);
-			[item setCustomValue:[NSString stringWithFormat:@"%@ %@",[item customValueForKey:@"status"],urlString] forKey:@"status"];
-			[self sendStatus];
-		}
+		// TODO determine later
 				
 	} else {
 		[self sendDidFailWithError:nil];
 	}
 }
 
-- (void)sendImageTicket:(OAServiceTicket *)ticket didFailWithError:(NSError*)error {
+- (void)sendImage:(OAServiceTicket *)ticket didFailWithError:(NSError*)error {
 	[self sendDidFailWithError:error];
 }
 

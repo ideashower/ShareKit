@@ -27,7 +27,7 @@
 
 #import "SHKTwitPicForm.h"
 #import "SHK.h"
-#import "SHKTwitter.h"
+#import "SHKTwitPic.h"
 
 
 @implementation SHKTwitPicForm
@@ -205,7 +205,7 @@
 - (void)cancel
 {	
 	[[SHK currentHelper] hideCurrentViewControllerAnimated:YES];
-	[(SHKTwitter *)delegate sendDidCancel];
+	[(SHKTwitPic *)delegate sendDidCancel];
 }
 
 - (void)save
@@ -230,7 +230,7 @@
 		return;
 	}
 	
-	[(SHKTwitter *)delegate sendForm:self];
+	[(SHKTwitPic *)delegate sendForm:self];
 	
 	[[SHK currentHelper] hideCurrentViewControllerAnimated:YES];
 }
