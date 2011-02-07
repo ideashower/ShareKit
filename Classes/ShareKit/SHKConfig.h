@@ -91,7 +91,8 @@
 // Append 'Shared With 'Signature to Email (and related forms)
 #define SHKSharedWithSignature		0
 
-
+// TwitPic http://dev.twitpic.com/
+#define SHKTwitPicAPIKey            @""
 
 /*
  UI Configuration : Basic
