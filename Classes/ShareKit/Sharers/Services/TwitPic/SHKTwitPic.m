@@ -209,6 +209,12 @@
 													  token:accessToken
 													  realm:@"http://api.twitter.com/"
 										  signatureProvider:signatureProvider];
+
+    // NASTY workaround to prevent Authorization HTTP header field to be set later on
+    [oRequest prepare];
+    [oRequest setValue:nil forHTTPHeaderField:@"Authorization"];
+    // END NASTY workaround
+    
 	[oRequest setHTTPMethod:@"POST"];
 	[oRequest setValue:@"https://api.twitter.com/1/account/verify_credentials.json" forHTTPHeaderField:@"X-Auth-Service-Provider"];
 	[oRequest setValue:oauthHeader forHTTPHeaderField:@"X-Verify-Credentials-Authorization"];
