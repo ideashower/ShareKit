@@ -78,7 +78,7 @@
 	return [NSArray arrayWithObjects:
 			[SHKFormFieldSettings label:SHKLocalizedString(@"Username") key:@"username" type:SHKFormFieldTypeText start:nil],
 			[SHKFormFieldSettings label:SHKLocalizedString(@"Password") key:@"password" type:SHKFormFieldTypePassword start:nil],
-			[SHKFormFieldSettings label:SHKLocalizedString(@"Follow %@", SHKTwitterUsername) key:@"followMe" type:SHKFormFieldTypeSwitch start:SHKFormFieldSwitchOn],			
+			[SHKFormFieldSettings label:SHKLocalizedString(@"Send to Twitter") key:@"sendToTwitter" type:SHKFormFieldTypeSwitch start:SHKFormFieldSwitchOn],			
 			nil];
 }
 
@@ -103,7 +103,7 @@
 
 - (void)tokenAccessTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {
 	if (ticket.didSucceed) {
-		[item setCustomValue:[[pendingForm formValues] objectForKey:@"followMe"] forKey:@"followMe"];
+		[item setCustomValue:[[pendingForm formValues] objectForKey:@"sendToTwitter"] forKey:@"sendToTwitter"];
 		[pendingForm close];
     } else {
         NSString *response = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
@@ -263,8 +263,9 @@
 - (void)sendImage:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {	
 	if (ticket.didSucceed) {
 		[self sendDidFinish];
-		// TODO determine later
-				
+		if ([item customBoolForSwitchKey:@"sendToTwitter"]) {
+            // TODO send to twitter
+        }				
 	} else {
 		[self sendDidFailWithError:nil];
 	}
