@@ -262,16 +262,67 @@
 
 - (void)sendImage:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {	
 	if (ticket.didSucceed) {
-		[self sendDidFinish];
 		if ([item customBoolForSwitchKey:@"sendToTwitter"]) {
-            // TODO send to twitter
-        }				
+            NSString *url = @"";
+            NSScanner *scanner = [NSScanner scannerWithString:[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]];
+            [scanner scanUpToString:@"\"url\":\"" intoString:nil];
+                       
+            if ([scanner scanString:@"\"url\":\"" intoString:nil]) {
+                [scanner scanUpToCharactersFromSet:[NSCharacterSet characterSetWithCharactersInString:@"\""] intoString:&url];
+                url = [url stringByReplacingOccurrencesOfString:@"\\" withString:@""];
+                NSString *twitPicStatus = [NSString stringWithFormat:@"%@ %@", [item customValueForKey:@"status"], url];
+                [self sendStatus: twitPicStatus];
+            } else {
+                [self sendDidFailWithError:nil];
+            }
+        } else {
+       		[self sendDidFinish];
+        }
 	} else {
 		[self sendDidFailWithError:nil];
 	}
 }
 
 - (void)sendImage:(OAServiceTicket *)ticket didFailWithError:(NSError*)error {
+	[self sendDidFailWithError:error];
+}
+
+- (void)sendStatus:(NSString*)status {
+	OAMutableURLRequest *oRequest = [[OAMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.twitter.com/1/statuses/update.json"]
+																	consumer:consumer
+																	   token:accessToken
+																	   realm:nil
+														   signatureProvider:nil];
+	
+	[oRequest setHTTPMethod:@"POST"];
+	
+	OARequestParameter *statusParam = [[OARequestParameter alloc] initWithName:@"status" value:status];
+	NSArray *params = [NSArray arrayWithObjects:statusParam, nil];
+	[oRequest setParameters:params];
+	[statusParam release];
+	
+	OAAsynchronousDataFetcher *fetcher = [OAAsynchronousDataFetcher asynchronousFetcherWithRequest:oRequest
+																						  delegate:self
+																				 didFinishSelector:@selector(sendStatusTicket:didFinishWithData:)
+																				   didFailSelector:@selector(sendStatusTicket:didFailWithError:)];	
+	
+	[fetcher start];
+	[oRequest release];
+}
+
+- (void)sendStatusTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {		
+
+	if (ticket.didSucceed) {
+		[self sendDidFinish];
+	} else {		
+        NSString *string = @"Your picture is on TwitPic, but we couldn't share it on Twitter!";
+		NSError *error = [NSError errorWithDomain:@"Twitter" code:2 userInfo:[NSDictionary dictionaryWithObject:string forKey:NSLocalizedDescriptionKey]];
+		[self sendDidFailWithError:error];
+	}
+    
+}
+
+- (void)sendStatusTicket:(OAServiceTicket *)ticket didFailWithError:(NSError*)error {
 	[self sendDidFailWithError:error];
 }
 

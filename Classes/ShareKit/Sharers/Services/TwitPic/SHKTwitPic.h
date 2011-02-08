@@ -30,4 +30,8 @@
 - (void)sendImage:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data;
 - (void)sendImage:(OAServiceTicket *)ticket didFailWithError:(NSError*)error;
 
+- (void)sendStatus:(NSString*)status;
+- (void)sendStatusTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data;
+- (void)sendStatusTicket:(OAServiceTicket *)ticket didFailWithError:(NSError*)error;
+
 @end
