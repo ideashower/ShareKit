@@ -40,6 +40,7 @@
 "Create an account at %@" = "%@ 계정 만들기";
 
 "Send to Twitter" = "Twitter로 보내기";
+"Send to TwitPic" = "TwitPic로 보내기";
 
 "Message is too long" = "메시지가 너무 깁니다";
 "Twitter posts can only be 140 characters in length." = "Twitter 메시지는 140자를 넘을 수 없습니다.";

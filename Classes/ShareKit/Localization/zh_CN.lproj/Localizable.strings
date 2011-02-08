@@ -41,6 +41,7 @@
 "Create an account at %@" = "在 %@ 上创建一个账户";
 
 "Send to Twitter" = "发送到 Twitter";
+"Send to TwitPic" = "发送到 TwitPic";
 
 "Message is too long" = "消息太长了";
 "Twitter posts can only be 140 characters in length." = "Twitter 消息不能超过 140 个字符。";
