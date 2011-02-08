@@ -3,6 +3,7 @@
 //  ShareKit
 //
 //  Created by Nathan Weiner on 6/22/10.
+//  Adapted by David Linsin on 2/8/11 to support TwitPic.
 
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
