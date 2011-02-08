@@ -133,7 +133,7 @@
 	[rootView view];
 	
 	rootView.textView.text = [item customValueForKey:@"status"];
-	rootView.hasAttachment = item.image != nil;
+	rootView.hasAttachment = YES;
 	
 	[self pushViewController:rootView animated:NO];
 	
