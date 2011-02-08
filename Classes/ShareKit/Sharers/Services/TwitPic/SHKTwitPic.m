@@ -210,7 +210,7 @@
 													  realm:@"http://api.twitter.com/"
 										  signatureProvider:signatureProvider];
 
-    // NASTY workaround to prevent Authorization HTTP header field to be set later on
+    // NASTY workaround to prevent Authorization HTTP header field to be set later on, TwitPic doesn't like it
     [oRequest prepare];
     [oRequest setValue:nil forHTTPHeaderField:@"Authorization"];
     // END NASTY workaround
