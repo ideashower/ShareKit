@@ -103,7 +103,7 @@
 
 - (void)tokenAccessTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {
 	if (ticket.didSucceed) {
-		[item setCustomValue:[[pendingForm formValues] objectForKey:@"sendToTwitter"] forKey:@"sendToTwitter"];
+		[self setShareOnTwitter:[[[super.pendingForm formValues] objectForKey:@"sendToTwitter"] isEqualToString:SHKFormFieldSwitchOn]];
 		[pendingForm close];
     } else {
         NSString *response = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
@@ -262,7 +262,7 @@
 
 - (void)sendImage:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {	
 	if (ticket.didSucceed) {
-		if ([item customBoolForSwitchKey:@"sendToTwitter"]) {
+		if ([self shareOnTwitter]) {
             NSString *url = @"";
             NSScanner *scanner = [NSScanner scannerWithString:[[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]];
             [scanner scanUpToString:@"\"url\":\"" intoString:nil];
@@ -324,6 +324,17 @@
 
 - (void)sendStatusTicket:(OAServiceTicket *)ticket didFailWithError:(NSError*)error {
 	[self sendDidFailWithError:error];
+}
+
+#pragma mark -
+#pragma mark twitpic specific
+
+- (BOOL)shareOnTwitter {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:[NSString stringWithFormat:@"%@_shareOnTwitter", [self sharerId]]];
+}
+
+- (void)setShareOnTwitter:(BOOL)share {
+    [[NSUserDefaults standardUserDefaults] setBool:share forKey:[NSString stringWithFormat:@"%@_shareOnTwitter", [self sharerId]]];
 }
 
 @end

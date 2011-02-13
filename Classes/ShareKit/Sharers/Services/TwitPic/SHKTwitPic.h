@@ -34,4 +34,11 @@
 - (void)sendStatusTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data;
 - (void)sendStatusTicket:(OAServiceTicket *)ticket didFailWithError:(NSError*)error;
 
+#pragma mark -
+#pragma mark twitpic specific
+
+- (BOOL)shareOnTwitter;
+- (void)setShareOnTwitter:(BOOL)share;
+
+
 @end
