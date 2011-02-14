@@ -113,13 +113,15 @@
 	CGFloat keyboardHeight = 0;
 	
 	// 3.2 and above
-	[[notification.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardFrame];
-	if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait 
-	 || [[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown) {
-		 keyboardHeight = keyboardFrame.size.height;
-	}
-	else {
-		keyboardHeight = keyboardFrame.size.width;
+	if (&UIKeyboardFrameEndUserInfoKey) {
+    	[[notification.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardFrame];
+    	if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait 
+    	 || [[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown) {
+    		 keyboardHeight = keyboardFrame.size.height;
+    	}
+    	else {
+    		keyboardHeight = keyboardFrame.size.width;
+    	}
 	}
 	 	
 	// Find the bottom of the screen (accounting for keyboard overlay)
