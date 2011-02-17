@@ -252,24 +252,21 @@ static SHKActivityIndicator *currentIndicator = nil;
 
 - (void)setProperRotation:(BOOL)animated
 {
-	UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
-	
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    
 	if (animated)
 	{
 		[UIView beginAnimations:nil context:NULL];
 		[UIView setAnimationDuration:0.3];
 	}
 	
-	if (orientation == UIDeviceOrientationPortraitUpsideDown)
+	if (orientation == UIInterfaceOrientationPortraitUpsideDown)
 		self.transform = CGAffineTransformRotate(CGAffineTransformIdentity, SHKdegreesToRadians(180));	
-		
-	else if (orientation == UIDeviceOrientationPortrait)
-		self.transform = CGAffineTransformRotate(CGAffineTransformIdentity, SHKdegreesToRadians(0)); 
 	
-	else if (orientation == UIDeviceOrientationLandscapeLeft)
+	else if (orientation == UIInterfaceOrientationLandscapeRight)
 		self.transform = CGAffineTransformRotate(CGAffineTransformIdentity, SHKdegreesToRadians(90));	
 	
-	else if (orientation == UIDeviceOrientationLandscapeRight)
+	else if (orientation == UIInterfaceOrientationLandscapeLeft)
 		self.transform = CGAffineTransformRotate(CGAffineTransformIdentity, SHKdegreesToRadians(-90));
 	
 	if (animated)
