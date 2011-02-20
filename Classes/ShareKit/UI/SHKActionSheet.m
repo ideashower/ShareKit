@@ -46,6 +46,11 @@ static BOOL hasMoreButton = NO;
 
 + (SHKActionSheet *)actionSheetForType:(SHKShareType)type
 {
+    return [self actionSheetForType:type withSharers:nil];
+}
+
++ (SHKActionSheet *)actionSheetForType:(SHKShareType)type withSharers:(NSArray *)sharers
+{
 	SHKActionSheet *as = [[SHKActionSheet alloc] initWithTitle:nil
 													  delegate:self
 											 cancelButtonTitle:nil
@@ -55,11 +60,13 @@ static BOOL hasMoreButton = NO;
 	as.item.shareType = type;
 	
 	as.sharers = [NSMutableArray arrayWithCapacity:0];
-	NSArray *favoriteSharers = [SHK favoriteSharersForType:type];
+	if (!sharers) {
+	    sharers = [SHK favoriteSharersForType:type];
+	}
 		
 	// Add buttons for each favorite sharer
 	id class;
-	for(NSString *sharerId in favoriteSharers)
+	for(NSString *sharerId in sharers)
 	{
 		class = NSClassFromString(sharerId);
 		if ([class canShare])
@@ -74,7 +81,7 @@ static BOOL hasMoreButton = NO;
         total_sharers += [[[SHK sharersDictionary] objectForKey:key] count];
     }
 
-    if (total_sharers > [favoriteSharers count]) {
+    if (total_sharers > [sharers count] && !sharers) {
         hasMoreButton = YES;
 	    // Add More button
 	    [as addButtonWithTitle:SHKLocalizedString(@"More...")];
@@ -96,6 +103,14 @@ static BOOL hasMoreButton = NO;
 	as.item = i;
 	return as;
 }
+
++ (SHKActionSheet *)actionSheetForItem:(SHKItem *)i withSharers:(NSArray *)sharers 
+{
+	SHKActionSheet *as = [self actionSheetForType:i.shareType withSharers:sharers];
+	as.item = i;
+	return as;
+}
+
 
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated
 {

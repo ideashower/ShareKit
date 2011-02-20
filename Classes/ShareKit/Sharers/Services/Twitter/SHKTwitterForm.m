@@ -225,14 +225,5 @@
 	[[SHK currentHelper] hideCurrentViewControllerAnimated:YES];
 }
 
-#pragma mark -
-#pragma mark Default UI Updating
-
-- (void)sharerFinishedSending:(SHKSharer *)sharer
-{
-	if (!quiet) {
-    	[SHK displayCompleted:SHKLocalizedString(@"Posted to Twitter")];
-    }
-}
 
 @end

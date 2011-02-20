@@ -40,6 +40,7 @@
 @property (retain) SHKItem *item;
 
 + (SHKActionSheet *)actionSheetForType:(SHKShareType)type;
++ (SHKActionSheet *)actionSheetForType:(SHKShareType)type withSharers:(NSArray *)sharers;
 + (SHKActionSheet *)actionSheetForItem:(SHKItem *)i;
-
++ (SHKActionSheet *)actionSheetForItem:(SHKItem *)i withSharers:(NSArray *)sharers;
 @end
