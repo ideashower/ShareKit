@@ -95,3 +95,12 @@
 
 "NoConnection"				= "No Internet Connection";
 "ShareInternetRequired"		= "An Internet connection is required to share on %@."; 
+
+"Posted to Twitter" = "Posted to Twitter";
+"Posted to Facebook" = "Posted to Facebook";
+"Sent to Delicious" = "Sent to Delicious";
+"Sent to Pinboard" = "Sent to Pinboard";
+"Sent to Google Reader" = "Sent to Google Reader";
+"Sent to Instapaper" = "Sent to Instapaper";
+"Sent to Read it Later" = "Sent to Read it Later";
+"Sent to Tumblr" = "Sent to Tumblr";

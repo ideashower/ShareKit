@@ -208,5 +208,12 @@
 	}
 }
 
+- (void)sharerFinishedSending:(SHKSharer *)sharer
+{
+	if (!quiet) {
+    	[SHK displayCompleted:SHKLocalizedString(@"E-mail Sent")];
+    }
+}
+
 
 @end

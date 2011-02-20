@@ -163,4 +163,15 @@ static NSString * const kInstapaperSharingURL = @"https://www.instapaper.com/api
 	[self sendDidFinish];
 }
 
+#pragma mark -
+#pragma mark Default UI Updating
+
+- (void)sharerFinishedSending:(SHKSharer *)sharer
+{
+	if (!quiet) {
+    	[SHK displayCompleted:SHKLocalizedString(@"Sent to Instapaper")];
+    }
+}
+
+
 @end

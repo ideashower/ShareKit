@@ -170,4 +170,14 @@
 	[self sendDidFailWithError:[SHK error:SHKLocalizedString(@"There was an error saving to Pinboard")]];		
 }
 
+#pragma mark -
+#pragma mark Default UI Updating
+
+- (void)sharerFinishedSending:(SHKSharer *)sharer
+{
+	if (!quiet) {
+    	[SHK displayCompleted:SHKLocalizedString(@"Sent to Pinboard")];
+    }
+}
+
 @end

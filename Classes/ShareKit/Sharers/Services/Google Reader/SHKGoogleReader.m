@@ -298,4 +298,14 @@ Google Reader API is unoffical, this was hobbled together from:
 }
 
 
+#pragma mark -
+#pragma mark Default UI Updating
+
+- (void)sharerFinishedSending:(SHKSharer *)sharer
+{
+	if (!quiet) {
+    	[SHK displayCompleted:SHKLocalizedString(@"Sent to Google Reader")];
+    }
+}
+
 @end
