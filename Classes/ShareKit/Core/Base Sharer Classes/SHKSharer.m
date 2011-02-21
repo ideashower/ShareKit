@@ -629,7 +629,7 @@
 - (void)sharerFinishedSending:(SHKSharer *)sharer
 {
 	if (!quiet) {
-    	[SHK displayCompleted:SHKLocalizedString(@"Complete")];
+		[SHK displayActivity:SHKLocalizedString(@"Sent to to %@", [[self class] sharerTitle])];
     }
 }
 

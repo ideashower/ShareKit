@@ -276,6 +276,12 @@
 	[self sendDidFailWithError:error];
 }
 
+- (void)sharerFinishedSending:(SHKSharer *)sharer
+{
+	if (!quiet) {
+    	[SHK displayCompleted:SHKLocalizedString(@"Sent to Facebook")];
+    }
+}
 
 
 @end

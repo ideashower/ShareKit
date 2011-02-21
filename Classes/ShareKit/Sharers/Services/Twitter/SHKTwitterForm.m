@@ -29,10 +29,20 @@
 #import "SHK.h"
 #import "SHKTwitter.h"
 
+static CGFloat UsernameFontSize = 18;
+static CGFloat CounterMarginRight = 115;
+static CGFloat LogoutButtonWidth = 66;
+
+@interface SHKTwitterForm (private)
+- (void)setupToolbar;
+- (CGRect)toolbarFrame;
+- (void)updateCounter;
+@end
 
 @implementation SHKTwitterForm
 
 @synthesize delegate;
+@synthesize username;
 @synthesize textView;
 @synthesize counter;
 @synthesize hasAttachment;
@@ -41,6 +51,7 @@
 {
 	[delegate release];
 	[textView release];
+	[toolbar release];
 	[counter release];
     [super dealloc];
 }
@@ -77,7 +88,9 @@
 	textView.autoresizesSubviews = YES;
 	textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	
+	
 	[self.view addSubview:textView];
+    [self setupToolbar];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -105,6 +118,44 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
 {
     return YES;
+}
+
+- (void)setupToolbar {
+    [toolbar removeFromSuperview];
+    [toolbar release];
+    toolbar = [[UIToolbar alloc] initWithFrame:[self toolbarFrame]];
+    toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    toolbar.tintColor = [UIColor blackColor];
+    UIBarButtonItem *logout_button = [[UIBarButtonItem alloc] initWithTitle:SHKLocalizedString(@"Log Out")
+                                                                      style:UIBarButtonItemStyleBordered
+                                                                     target:self
+                                                                     action:@selector(logout)];
+    UILabel *username_label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds) - LogoutButtonWidth - CounterMarginRight, CGRectGetHeight(toolbar.frame))];
+    username_label.text = username;
+    username_label.textColor = [UIColor whiteColor];
+    username_label.font = [UIFont systemFontOfSize:UsernameFontSize];
+    username_label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    username_label.backgroundColor = [UIColor clearColor];
+    UIBarButtonItem *username_label_item = [[UIBarButtonItem alloc] initWithCustomView:username_label];
+	[self updateCounter];
+    UIBarButtonItem *counter_item = [[UIBarButtonItem alloc] initWithCustomView:counter];
+    UIBarButtonItem *flexible_space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace 
+                                                                                    target:nil 
+                                                                                    action:nil];
+    NSArray *items = [[NSArray alloc] initWithObjects:logout_button, username_label_item, flexible_space, counter_item, nil];
+    toolbar.items = items;
+    [self.view addSubview:toolbar];
+}
+
+- (CGRect)toolbarFrame {
+    CGRect frame = CGRectZero;
+    if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
+        frame = CGRectMake(0, 158, CGRectGetWidth(self.view.bounds), 44);
+    }
+    else {
+        frame = CGRectMake(0, 72, CGRectGetWidth(self.view.bounds), 34);
+    }
+    return frame;
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification
@@ -139,7 +190,6 @@
 	CGFloat maxViewHeight = self.view.bounds.size.height - keyboardHeight + distFromBottom;
 	
 	textView.frame = CGRectMake(0,0,self.view.bounds.size.width,maxViewHeight);
-	[self layoutCounter];
 }
 
 #pragma mark -
@@ -157,23 +207,13 @@
 		counter.autoresizesSubviews = YES;
 		counter.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
 		
-		[self.view addSubview:counter];
-		[self layoutCounter];
-		
 		[counter release];
 	}
 	
 	int count = (hasAttachment?115:140) - textView.text.length;
 	counter.text = [NSString stringWithFormat:@"%@%i", hasAttachment ? @"Image + ":@"" , count];
-	counter.textColor = count >= 0 ? [UIColor blackColor] : [UIColor redColor];
-}
-
-- (void)layoutCounter
-{
-	counter.frame = CGRectMake(textView.bounds.size.width-150-15,
-							   textView.bounds.size.height-15-9,
-							   150,
-							   15);
+    counter.textColor = [UIColor grayColor];
+    [counter sizeToFit];
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView
@@ -196,6 +236,11 @@
 - (void)cancel
 {	
 	[[SHK currentHelper] hideCurrentViewControllerAnimated:YES];
+}
+
+- (void)logout {
+    [SHKTwitter logout];
+    [(SHKTwitter *)delegate promptAuthorization];
 }
 
 - (void)save
@@ -225,5 +270,12 @@
 	[[SHK currentHelper] hideCurrentViewControllerAnimated:YES];
 }
 
+#pragma mark -
+#pragma mark Rotation
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
+                                         duration:(NSTimeInterval)duration {
+    [self setupToolbar];
+}
 
 @end
