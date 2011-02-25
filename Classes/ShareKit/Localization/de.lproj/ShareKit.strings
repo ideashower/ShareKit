@@ -101,8 +101,8 @@
 "NoConnection" = "Keine Internetverbindung";
 "ShareInternetRequired"		= "Eine Internetverbindung ist für die Freigabe auf %@ erforderlich."; 
 
-"Posted to Twitter" = "Geschrieben auf Twitter";
-"Posted to Facebook" = "Geschrieben auf Facebook";
+"Sent to Twitter" = "Geschrieben auf Twitter";
+"Sent to Facebook" = "Geschrieben auf Facebook";
 "Sent to Delicious" = "Geschrieben auf Delicious";
 "Sent to Pinboard" = "Geschrieben auf Pinboard";
 "Sent to Google Reader" = "Geschrieben auf Google Reader";

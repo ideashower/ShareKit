@@ -297,15 +297,4 @@ Google Reader API is unoffical, this was hobbled together from:
 		[self sendDidFailWithError:[SHK error:SHKLocalizedString(@"There was a problem saving your note.")]]; // TODO better error handling/message	
 }
 
-
-#pragma mark -
-#pragma mark Default UI Updating
-
-- (void)sharerFinishedSending:(SHKSharer *)sharer
-{
-	if (!quiet) {
-    	[SHK displayCompleted:SHKLocalizedString(@"Sent to Google Reader")];
-    }
-}
-
 @end

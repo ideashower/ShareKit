@@ -184,15 +184,4 @@
 }
 
 
-#pragma mark -
-#pragma mark Default UI Updating
-
-- (void)sharerFinishedSending:(SHKSharer *)sharer
-{
-	if (!quiet) {
-    	[SHK displayCompleted:SHKLocalizedString(@"Sent to Read it Later")];
-    }
-}
-
-
 @end

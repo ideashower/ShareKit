@@ -628,6 +628,9 @@
 
 - (void)sharerFinishedSending:(SHKSharer *)sharer
 {
+	if (!quiet) {
+		[SHK displayActivity:SHKLocalizedString(@"Sent to to %@", [[self class] sharerTitle])];
+    }
 }
 
 - (void)sharer:(SHKSharer *)sharer failedWithError:(NSError *)error shouldRelogin:(BOOL)shouldRelogin
@@ -696,9 +699,6 @@
 
 - (void)sendDidFinish
 {	
-	if (!quiet) {
-		[SHK displayCompleted:SHKLocalizedString(@"Sent to %@", [[self class] sharerTitle])];
-    }
 	if ([shareDelegate respondsToSelector:@selector(sharerFinishedSending:)])
 		[shareDelegate performSelector:@selector(sharerFinishedSending:) withObject:self];
 	

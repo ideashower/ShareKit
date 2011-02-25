@@ -364,14 +364,4 @@ static NSString * const kTumblrWriteURL = @"https://www.tumblr.com/api/write";
     
 }
 
-#pragma mark -
-#pragma mark Default UI Updating
-
-- (void)sharerFinishedSending:(SHKSharer *)sharer
-{
-	if (!quiet) {
-    	[SHK displayCompleted:SHKLocalizedString(@"Sent to Tumblr")];
-    }
-}
-
 @end
