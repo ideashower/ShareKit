@@ -63,8 +63,12 @@
  }
  */
 #define SHKFacebookAppId			@""
-
-
+#define SHKFacebookUseSingleSignOn 0
+/* Setting SHKFacebookUseSingleSignOn to 0 will enable Facebook Single Sign-On 
+ Setting SHKFacebookUseSingleSignOn to 1 will disable SHKFacebookUseSingleSignOn 
+  
+ You can read more about Facebook Single Sign-On here: https://github.com/facebook/facebook-ios-sdk and in the comments at SHKConfig.h
+*/
 // Read It Later - http://readitlaterlist.com/api/?shk
 #define SHKReadItLaterKey			@""
 

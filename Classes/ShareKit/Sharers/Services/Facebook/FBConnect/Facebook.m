@@ -17,7 +17,7 @@
 #import "Facebook.h"
 #import "FBLoginDialog.h"
 #import "FBRequest.h"
-
+#import "SHKConfig.h"
 static NSString* kDialogBaseURL = @"https://m.facebook.com/dialog/";
 static NSString* kGraphBaseURL = @"https://graph.facebook.com/";
 static NSString* kRestserverBaseURL = @"https://api.facebook.com/method/";
@@ -104,6 +104,11 @@ static NSString* kSDKVersion = @"2";
  */
 - (void)authorizeWithFBAppAuth:(BOOL)tryFBAppAuth
                     safariAuth:(BOOL)trySafariAuth {
+	if (SHKFacebookUseSingleSignOn == 1) {
+		tryFBAppAuth = NO;
+		trySafariAuth = NO;
+		// Read more about in the comments at SHKConfig.h
+	}
   NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                  _appId, @"client_id",
                                  @"user_agent", @"type",
