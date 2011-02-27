@@ -105,6 +105,7 @@
 		43D1DEF011D5CDD200550D75 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1DEEF11D5CDD200550D75 /* SystemConfiguration.framework */; };
 		43EF406E11D3FFF800B1F700 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EF406D11D3FFF800B1F700 /* Security.framework */; };
 		43FF9C7412270E9F00ADE53C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FF9C7212270E9F00ADE53C /* Localizable.strings */; };
+		6349DD39131A3B3800CA033D /* SHKFacebookForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6349DD38131A3B3800CA033D /* SHKFacebookForm.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -308,6 +309,8 @@
 		43EF406D11D3FFF800B1F700 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		43FF9C7312270E9F00ADE53C /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Classes/ShareKit/Localization/en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		43FF9C7512270EB900ADE53C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Classes/ShareKit/Localization/de.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		6349DD37131A3B3800CA033D /* SHKFacebookForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKFacebookForm.h; sourceTree = "<group>"; };
+		6349DD38131A3B3800CA033D /* SHKFacebookForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKFacebookForm.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ShareKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShareKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -784,6 +787,8 @@
 				3B06B62B12EF841800FC0583 /* FBConnect */,
 				3B06B65112EF842800FC0583 /* SHKFacebook.h */,
 				3B06B65212EF842800FC0583 /* SHKFacebook.m */,
+				6349DD37131A3B3800CA033D /* SHKFacebookForm.h */,
+				6349DD38131A3B3800CA033D /* SHKFacebookForm.m */,
 			);
 			path = Facebook;
 			sourceTree = "<group>";
@@ -1056,6 +1061,7 @@
 				3B06B64D12EF841800FC0583 /* SBJsonParser.m in Sources */,
 				3B06B64E12EF841800FC0583 /* SBJsonWriter.m in Sources */,
 				3B06B65312EF842800FC0583 /* SHKFacebook.m in Sources */,
+				6349DD39131A3B3800CA033D /* SHKFacebookForm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

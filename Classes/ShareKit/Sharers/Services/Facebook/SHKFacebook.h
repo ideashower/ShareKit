@@ -23,6 +23,7 @@ typedef enum
 	Facebook *facebook;
 	SHKFacebookPendingAction pendingFacebookAction;
 	NSArray *permissions;
+	NSString *facebookFormText;
 }
 
 @property (nonatomic, retain) Facebook *facebook;

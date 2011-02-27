@@ -7,7 +7,7 @@
 //
 
 #import "SHKFacebook.h"
-
+#import "SHKFacebookForm.h"
 
 @implementation SHKFacebook
 
@@ -134,6 +134,7 @@ static NSString *const SHKFacebookPendingItem = @"SHKFacebookPendingItem";
 								andDelegate:self];
 	}
 	else if (item.shareType == SHKShareTypeImage) {
+		/*
 		NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
 									   item.image, @"source",
 									   item.title, @"message",
@@ -143,13 +144,45 @@ static NSString *const SHKFacebookPendingItem = @"SHKFacebookPendingItem";
 								  andParams:params 
 							  andHttpMethod:@"POST" 
 								andDelegate:self];
+		 //This code used to just send the images off to facebook, while the new code below allows a custom facebook image caption to be posted
+		 */
+		SHKFacebookForm *facebookFormView = [[SHKFacebookForm alloc] initWithNibName:nil bundle:nil];	
+		facebookFormView.delegate = self;
+		
+		// force view to load so we can set textView text
+		[facebookFormView view];
+		
+		//facebookFormView.textView.text = [item customValueForKey:@"status"];
+		facebookFormView.hasAttachment = item.image != nil;
+		
+		[self pushViewController:facebookFormView animated:NO];
+		facebookFormView.textView.text = item.title;
+		[[SHK currentHelper] showViewController:self];	
+		[facebookFormView release]; 
+		
 	}
-	
+	if (item.shareType != SHKShareTypeImage) {
+		
 	[self sendDidStart];
+
+	}
 	
 	return YES;
 }
+- (void)sendForm:(SHKFacebookForm *)form {
+	[self sendDidStart];
 
+	facebookFormText = [NSString stringWithFormat:@"%@", form.textView.text];
+ 	
+	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+								   item.image, @"source",
+								   facebookFormText, @"message",
+								   nil];
+	[self.facebook requestWithGraphPath:@"me/photos" 
+							  andParams:params 
+						  andHttpMethod:@"POST" 
+							andDelegate:self];
+}
 - (void)dialogDidComplete:(FBDialog *)dialog {
 	if (pendingFacebookAction == SHKFacebookPendingStatus) {
 		[self sendDidFinish];
