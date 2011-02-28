@@ -276,5 +276,11 @@
 	[self sendDidFailWithError:error];
 }
 
+- (void)sendDidFinish
+{	
+	if (!quiet) {
+		[SHK displayCompleted:SHKLocalizedString(@"Posted to Facebook")];
+    }
+}
 
 @end

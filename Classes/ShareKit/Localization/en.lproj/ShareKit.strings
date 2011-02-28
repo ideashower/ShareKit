@@ -93,11 +93,11 @@
 "Access Error" = "Access Error";
 "There was an error while sharing" = "There was an error while sharing";
 
-"NoConnection"				= "No Internet Connection";
+"No Internet Connection"				= "No Internet Connection";
 "ShareInternetRequired"		= "An Internet connection is required to share on %@."; 
 
-"Sent to Twitter" = "Sent to Twitter";
-"Sent to Facebook" = "Sent to Facebook";
+"Posted to Twitter" = "Posted to Twitter";
+"Posted to Facebook" = "Posted to Facebook";
 "Sent to Delicious" = "Sent to Delicious";
 "Sent to Pinboard" = "Sent to Pinboard";
 "Sent to Google Reader" = "Sent to Google Reader";

@@ -98,11 +98,11 @@
 "Sharing a File" = "Teile Datei";
 "Logout of All Services" = "Aus allen Services ausloggen";
 
-"NoConnection" = "Keine Internetverbindung";
+"No Internet Connection" = "Keine Internetverbindung";
 "ShareInternetRequired"		= "Eine Internetverbindung ist für die Freigabe auf %@ erforderlich."; 
 
-"Sent to Twitter" = "Geschrieben auf Twitter";
-"Sent to Facebook" = "Geschrieben auf Facebook";
+"Posted to Twitter" = "Geschrieben auf Twitter";
+"Posted to Facebook" = "Geschrieben auf Facebook";
 "Sent to Delicious" = "Geschrieben auf Delicious";
 "Sent to Pinboard" = "Geschrieben auf Pinboard";
 "Sent to Google Reader" = "Geschrieben auf Google Reader";

@@ -560,4 +560,11 @@
 	[oRequest release];
 }
 
+- (void)sendDidFinish
+{	
+	if (!quiet) {
+        [SHK displayCompleted:SHKLocalizedString(@"Posted to Twitter")];
+    }
+}
+
 @end
