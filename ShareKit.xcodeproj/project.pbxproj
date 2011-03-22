@@ -121,14 +121,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A685A5441338E19F00AE7524 /* ShareKit */;
+			remoteGlobalIDString = A685A5441338E19F00AE7524;
 			remoteInfo = ShareKit;
 		};
 		A685A6DF1338E3F000AE7524 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A685A6D71338E39000AE7524 /* ShareKitResources */;
+			remoteGlobalIDString = A685A6D71338E39000AE7524;
 			remoteInfo = ShareKitResources;
 		};
 /* End PBXContainerItemProxy section */
