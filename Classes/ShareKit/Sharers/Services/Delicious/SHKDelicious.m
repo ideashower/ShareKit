@@ -43,8 +43,8 @@
 {
 	if (self = [super init])
 	{		
-		self.consumerKey = SHKDeliciousConsumerKey;		
-		self.secretKey = SHKDeliciousSecretKey;
+		self.consumerKey = SHKConfigValueForKey(SHKConfigDeliciousConsumerKey);		
+		self.secretKey = SHKConfigValueForKey(SHKConfigDeliciousSecretKey);
  		self.authorizeCallbackURL = [NSURL URLWithString:SHKDeliciousCallbackUrl];// HOW-TO: In your Twitter application settings, use the "Callback URL" field.  If you do not have this field in the settings, set your application type to 'Browser'.
 		
 		

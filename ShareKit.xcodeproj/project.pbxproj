@@ -7,110 +7,135 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
 		4312CF7C11CB33E200E61D7A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4312CF7B11CB33E200E61D7A /* MessageUI.framework */; };
-		43150A8D11E78697008C6B68 /* SHKInstapaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 43150A8C11E78697008C6B68 /* SHKInstapaper.m */; };
-		432B147C11FF4B0700291B37 /* SHKPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 432B147B11FF4B0700291B37 /* SHKPhotoAlbum.m */; };
-		4379F2B31291AC9700D2A41E /* EDAMLimits.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F28D1291AC9700D2A41E /* EDAMLimits.m */; };
-		4379F2B41291AC9700D2A41E /* Errors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F28F1291AC9700D2A41E /* Errors.m */; };
-		4379F2B51291AC9700D2A41E /* NoteStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2911291AC9700D2A41E /* NoteStore.m */; };
-		4379F2B61291AC9700D2A41E /* Types.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2931291AC9700D2A41E /* Types.m */; };
-		4379F2B71291AC9700D2A41E /* UserStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2951291AC9700D2A41E /* UserStore.m */; };
-		4379F2B81291AC9700D2A41E /* TBinaryProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2991291AC9700D2A41E /* TBinaryProtocol.m */; };
-		4379F2B91291AC9700D2A41E /* TProtocolException.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F29C1291AC9700D2A41E /* TProtocolException.m */; };
-		4379F2BA1291AC9700D2A41E /* TProtocolUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F29F1291AC9700D2A41E /* TProtocolUtil.m */; };
-		4379F2BB1291AC9700D2A41E /* TApplicationException.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2A11291AC9700D2A41E /* TApplicationException.m */; };
-		4379F2BC1291AC9700D2A41E /* TException.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2A31291AC9700D2A41E /* TException.m */; };
-		4379F2BD1291AC9700D2A41E /* THTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2A81291AC9700D2A41E /* THTTPClient.m */; };
-		4379F2BE1291AC9700D2A41E /* TMemoryBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2AA1291AC9700D2A41E /* TMemoryBuffer.m */; };
-		4379F2BF1291AC9700D2A41E /* TTransportException.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2AD1291AC9700D2A41E /* TTransportException.m */; };
-		4379F2C01291AC9700D2A41E /* TSharedProcessorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2AF1291AC9700D2A41E /* TSharedProcessorFactory.m */; };
-		4379F2C11291AC9700D2A41E /* SHKEvernote.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2B11291AC9700D2A41E /* SHKEvernote.m */; };
 		4379F2C21291AC9700D2A41E /* SHKEvernote.md in Resources */ = {isa = PBXBuildFile; fileRef = 4379F2B21291AC9700D2A41E /* SHKEvernote.md */; };
-		4379F2EA1291AE5700D2A41E /* NSData+md5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2E91291AE5700D2A41E /* NSData+md5.m */; };
-		4379F3B21291C45700D2A41E /* SHKTextMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F3B11291C45700D2A41E /* SHKTextMessage.m */; };
-		43A5370011DBE3B9004A1712 /* SHKOAuthSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5367511DBE3B9004A1712 /* SHKOAuthSharer.m */; };
-		43A5370111DBE3B9004A1712 /* SHKSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5367711DBE3B9004A1712 /* SHKSharer.m */; };
-		43A5370211DBE3B9004A1712 /* UIWebView+SHK.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5367A11DBE3B9004A1712 /* UIWebView+SHK.m */; };
-		43A5370311DBE3B9004A1712 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5367E11DBE3B9004A1712 /* SFHFKeychainUtils.m */; };
-		43A5370411DBE3B9004A1712 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5368211DBE3B9004A1712 /* NSMutableURLRequest+Parameters.m */; };
-		43A5370511DBE3B9004A1712 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5368411DBE3B9004A1712 /* NSString+URLEncoding.m */; };
-		43A5370611DBE3B9004A1712 /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5368611DBE3B9004A1712 /* NSURL+Base.m */; };
-		43A5370711DBE3B9004A1712 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 43A5368811DBE3B9004A1712 /* Base64Transcoder.c */; };
-		43A5370811DBE3B9004A1712 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 43A5368A11DBE3B9004A1712 /* hmac.c */; };
-		43A5370911DBE3B9004A1712 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 43A5368C11DBE3B9004A1712 /* sha1.c */; };
-		43A5370A11DBE3B9004A1712 /* OAAsynchronousDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5368F11DBE3B9004A1712 /* OAAsynchronousDataFetcher.m */; };
-		43A5370B11DBE3B9004A1712 /* OAConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5369111DBE3B9004A1712 /* OAConsumer.m */; };
-		43A5370C11DBE3B9004A1712 /* OADataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5369311DBE3B9004A1712 /* OADataFetcher.m */; };
-		43A5370D11DBE3B9004A1712 /* OAHMAC_SHA1SignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5369511DBE3B9004A1712 /* OAHMAC_SHA1SignatureProvider.m */; };
-		43A5370E11DBE3B9004A1712 /* OAMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5369711DBE3B9004A1712 /* OAMutableURLRequest.m */; };
-		43A5370F11DBE3B9004A1712 /* OAPlaintextSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5369911DBE3B9004A1712 /* OAPlaintextSignatureProvider.m */; };
-		43A5371111DBE3B9004A1712 /* OARequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5369D11DBE3B9004A1712 /* OARequestParameter.m */; };
-		43A5371211DBE3B9004A1712 /* OAServiceTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5369F11DBE3B9004A1712 /* OAServiceTicket.m */; };
-		43A5371311DBE3B9004A1712 /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536A211DBE3B9004A1712 /* OAToken.m */; };
-		43A5371411DBE3B9004A1712 /* SHKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536A511DBE3B9004A1712 /* SHKRequest.m */; };
-		43A5371511DBE3B9004A1712 /* SHK.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536A711DBE3B9004A1712 /* SHK.m */; };
-		43A5371611DBE3B9004A1712 /* SHKItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536A911DBE3B9004A1712 /* SHKItem.m */; };
-		43A5371711DBE3B9004A1712 /* SHKOfflineSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536AB11DBE3B9004A1712 /* SHKOfflineSharer.m */; };
 		43A5371811DBE3B9004A1712 /* SHKSharers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43A536AC11DBE3B9004A1712 /* SHKSharers.plist */; };
-		43A5371911DBE3B9004A1712 /* SHKCustomFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536AF11DBE3B9004A1712 /* SHKCustomFormController.m */; };
-		43A5371A11DBE3B9004A1712 /* SHKCustomFormFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536B111DBE3B9004A1712 /* SHKCustomFormFieldCell.m */; };
-		43A5371B11DBE3B9004A1712 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536B411DBE3B9004A1712 /* Reachability.m */; };
-		43A5371C11DBE3B9004A1712 /* SHKCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536B911DBE3B9004A1712 /* SHKCopy.m */; };
-		43A5371D11DBE3B9004A1712 /* SHKMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536BC11DBE3B9004A1712 /* SHKMail.m */; };
-		43A5371E11DBE3B9004A1712 /* SHKSafari.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536BF11DBE3B9004A1712 /* SHKSafari.m */; };
-		43A5371F11DBE3B9004A1712 /* SHKDelicious.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536C311DBE3B9004A1712 /* SHKDelicious.m */; };
-		43A5372011DBE3B9004A1712 /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 43A536C611DBE3B9004A1712 /* FBConnect.bundle */; };
-		43A5372111DBE3B9004A1712 /* FBConnectGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536C911DBE3B9004A1712 /* FBConnectGlobal.m */; };
-		43A5372211DBE3B9004A1712 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536CB11DBE3B9004A1712 /* FBDialog.m */; };
-		43A5372311DBE3B9004A1712 /* FBFeedDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536CD11DBE3B9004A1712 /* FBFeedDialog.m */; };
-		43A5372411DBE3B9004A1712 /* FBLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536CF11DBE3B9004A1712 /* FBLoginButton.m */; };
-		43A5372511DBE3B9004A1712 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536D111DBE3B9004A1712 /* FBLoginDialog.m */; };
-		43A5372611DBE3B9004A1712 /* FBPermissionDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536D311DBE3B9004A1712 /* FBPermissionDialog.m */; };
-		43A5372711DBE3B9004A1712 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536D511DBE3B9004A1712 /* FBRequest.m */; };
-		43A5372811DBE3B9004A1712 /* FBSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536D711DBE3B9004A1712 /* FBSession.m */; };
-		43A5372911DBE3B9004A1712 /* FBStreamDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536D911DBE3B9004A1712 /* FBStreamDialog.m */; };
-		43A5372A11DBE3B9004A1712 /* FBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536DB11DBE3B9004A1712 /* FBXMLHandler.m */; };
-		43A5372B11DBE3B9004A1712 /* SHKFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536DD11DBE3B9004A1712 /* SHKFacebook.m */; };
-		43A5372C11DBE3B9004A1712 /* SHKGoogleReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536E011DBE3B9004A1712 /* SHKGoogleReader.m */; };
-		43A5372D11DBE3B9004A1712 /* SHKPinboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536E311DBE3B9004A1712 /* SHKPinboard.m */; };
-		43A5372E11DBE3B9004A1712 /* SHKReadItLater.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536E611DBE3B9004A1712 /* SHKReadItLater.m */; };
-		43A5372F11DBE3B9004A1712 /* SHKTwitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536E911DBE3B9004A1712 /* SHKTwitter.m */; };
-		43A5373011DBE3B9004A1712 /* SHKTwitterForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536EB11DBE3B9004A1712 /* SHKTwitterForm.m */; };
-		43A5373111DBE3B9004A1712 /* SHKActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536EF11DBE3B9004A1712 /* SHKActionSheet.m */; };
-		43A5373211DBE3B9004A1712 /* SHKActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536F111DBE3B9004A1712 /* SHKActivityIndicator.m */; };
-		43A5373311DBE3B9004A1712 /* SHKFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536F311DBE3B9004A1712 /* SHKFormController.m */; };
-		43A5373411DBE3B9004A1712 /* SHKFormFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536F511DBE3B9004A1712 /* SHKFormFieldCell.m */; };
-		43A5373511DBE3B9004A1712 /* SHKFormFieldSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536F711DBE3B9004A1712 /* SHKFormFieldSettings.m */; };
-		43A5373711DBE3B9004A1712 /* SHKOAuthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536FB11DBE3B9004A1712 /* SHKOAuthView.m */; };
-		43A5373811DBE3B9004A1712 /* SHKShareMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536FD11DBE3B9004A1712 /* SHKShareMenu.m */; };
-		43A5373911DBE3B9004A1712 /* SHKViewControllerWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536FF11DBE3B9004A1712 /* SHKViewControllerWrapper.m */; };
 		43A5382811DBE480004A1712 /* example.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 43A5382611DBE480004A1712 /* example.pdf */; };
 		43A5382911DBE480004A1712 /* sanFran.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43A5382711DBE480004A1712 /* sanFran.jpg */; };
-		43A5383611DBE493004A1712 /* ExampleShareFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5382B11DBE493004A1712 /* ExampleShareFile.m */; };
-		43A5383711DBE493004A1712 /* ExampleShareImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5382D11DBE493004A1712 /* ExampleShareImage.m */; };
-		43A5383811DBE493004A1712 /* ExampleShareLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5382F11DBE493004A1712 /* ExampleShareLink.m */; };
-		43A5383911DBE493004A1712 /* ExampleShareText.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5383111DBE493004A1712 /* ExampleShareText.m */; };
-		43A5383A11DBE493004A1712 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5383311DBE493004A1712 /* RootViewController.m */; };
-		43A5383B11DBE493004A1712 /* ShareKitAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5383511DBE493004A1712 /* ShareKitAppDelegate.m */; };
-		43A53C0911DC07A9004A1712 /* SHKCustomShareMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A53C0811DC07A9004A1712 /* SHKCustomShareMenuCell.m */; };
-		43A53C1211DC08B1004A1712 /* SHKCustomShareMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A53C1111DC08B1004A1712 /* SHKCustomShareMenu.m */; };
-		43B934B511FE682600C9D3F3 /* SHKFBStreamDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B934B411FE682600C9D3F3 /* SHKFBStreamDialog.m */; };
 		43C91D1D11EB963600F31FAE /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C91D1C11EB963600F31FAE /* MainWindow-iPad.xib */; };
-		43C91DF511EBAE4800F31FAE /* SHKTumblr.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C91DF411EBAE4800F31FAE /* SHKTumblr.m */; };
 		43D1DEF011D5CDD200550D75 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1DEEF11D5CDD200550D75 /* SystemConfiguration.framework */; };
 		43EF406E11D3FFF800B1F700 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EF406D11D3FFF800B1F700 /* Security.framework */; };
-		43FF9C7412270E9F00ADE53C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FF9C7212270E9F00ADE53C /* Localizable.strings */; };
+		A685A54A1338E1B700AE7524 /* libShareKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A685A5451338E19F00AE7524 /* libShareKit.a */; };
+		A685A54D1338E1FA00AE7524 /* SHKOAuthSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5367511DBE3B9004A1712 /* SHKOAuthSharer.m */; };
+		A685A54E1338E1FA00AE7524 /* SHKSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5367711DBE3B9004A1712 /* SHKSharer.m */; };
+		A685A54F1338E1FA00AE7524 /* UIWebView+SHK.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5367A11DBE3B9004A1712 /* UIWebView+SHK.m */; };
+		A685A5501338E1FA00AE7524 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5367E11DBE3B9004A1712 /* SFHFKeychainUtils.m */; };
+		A685A5511338E1FA00AE7524 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5368211DBE3B9004A1712 /* NSMutableURLRequest+Parameters.m */; };
+		A685A5521338E1FA00AE7524 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5368411DBE3B9004A1712 /* NSString+URLEncoding.m */; };
+		A685A5531338E1FA00AE7524 /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5368611DBE3B9004A1712 /* NSURL+Base.m */; };
+		A685A5541338E1FA00AE7524 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 43A5368811DBE3B9004A1712 /* Base64Transcoder.c */; };
+		A685A5551338E1FA00AE7524 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 43A5368A11DBE3B9004A1712 /* hmac.c */; };
+		A685A5561338E1FA00AE7524 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 43A5368C11DBE3B9004A1712 /* sha1.c */; };
+		A685A5571338E1FA00AE7524 /* OAAsynchronousDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5368F11DBE3B9004A1712 /* OAAsynchronousDataFetcher.m */; };
+		A685A5581338E1FA00AE7524 /* OAConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5369111DBE3B9004A1712 /* OAConsumer.m */; };
+		A685A5591338E1FA00AE7524 /* OADataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5369311DBE3B9004A1712 /* OADataFetcher.m */; };
+		A685A55A1338E1FA00AE7524 /* OAHMAC_SHA1SignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5369511DBE3B9004A1712 /* OAHMAC_SHA1SignatureProvider.m */; };
+		A685A55B1338E1FA00AE7524 /* OAMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5369711DBE3B9004A1712 /* OAMutableURLRequest.m */; };
+		A685A55C1338E1FA00AE7524 /* OAPlaintextSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5369911DBE3B9004A1712 /* OAPlaintextSignatureProvider.m */; };
+		A685A55D1338E1FA00AE7524 /* OARequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5369D11DBE3B9004A1712 /* OARequestParameter.m */; };
+		A685A55E1338E1FA00AE7524 /* OAServiceTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5369F11DBE3B9004A1712 /* OAServiceTicket.m */; };
+		A685A55F1338E1FA00AE7524 /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536A211DBE3B9004A1712 /* OAToken.m */; };
+		A685A5601338E1FA00AE7524 /* SHKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536A511DBE3B9004A1712 /* SHKRequest.m */; };
+		A685A5611338E1FA00AE7524 /* SHK.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536A711DBE3B9004A1712 /* SHK.m */; };
+		A685A5621338E1FA00AE7524 /* SHKItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536A911DBE3B9004A1712 /* SHKItem.m */; };
+		A685A5631338E1FA00AE7524 /* SHKOfflineSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536AB11DBE3B9004A1712 /* SHKOfflineSharer.m */; };
+		A685A5641338E1FA00AE7524 /* SHKCustomFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536AF11DBE3B9004A1712 /* SHKCustomFormController.m */; };
+		A685A5651338E1FA00AE7524 /* SHKCustomFormFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536B111DBE3B9004A1712 /* SHKCustomFormFieldCell.m */; };
+		A685A5661338E1FA00AE7524 /* SHKReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536B411DBE3B9004A1712 /* SHKReachability.m */; };
+		A685A5671338E1FA00AE7524 /* SHKCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536B911DBE3B9004A1712 /* SHKCopy.m */; };
+		A685A5681338E1FA00AE7524 /* SHKMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536BC11DBE3B9004A1712 /* SHKMail.m */; };
+		A685A5691338E1FA00AE7524 /* SHKSafari.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536BF11DBE3B9004A1712 /* SHKSafari.m */; };
+		A685A56A1338E1FA00AE7524 /* SHKDelicious.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536C311DBE3B9004A1712 /* SHKDelicious.m */; };
+		A685A56B1338E1FA00AE7524 /* FBConnectGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536C911DBE3B9004A1712 /* FBConnectGlobal.m */; };
+		A685A56C1338E1FA00AE7524 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536CB11DBE3B9004A1712 /* FBDialog.m */; };
+		A685A56D1338E1FA00AE7524 /* FBFeedDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536CD11DBE3B9004A1712 /* FBFeedDialog.m */; };
+		A685A56E1338E1FA00AE7524 /* FBLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536CF11DBE3B9004A1712 /* FBLoginButton.m */; };
+		A685A56F1338E1FA00AE7524 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536D111DBE3B9004A1712 /* FBLoginDialog.m */; };
+		A685A5701338E1FA00AE7524 /* FBPermissionDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536D311DBE3B9004A1712 /* FBPermissionDialog.m */; };
+		A685A5711338E1FA00AE7524 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536D511DBE3B9004A1712 /* FBRequest.m */; };
+		A685A5721338E1FA00AE7524 /* FBSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536D711DBE3B9004A1712 /* FBSession.m */; };
+		A685A5731338E1FA00AE7524 /* FBStreamDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536D911DBE3B9004A1712 /* FBStreamDialog.m */; };
+		A685A5741338E1FA00AE7524 /* FBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536DB11DBE3B9004A1712 /* FBXMLHandler.m */; };
+		A685A5751338E1FA00AE7524 /* SHKFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536DD11DBE3B9004A1712 /* SHKFacebook.m */; };
+		A685A5761338E1FA00AE7524 /* SHKGoogleReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536E011DBE3B9004A1712 /* SHKGoogleReader.m */; };
+		A685A5771338E1FA00AE7524 /* SHKPinboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536E311DBE3B9004A1712 /* SHKPinboard.m */; };
+		A685A5781338E1FA00AE7524 /* SHKReadItLater.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536E611DBE3B9004A1712 /* SHKReadItLater.m */; };
+		A685A5791338E1FA00AE7524 /* SHKTwitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536E911DBE3B9004A1712 /* SHKTwitter.m */; };
+		A685A57A1338E1FA00AE7524 /* SHKTwitterForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536EB11DBE3B9004A1712 /* SHKTwitterForm.m */; };
+		A685A57B1338E1FA00AE7524 /* SHKActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536EF11DBE3B9004A1712 /* SHKActionSheet.m */; };
+		A685A57C1338E1FA00AE7524 /* SHKActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536F111DBE3B9004A1712 /* SHKActivityIndicator.m */; };
+		A685A57D1338E1FA00AE7524 /* SHKFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536F311DBE3B9004A1712 /* SHKFormController.m */; };
+		A685A57E1338E1FA00AE7524 /* SHKFormFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536F511DBE3B9004A1712 /* SHKFormFieldCell.m */; };
+		A685A57F1338E1FA00AE7524 /* SHKFormFieldSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536F711DBE3B9004A1712 /* SHKFormFieldSettings.m */; };
+		A685A5801338E1FA00AE7524 /* SHKOAuthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536FB11DBE3B9004A1712 /* SHKOAuthView.m */; };
+		A685A5811338E1FA00AE7524 /* SHKShareMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536FD11DBE3B9004A1712 /* SHKShareMenu.m */; };
+		A685A5821338E1FA00AE7524 /* SHKViewControllerWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536FF11DBE3B9004A1712 /* SHKViewControllerWrapper.m */; };
+		A685A5891338E1FA00AE7524 /* SHKCustomShareMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A53C0811DC07A9004A1712 /* SHKCustomShareMenuCell.m */; };
+		A685A58A1338E1FA00AE7524 /* SHKCustomShareMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A53C1111DC08B1004A1712 /* SHKCustomShareMenu.m */; };
+		A685A58B1338E1FA00AE7524 /* SHKInstapaper.m in Sources */ = {isa = PBXBuildFile; fileRef = 43150A8C11E78697008C6B68 /* SHKInstapaper.m */; };
+		A685A58C1338E1FA00AE7524 /* SHKTumblr.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C91DF411EBAE4800F31FAE /* SHKTumblr.m */; };
+		A685A58D1338E1FA00AE7524 /* SHKFBStreamDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B934B411FE682600C9D3F3 /* SHKFBStreamDialog.m */; };
+		A685A58E1338E1FA00AE7524 /* SHKPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 432B147B11FF4B0700291B37 /* SHKPhotoAlbum.m */; };
+		A685A58F1338E1FA00AE7524 /* EDAMLimits.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F28D1291AC9700D2A41E /* EDAMLimits.m */; };
+		A685A5901338E1FA00AE7524 /* Errors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F28F1291AC9700D2A41E /* Errors.m */; };
+		A685A5911338E1FA00AE7524 /* NoteStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2911291AC9700D2A41E /* NoteStore.m */; };
+		A685A5921338E1FA00AE7524 /* Types.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2931291AC9700D2A41E /* Types.m */; };
+		A685A5931338E1FA00AE7524 /* UserStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2951291AC9700D2A41E /* UserStore.m */; };
+		A685A5941338E1FA00AE7524 /* TBinaryProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2991291AC9700D2A41E /* TBinaryProtocol.m */; };
+		A685A5951338E1FA00AE7524 /* TProtocolException.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F29C1291AC9700D2A41E /* TProtocolException.m */; };
+		A685A5961338E1FA00AE7524 /* TProtocolUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F29F1291AC9700D2A41E /* TProtocolUtil.m */; };
+		A685A5971338E1FA00AE7524 /* TApplicationException.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2A11291AC9700D2A41E /* TApplicationException.m */; };
+		A685A5981338E1FA00AE7524 /* TException.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2A31291AC9700D2A41E /* TException.m */; };
+		A685A5991338E1FA00AE7524 /* THTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2A81291AC9700D2A41E /* THTTPClient.m */; };
+		A685A59A1338E1FA00AE7524 /* TMemoryBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2AA1291AC9700D2A41E /* TMemoryBuffer.m */; };
+		A685A59B1338E1FA00AE7524 /* TTransportException.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2AD1291AC9700D2A41E /* TTransportException.m */; };
+		A685A59C1338E1FA00AE7524 /* TSharedProcessorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2AF1291AC9700D2A41E /* TSharedProcessorFactory.m */; };
+		A685A59D1338E1FA00AE7524 /* SHKEvernote.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2B11291AC9700D2A41E /* SHKEvernote.m */; };
+		A685A59E1338E1FA00AE7524 /* NSData+md5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2E91291AE5700D2A41E /* NSData+md5.m */; };
+		A685A59F1338E1FA00AE7524 /* SHKTextMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F3B11291C45700D2A41E /* SHKTextMessage.m */; };
+		A685A5A01338E22A00AE7524 /* ExampleShareFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5382B11DBE493004A1712 /* ExampleShareFile.m */; };
+		A685A5A11338E22A00AE7524 /* ExampleShareImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5382D11DBE493004A1712 /* ExampleShareImage.m */; };
+		A685A5A21338E22A00AE7524 /* ExampleShareLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5382F11DBE493004A1712 /* ExampleShareLink.m */; };
+		A685A5A31338E22A00AE7524 /* ExampleShareText.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5383111DBE493004A1712 /* ExampleShareText.m */; };
+		A685A5A41338E22A00AE7524 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5383311DBE493004A1712 /* RootViewController.m */; };
+		A685A5A51338E22A00AE7524 /* ShareKitAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5383511DBE493004A1712 /* ShareKitAppDelegate.m */; };
+		A685A5A61338E22A00AE7524 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		A685A6A21338E2C500AE7524 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		A685A6A31338E2C500AE7524 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		A685A6A41338E2C500AE7524 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		A685A6A51338E2C500AE7524 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4312CF7B11CB33E200E61D7A /* MessageUI.framework */; };
+		A685A6A61338E2C500AE7524 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EF406D11D3FFF800B1F700 /* Security.framework */; };
+		A685A6A71338E2C500AE7524 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1DEEF11D5CDD200550D75 /* SystemConfiguration.framework */; };
+		A685A6DE1338E3DA00AE7524 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FF9C7212270E9F00ADE53C /* Localizable.strings */; };
+		A685A6E11338E42200AE7524 /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 43A536C611DBE3B9004A1712 /* FBConnect.bundle */; };
+		A685A6E71338E47800AE7524 /* ShareKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A685A6D81338E39100AE7524 /* ShareKitResources.bundle */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A685A5481338E1B300AE7524 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A685A5441338E19F00AE7524 /* ShareKit */;
+			remoteInfo = ShareKit;
+		};
+		A685A6DF1338E3F000AE7524 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A685A6D71338E39000AE7524 /* ShareKitResources */;
+			remoteInfo = ShareKitResources;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* ShareKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AAE50D9B0CCF005BE974 /* ShareKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareKit_Prefix.pch; sourceTree = "<group>"; };
@@ -158,17 +183,17 @@
 		4379F2B01291AC9700D2A41E /* SHKEvernote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKEvernote.h; sourceTree = "<group>"; };
 		4379F2B11291AC9700D2A41E /* SHKEvernote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKEvernote.m; sourceTree = "<group>"; };
 		4379F2B21291AC9700D2A41E /* SHKEvernote.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SHKEvernote.md; sourceTree = "<group>"; };
-		4379F2D31291ACD800D2A41E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = Classes/ShareKit/Localization/ja.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		4379F2D31291ACD800D2A41E /* ja */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ja; path = Classes/ShareKit/Localization/ja.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		4379F2D31291ACD900D2A41E /* sv */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = sv; path = Classes/ShareKit/Localization/sv.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		4379F2D41291ACE600D2A41E /* eu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = eu; path = Classes/ShareKit/Localization/eu.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		4379F2D51291ACF700D2A41E /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = Classes/ShareKit/Localization/nl.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
-		4379F2D61291AD0300D2A41E /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = Classes/ShareKit/Localization/vi.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
-		4379F2D71291AD0F00D2A41E /* zh_CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_CN; path = Classes/ShareKit/Localization/zh_CN.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		4379F2D71291AD0F00D2A41E /* zh_CN */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = zh_CN; path = Classes/ShareKit/Localization/zh_CN.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		4379F2E81291AE5700D2A41E /* NSData+md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+md5.h"; sourceTree = "<group>"; };
 		4379F2E91291AE5700D2A41E /* NSData+md5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+md5.m"; sourceTree = "<group>"; };
-		4379F3251291B86500D2A41E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Classes/ShareKit/Localization/fr.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		4379F3251291B86500D2A41E /* fr */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = fr; path = Classes/ShareKit/Localization/fr.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		4379F3B01291C45700D2A41E /* SHKTextMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKTextMessage.h; sourceTree = "<group>"; };
 		4379F3B11291C45700D2A41E /* SHKTextMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKTextMessage.m; sourceTree = "<group>"; };
-		4379F3EA1291CA1700D2A41E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = Classes/ShareKit/Localization/ko.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		4379F3EA1291CA1700D2A41E /* ko */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ko; path = Classes/ShareKit/Localization/ko.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		43A5367411DBE3B9004A1712 /* SHKOAuthSharer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKOAuthSharer.h; sourceTree = "<group>"; };
 		43A5367511DBE3B9004A1712 /* SHKOAuthSharer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKOAuthSharer.m; sourceTree = "<group>"; };
 		43A5367611DBE3B9004A1712 /* SHKSharer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKSharer.h; sourceTree = "<group>"; };
@@ -222,8 +247,8 @@
 		43A536AF11DBE3B9004A1712 /* SHKCustomFormController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKCustomFormController.m; sourceTree = "<group>"; };
 		43A536B011DBE3B9004A1712 /* SHKCustomFormFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKCustomFormFieldCell.h; sourceTree = "<group>"; };
 		43A536B111DBE3B9004A1712 /* SHKCustomFormFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKCustomFormFieldCell.m; sourceTree = "<group>"; };
-		43A536B311DBE3B9004A1712 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		43A536B411DBE3B9004A1712 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		43A536B311DBE3B9004A1712 /* SHKReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKReachability.h; sourceTree = "<group>"; };
+		43A536B411DBE3B9004A1712 /* SHKReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKReachability.m; sourceTree = "<group>"; };
 		43A536B811DBE3B9004A1712 /* SHKCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKCopy.h; sourceTree = "<group>"; };
 		43A536B911DBE3B9004A1712 /* SHKCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKCopy.m; sourceTree = "<group>"; };
 		43A536BB11DBE3B9004A1712 /* SHKMail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKMail.h; sourceTree = "<group>"; };
@@ -309,8 +334,10 @@
 		43D1DEEF11D5CDD200550D75 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		43EF406D11D3FFF800B1F700 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		43FF9C7312270E9F00ADE53C /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Classes/ShareKit/Localization/en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
-		43FF9C7512270EB900ADE53C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Classes/ShareKit/Localization/de.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		43FF9C7512270EB900ADE53C /* de */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = de; path = Classes/ShareKit/Localization/de.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* ShareKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShareKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		A685A5451338E19F00AE7524 /* libShareKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShareKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A685A6D81338E39100AE7524 /* ShareKitResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShareKitResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +351,20 @@
 				4312CF7C11CB33E200E61D7A /* MessageUI.framework in Frameworks */,
 				43EF406E11D3FFF800B1F700 /* Security.framework in Frameworks */,
 				43D1DEF011D5CDD200550D75 /* SystemConfiguration.framework in Frameworks */,
+				A685A54A1338E1B700AE7524 /* libShareKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A685A5431338E19F00AE7524 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A685A6A21338E2C500AE7524 /* Foundation.framework in Frameworks */,
+				A685A6A31338E2C500AE7524 /* UIKit.framework in Frameworks */,
+				A685A6A41338E2C500AE7524 /* CoreGraphics.framework in Frameworks */,
+				A685A6A51338E2C500AE7524 /* MessageUI.framework in Frameworks */,
+				A685A6A61338E2C500AE7524 /* Security.framework in Frameworks */,
+				A685A6A71338E2C500AE7524 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +383,9 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* ShareKit.app */,
+				1D6058910D05DD3D006BFB54 /* SampleApp.app */,
+				A685A5451338E19F00AE7524 /* libShareKit.a */,
+				A685A6D81338E39100AE7524 /* ShareKitResources.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -663,8 +706,8 @@
 		43A536B211DBE3B9004A1712 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				43A536B311DBE3B9004A1712 /* Reachability.h */,
-				43A536B411DBE3B9004A1712 /* Reachability.m */,
+				43A536B311DBE3B9004A1712 /* SHKReachability.h */,
+				43A536B411DBE3B9004A1712 /* SHKReachability.m */,
 			);
 			path = Reachability;
 			sourceTree = "<group>";
@@ -893,10 +936,20 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		A685A5411338E19F00AE7524 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* ShareKit */ = {
+		1D6058900D05DD3D006BFB54 /* SampleApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ShareKit" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SampleApp" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -905,11 +958,45 @@
 			buildRules = (
 			);
 			dependencies = (
+				A685A5491338E1B300AE7524 /* PBXTargetDependency */,
+			);
+			name = SampleApp;
+			productName = ShareKit;
+			productReference = 1D6058910D05DD3D006BFB54 /* SampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A685A5441338E19F00AE7524 /* ShareKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A685A54B1338E1D500AE7524 /* Build configuration list for PBXNativeTarget "ShareKit" */;
+			buildPhases = (
+				A685A5411338E19F00AE7524 /* Headers */,
+				A685A5421338E19F00AE7524 /* Sources */,
+				A685A5431338E19F00AE7524 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A685A6E01338E3F000AE7524 /* PBXTargetDependency */,
 			);
 			name = ShareKit;
 			productName = ShareKit;
-			productReference = 1D6058910D05DD3D006BFB54 /* ShareKit.app */;
-			productType = "com.apple.product-type.application";
+			productReference = A685A5451338E19F00AE7524 /* libShareKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A685A6D71338E39000AE7524 /* ShareKitResources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A685A6DC1338E39100AE7524 /* Build configuration list for PBXNativeTarget "ShareKitResources" */;
+			buildPhases = (
+				A685A6D41338E39000AE7524 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareKitResources;
+			productName = ShareKitResources;
+			productReference = A685A6D81338E39100AE7524 /* ShareKitResources.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -934,12 +1021,15 @@
 				eu,
 				fr,
 				ko,
+				sv,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* ShareKit */,
+				A685A6D71338E39000AE7524 /* ShareKitResources */,
+				A685A5441338E19F00AE7524 /* ShareKit */,
+				1D6058900D05DD3D006BFB54 /* SampleApp */,
 			);
 		};
 /* End PBXProject section */
@@ -949,15 +1039,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A685A6E71338E47800AE7524 /* ShareKitResources.bundle in Resources */,
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
 				43A5371811DBE3B9004A1712 /* SHKSharers.plist in Resources */,
-				43A5372011DBE3B9004A1712 /* FBConnect.bundle in Resources */,
 				43A5382811DBE480004A1712 /* example.pdf in Resources */,
 				43A5382911DBE480004A1712 /* sanFran.jpg in Resources */,
 				43C91D1D11EB963600F31FAE /* MainWindow-iPad.xib in Resources */,
-				43FF9C7412270E9F00ADE53C /* Localizable.strings in Resources */,
 				4379F2C21291AC9700D2A41E /* SHKEvernote.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A685A6D41338E39000AE7524 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A685A6E11338E42200AE7524 /* FBConnect.bundle in Resources */,
+				A685A6DE1338E3DA00AE7524 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -968,94 +1066,114 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				43A5370011DBE3B9004A1712 /* SHKOAuthSharer.m in Sources */,
-				43A5370111DBE3B9004A1712 /* SHKSharer.m in Sources */,
-				43A5370211DBE3B9004A1712 /* UIWebView+SHK.m in Sources */,
-				43A5370311DBE3B9004A1712 /* SFHFKeychainUtils.m in Sources */,
-				43A5370411DBE3B9004A1712 /* NSMutableURLRequest+Parameters.m in Sources */,
-				43A5370511DBE3B9004A1712 /* NSString+URLEncoding.m in Sources */,
-				43A5370611DBE3B9004A1712 /* NSURL+Base.m in Sources */,
-				43A5370711DBE3B9004A1712 /* Base64Transcoder.c in Sources */,
-				43A5370811DBE3B9004A1712 /* hmac.c in Sources */,
-				43A5370911DBE3B9004A1712 /* sha1.c in Sources */,
-				43A5370A11DBE3B9004A1712 /* OAAsynchronousDataFetcher.m in Sources */,
-				43A5370B11DBE3B9004A1712 /* OAConsumer.m in Sources */,
-				43A5370C11DBE3B9004A1712 /* OADataFetcher.m in Sources */,
-				43A5370D11DBE3B9004A1712 /* OAHMAC_SHA1SignatureProvider.m in Sources */,
-				43A5370E11DBE3B9004A1712 /* OAMutableURLRequest.m in Sources */,
-				43A5370F11DBE3B9004A1712 /* OAPlaintextSignatureProvider.m in Sources */,
-				43A5371111DBE3B9004A1712 /* OARequestParameter.m in Sources */,
-				43A5371211DBE3B9004A1712 /* OAServiceTicket.m in Sources */,
-				43A5371311DBE3B9004A1712 /* OAToken.m in Sources */,
-				43A5371411DBE3B9004A1712 /* SHKRequest.m in Sources */,
-				43A5371511DBE3B9004A1712 /* SHK.m in Sources */,
-				43A5371611DBE3B9004A1712 /* SHKItem.m in Sources */,
-				43A5371711DBE3B9004A1712 /* SHKOfflineSharer.m in Sources */,
-				43A5371911DBE3B9004A1712 /* SHKCustomFormController.m in Sources */,
-				43A5371A11DBE3B9004A1712 /* SHKCustomFormFieldCell.m in Sources */,
-				43A5371B11DBE3B9004A1712 /* Reachability.m in Sources */,
-				43A5371C11DBE3B9004A1712 /* SHKCopy.m in Sources */,
-				43A5371D11DBE3B9004A1712 /* SHKMail.m in Sources */,
-				43A5371E11DBE3B9004A1712 /* SHKSafari.m in Sources */,
-				43A5371F11DBE3B9004A1712 /* SHKDelicious.m in Sources */,
-				43A5372111DBE3B9004A1712 /* FBConnectGlobal.m in Sources */,
-				43A5372211DBE3B9004A1712 /* FBDialog.m in Sources */,
-				43A5372311DBE3B9004A1712 /* FBFeedDialog.m in Sources */,
-				43A5372411DBE3B9004A1712 /* FBLoginButton.m in Sources */,
-				43A5372511DBE3B9004A1712 /* FBLoginDialog.m in Sources */,
-				43A5372611DBE3B9004A1712 /* FBPermissionDialog.m in Sources */,
-				43A5372711DBE3B9004A1712 /* FBRequest.m in Sources */,
-				43A5372811DBE3B9004A1712 /* FBSession.m in Sources */,
-				43A5372911DBE3B9004A1712 /* FBStreamDialog.m in Sources */,
-				43A5372A11DBE3B9004A1712 /* FBXMLHandler.m in Sources */,
-				43A5372B11DBE3B9004A1712 /* SHKFacebook.m in Sources */,
-				43A5372C11DBE3B9004A1712 /* SHKGoogleReader.m in Sources */,
-				43A5372D11DBE3B9004A1712 /* SHKPinboard.m in Sources */,
-				43A5372E11DBE3B9004A1712 /* SHKReadItLater.m in Sources */,
-				43A5372F11DBE3B9004A1712 /* SHKTwitter.m in Sources */,
-				43A5373011DBE3B9004A1712 /* SHKTwitterForm.m in Sources */,
-				43A5373111DBE3B9004A1712 /* SHKActionSheet.m in Sources */,
-				43A5373211DBE3B9004A1712 /* SHKActivityIndicator.m in Sources */,
-				43A5373311DBE3B9004A1712 /* SHKFormController.m in Sources */,
-				43A5373411DBE3B9004A1712 /* SHKFormFieldCell.m in Sources */,
-				43A5373511DBE3B9004A1712 /* SHKFormFieldSettings.m in Sources */,
-				43A5373711DBE3B9004A1712 /* SHKOAuthView.m in Sources */,
-				43A5373811DBE3B9004A1712 /* SHKShareMenu.m in Sources */,
-				43A5373911DBE3B9004A1712 /* SHKViewControllerWrapper.m in Sources */,
-				43A5383611DBE493004A1712 /* ExampleShareFile.m in Sources */,
-				43A5383711DBE493004A1712 /* ExampleShareImage.m in Sources */,
-				43A5383811DBE493004A1712 /* ExampleShareLink.m in Sources */,
-				43A5383911DBE493004A1712 /* ExampleShareText.m in Sources */,
-				43A5383A11DBE493004A1712 /* RootViewController.m in Sources */,
-				43A5383B11DBE493004A1712 /* ShareKitAppDelegate.m in Sources */,
-				43A53C0911DC07A9004A1712 /* SHKCustomShareMenuCell.m in Sources */,
-				43A53C1211DC08B1004A1712 /* SHKCustomShareMenu.m in Sources */,
-				43150A8D11E78697008C6B68 /* SHKInstapaper.m in Sources */,
-				43C91DF511EBAE4800F31FAE /* SHKTumblr.m in Sources */,
-				43B934B511FE682600C9D3F3 /* SHKFBStreamDialog.m in Sources */,
-				432B147C11FF4B0700291B37 /* SHKPhotoAlbum.m in Sources */,
-				4379F2B31291AC9700D2A41E /* EDAMLimits.m in Sources */,
-				4379F2B41291AC9700D2A41E /* Errors.m in Sources */,
-				4379F2B51291AC9700D2A41E /* NoteStore.m in Sources */,
-				4379F2B61291AC9700D2A41E /* Types.m in Sources */,
-				4379F2B71291AC9700D2A41E /* UserStore.m in Sources */,
-				4379F2B81291AC9700D2A41E /* TBinaryProtocol.m in Sources */,
-				4379F2B91291AC9700D2A41E /* TProtocolException.m in Sources */,
-				4379F2BA1291AC9700D2A41E /* TProtocolUtil.m in Sources */,
-				4379F2BB1291AC9700D2A41E /* TApplicationException.m in Sources */,
-				4379F2BC1291AC9700D2A41E /* TException.m in Sources */,
-				4379F2BD1291AC9700D2A41E /* THTTPClient.m in Sources */,
-				4379F2BE1291AC9700D2A41E /* TMemoryBuffer.m in Sources */,
-				4379F2BF1291AC9700D2A41E /* TTransportException.m in Sources */,
-				4379F2C01291AC9700D2A41E /* TSharedProcessorFactory.m in Sources */,
-				4379F2C11291AC9700D2A41E /* SHKEvernote.m in Sources */,
-				4379F2EA1291AE5700D2A41E /* NSData+md5.m in Sources */,
-				4379F3B21291C45700D2A41E /* SHKTextMessage.m in Sources */,
+				A685A5A01338E22A00AE7524 /* ExampleShareFile.m in Sources */,
+				A685A5A11338E22A00AE7524 /* ExampleShareImage.m in Sources */,
+				A685A5A21338E22A00AE7524 /* ExampleShareLink.m in Sources */,
+				A685A5A31338E22A00AE7524 /* ExampleShareText.m in Sources */,
+				A685A5A41338E22A00AE7524 /* RootViewController.m in Sources */,
+				A685A5A51338E22A00AE7524 /* ShareKitAppDelegate.m in Sources */,
+				A685A5A61338E22A00AE7524 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A685A5421338E19F00AE7524 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A685A54D1338E1FA00AE7524 /* SHKOAuthSharer.m in Sources */,
+				A685A54E1338E1FA00AE7524 /* SHKSharer.m in Sources */,
+				A685A54F1338E1FA00AE7524 /* UIWebView+SHK.m in Sources */,
+				A685A5501338E1FA00AE7524 /* SFHFKeychainUtils.m in Sources */,
+				A685A5511338E1FA00AE7524 /* NSMutableURLRequest+Parameters.m in Sources */,
+				A685A5521338E1FA00AE7524 /* NSString+URLEncoding.m in Sources */,
+				A685A5531338E1FA00AE7524 /* NSURL+Base.m in Sources */,
+				A685A5541338E1FA00AE7524 /* Base64Transcoder.c in Sources */,
+				A685A5551338E1FA00AE7524 /* hmac.c in Sources */,
+				A685A5561338E1FA00AE7524 /* sha1.c in Sources */,
+				A685A5571338E1FA00AE7524 /* OAAsynchronousDataFetcher.m in Sources */,
+				A685A5581338E1FA00AE7524 /* OAConsumer.m in Sources */,
+				A685A5591338E1FA00AE7524 /* OADataFetcher.m in Sources */,
+				A685A55A1338E1FA00AE7524 /* OAHMAC_SHA1SignatureProvider.m in Sources */,
+				A685A55B1338E1FA00AE7524 /* OAMutableURLRequest.m in Sources */,
+				A685A55C1338E1FA00AE7524 /* OAPlaintextSignatureProvider.m in Sources */,
+				A685A55D1338E1FA00AE7524 /* OARequestParameter.m in Sources */,
+				A685A55E1338E1FA00AE7524 /* OAServiceTicket.m in Sources */,
+				A685A55F1338E1FA00AE7524 /* OAToken.m in Sources */,
+				A685A5601338E1FA00AE7524 /* SHKRequest.m in Sources */,
+				A685A5611338E1FA00AE7524 /* SHK.m in Sources */,
+				A685A5621338E1FA00AE7524 /* SHKItem.m in Sources */,
+				A685A5631338E1FA00AE7524 /* SHKOfflineSharer.m in Sources */,
+				A685A5641338E1FA00AE7524 /* SHKCustomFormController.m in Sources */,
+				A685A5651338E1FA00AE7524 /* SHKCustomFormFieldCell.m in Sources */,
+				A685A5661338E1FA00AE7524 /* SHKReachability.m in Sources */,
+				A685A5671338E1FA00AE7524 /* SHKCopy.m in Sources */,
+				A685A5681338E1FA00AE7524 /* SHKMail.m in Sources */,
+				A685A5691338E1FA00AE7524 /* SHKSafari.m in Sources */,
+				A685A56A1338E1FA00AE7524 /* SHKDelicious.m in Sources */,
+				A685A56B1338E1FA00AE7524 /* FBConnectGlobal.m in Sources */,
+				A685A56C1338E1FA00AE7524 /* FBDialog.m in Sources */,
+				A685A56D1338E1FA00AE7524 /* FBFeedDialog.m in Sources */,
+				A685A56E1338E1FA00AE7524 /* FBLoginButton.m in Sources */,
+				A685A56F1338E1FA00AE7524 /* FBLoginDialog.m in Sources */,
+				A685A5701338E1FA00AE7524 /* FBPermissionDialog.m in Sources */,
+				A685A5711338E1FA00AE7524 /* FBRequest.m in Sources */,
+				A685A5721338E1FA00AE7524 /* FBSession.m in Sources */,
+				A685A5731338E1FA00AE7524 /* FBStreamDialog.m in Sources */,
+				A685A5741338E1FA00AE7524 /* FBXMLHandler.m in Sources */,
+				A685A5751338E1FA00AE7524 /* SHKFacebook.m in Sources */,
+				A685A5761338E1FA00AE7524 /* SHKGoogleReader.m in Sources */,
+				A685A5771338E1FA00AE7524 /* SHKPinboard.m in Sources */,
+				A685A5781338E1FA00AE7524 /* SHKReadItLater.m in Sources */,
+				A685A5791338E1FA00AE7524 /* SHKTwitter.m in Sources */,
+				A685A57A1338E1FA00AE7524 /* SHKTwitterForm.m in Sources */,
+				A685A57B1338E1FA00AE7524 /* SHKActionSheet.m in Sources */,
+				A685A57C1338E1FA00AE7524 /* SHKActivityIndicator.m in Sources */,
+				A685A57D1338E1FA00AE7524 /* SHKFormController.m in Sources */,
+				A685A57E1338E1FA00AE7524 /* SHKFormFieldCell.m in Sources */,
+				A685A57F1338E1FA00AE7524 /* SHKFormFieldSettings.m in Sources */,
+				A685A5801338E1FA00AE7524 /* SHKOAuthView.m in Sources */,
+				A685A5811338E1FA00AE7524 /* SHKShareMenu.m in Sources */,
+				A685A5821338E1FA00AE7524 /* SHKViewControllerWrapper.m in Sources */,
+				A685A5891338E1FA00AE7524 /* SHKCustomShareMenuCell.m in Sources */,
+				A685A58A1338E1FA00AE7524 /* SHKCustomShareMenu.m in Sources */,
+				A685A58B1338E1FA00AE7524 /* SHKInstapaper.m in Sources */,
+				A685A58C1338E1FA00AE7524 /* SHKTumblr.m in Sources */,
+				A685A58D1338E1FA00AE7524 /* SHKFBStreamDialog.m in Sources */,
+				A685A58E1338E1FA00AE7524 /* SHKPhotoAlbum.m in Sources */,
+				A685A58F1338E1FA00AE7524 /* EDAMLimits.m in Sources */,
+				A685A5901338E1FA00AE7524 /* Errors.m in Sources */,
+				A685A5911338E1FA00AE7524 /* NoteStore.m in Sources */,
+				A685A5921338E1FA00AE7524 /* Types.m in Sources */,
+				A685A5931338E1FA00AE7524 /* UserStore.m in Sources */,
+				A685A5941338E1FA00AE7524 /* TBinaryProtocol.m in Sources */,
+				A685A5951338E1FA00AE7524 /* TProtocolException.m in Sources */,
+				A685A5961338E1FA00AE7524 /* TProtocolUtil.m in Sources */,
+				A685A5971338E1FA00AE7524 /* TApplicationException.m in Sources */,
+				A685A5981338E1FA00AE7524 /* TException.m in Sources */,
+				A685A5991338E1FA00AE7524 /* THTTPClient.m in Sources */,
+				A685A59A1338E1FA00AE7524 /* TMemoryBuffer.m in Sources */,
+				A685A59B1338E1FA00AE7524 /* TTransportException.m in Sources */,
+				A685A59C1338E1FA00AE7524 /* TSharedProcessorFactory.m in Sources */,
+				A685A59D1338E1FA00AE7524 /* SHKEvernote.m in Sources */,
+				A685A59E1338E1FA00AE7524 /* NSData+md5.m in Sources */,
+				A685A59F1338E1FA00AE7524 /* SHKTextMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A685A5491338E1B300AE7524 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A685A5441338E19F00AE7524 /* ShareKit */;
+			targetProxy = A685A5481338E1B300AE7524 /* PBXContainerItemProxy */;
+		};
+		A685A6E01338E3F000AE7524 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A685A6D71338E39000AE7524 /* ShareKitResources */;
+			targetProxy = A685A6DF1338E3F000AE7524 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		43FF9C7212270E9F00ADE53C /* Localizable.strings */ = {
@@ -1064,9 +1182,9 @@
 				43FF9C7312270E9F00ADE53C /* en */,
 				43FF9C7512270EB900ADE53C /* de */,
 				4379F2D31291ACD800D2A41E /* ja */,
+				4379F2D31291ACD900D2A41E /* sv */,
 				4379F2D41291ACE600D2A41E /* eu */,
 				4379F2D51291ACF700D2A41E /* nl */,
-				4379F2D61291AD0300D2A41E /* vi */,
 				4379F2D71291AD0F00D2A41E /* zh_CN */,
 				4379F3251291B86500D2A41E /* fr */,
 				4379F3EA1291CA1700D2A41E /* ko */,
@@ -1089,7 +1207,8 @@
 				GCC_PREFIX_HEADER = ShareKit_Prefix.pch;
 				INFOPLIST_FILE = "ShareKit-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
-				PRODUCT_NAME = ShareKit;
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = SampleApp;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1105,10 +1224,60 @@
 				GCC_PREFIX_HEADER = ShareKit_Prefix.pch;
 				INFOPLIST_FILE = "ShareKit-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
-				PRODUCT_NAME = ShareKit;
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = SampleApp;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A685A5461338E19F00AE7524 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PREBINDING = NO;
+				PRODUCT_NAME = ShareKit;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A685A5471338E19F00AE7524 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PREBINDING = NO;
+				PRODUCT_NAME = ShareKit;
+				SDKROOT = iphoneos;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		A685A6DA1338E39100AE7524 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = ShareKitResources;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		A685A6DB1338E39100AE7524 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = ShareKitResources;
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -1146,11 +1315,29 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ShareKit" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "SampleApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A685A54B1338E1D500AE7524 /* Build configuration list for PBXNativeTarget "ShareKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A685A5461338E19F00AE7524 /* Debug */,
+				A685A5471338E19F00AE7524 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A685A6DC1338E39100AE7524 /* Build configuration list for PBXNativeTarget "ShareKitResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A685A6DA1338E39100AE7524 /* Debug */,
+				A685A6DB1338E39100AE7524 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -8,15 +8,22 @@
 
 
 
+// Read one config value. Search order is:
+// 1. Registrered dictionary
+// 2. Main bundle plist.
+// 3. A defualt is applicable
+// 4. nil
+extern id SHKConfigValueForKey(NSString* key);
 
+
+// Keys are the string key for the values,
+extern void SHKRegisterConfigValuesWithDictionary(NSDictionary* configValues);
 
 
 // App Description
 // These values are used by any service that shows 'shared from XYZ'
-
-#define SHKMyAppName			@"My App Name"
-#define SHKMyAppURL				@"http://example.com"
-
+extern NSString* const SHKConfigMyAppName;
+extern NSString* const SHKConfigMyAppURL;
 
 
 /*
@@ -39,19 +46,21 @@
 
 
 // Delicious - https://developer.apps.yahoo.com/projects
-#define SHKDeliciousConsumerKey		@""
-#define SHKDeliciousSecretKey		@""
+extern NSString* const SHKConfigDeliciousConsumerKey;
+extern NSString* const SHKConfigDeliciousSecretKey;
+
 
 // Facebook - http://www.facebook.com/developers
 // If SHKFacebookUseSessionProxy is enabled then SHKFacebookSecret is ignored and should be left blank
+extern NSString* const SHKConfigFacebookUseSessionProxy;
+extern NSString* const SHKConfigFacebookKey;
+extern NSString* const SHKConfigFacebookSecret;
+extern NSString* const SHKConfigFacebookSessionProxyURL;
 
-#define SHKFacebookUseSessionProxy  NO 
-#define SHKFacebookKey				@""
-#define SHKFacebookSecret			@""
-#define SHKFacebookSessionProxyURL  @""
 
 // Read It Later - http://readitlaterlist.com/api/?shk
-#define SHKReadItLaterKey			@""
+extern NSString* const SHKConfigReadItLaterKey;
+
 
 // Twitter - http://dev.twitter.com/apps/new
 /*
@@ -69,22 +78,31 @@
  2. 'Application Type' should be set to BROWSER (not client)
  3. 'Callback URL' should match whatever you enter in SHKTwitterCallbackUrl.  The callback url doesn't have to be an actual existing url.  The user will never get to it because ShareKit intercepts it before the user is redirected.  It just needs to match.
  */
-#define SHKTwitterConsumerKey		@""
-#define SHKTwitterSecret			@""
-#define SHKTwitterCallbackUrl		@"" // You need to set this if using OAuth, see note above (xAuth users can skip it)
-#define SHKTwitterUseXAuth			0 // To use xAuth, set to 1
-#define SHKTwitterUsername			@"" // Enter your app's twitter account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
+extern NSString* const SHKConfigTwitterConsumerKey;
+extern NSString* const SHKConfigTwitterSecret;
+extern NSString* const SHKConfigTwitterCallbackURL; // You need to set this if using OAuth, see note above (xAuth users can skip it)
+
+extern NSString* const SHKConfigTwitterUseXAuth; // To use xAuth, set to YES
+extern NSString* const SHKConfigTwitterUsername; // Enter your app's twitter account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
+
 
 // Bit.ly (for shortening URLs on Twitter) - http://bit.ly/account/register - after signup: http://bit.ly/a/your_api_key
-#define SHKBitLyLogin				@""
-#define SHKBitLyKey					@""
+extern NSString* const SHKConfigBitLyLogin;
+extern NSString* const SHKConfigBitLyKey;
 
-// ShareMenu Ordering
-#define SHKShareMenuAlphabeticalOrder 1 // Setting this to 1 will show list in Alphabetical Order, setting to 0 will follow the order in SHKShares.plist
+
+// Evernote
+extern NSString* const SHKConfigEvernoteUserStoreURL;
+extern NSString* const SHKConfigEvernoteConsumerKey;
+extern NSString* const SHKConfigEvernoteSecretKey;
+extern NSString* const SHKConfigEvernoteNetStoreURLBase;
+
+// ShareMenu Ordering, Setting this to 1 will show list in Alphabetical Order, setting to 0 will follow the order in SHKShares.plist
+extern NSString* const SHKConfigShareMenuAlphabeticalOrder;
+
 
 // Append 'Shared With 'Signature to Email (and related forms)
-#define SHKSharedWithSignature		0
-
+extern NSString* const SHKConfigSharedWithSignature;
 
 
 /*
@@ -94,29 +112,20 @@
  */
 
 // Toolbars
-#define SHKBarStyle					@"UIBarStyleDefault" // See: http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIKitDataTypesReference/Reference/reference.html#//apple_ref/c/econst/UIBarStyleDefault
-#define SHKBarTintColorRed			-1 // Value between 0-255, set all to -1 for default
-#define SHKBarTintColorGreen		-1 // Value between 0-255, set all to -1 for default
-#define SHKBarTintColorBlue			-1 // Value between 0-255, set all to -1 for default
+extern NSString* const SHKConfigBarStyle;
+extern NSString* const SHKConfigBarTintColor;
 
 // Forms
-#define SHKFormFontColorRed			-1 // Value between 0-255, set all to -1 for default
-#define SHKFormFontColorGreen		-1 // Value between 0-255, set all to -1 for default
-#define SHKFormFontColorBlue		-1 // Value between 0-255, set all to -1 for default
-
-#define SHKFormBgColorRed			-1 // Value between 0-255, set all to -1 for default
-#define SHKFormBgColorGreen			-1 // Value between 0-255, set all to -1 for default
-#define SHKFormBgColorBlue			-1 // Value between 0-255, set all to -1 for default
+extern NSString* const SHKConfigFormFontColor;
+extern NSString* const SHKConfigFormBackgroundColor;
 
 // iPad views
-#define SHKModalPresentationStyle	@"UIModalPresentationFormSheet" // See: http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIViewController_Class/Reference/Reference.html#//apple_ref/occ/instp/UIViewController/modalPresentationStyle
-#define SHKModalTransitionStyle		@"UIModalTransitionStyleCoverVertical" // See: http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIViewController_Class/Reference/Reference.html#//apple_ref/occ/instp/UIViewController/modalTransitionStyle
+extern NSString* const SHKConfigModalPresentationStyle; // See: http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIViewController_Class/Reference/Reference.html#//apple_ref/occ/instp/UIViewController/modalPresentationStyle
+extern NSString* const SHKConfigModalTransitionStyle; // See: http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIViewController_Class/Reference/Reference.html#//apple_ref/occ/instp/UIViewController/modalTransitionStyle
 
-// ShareMenu Ordering
-#define SHKShareMenuAlphabeticalOrder 1 // Setting this to 1 will show list in Alphabetical Order, setting to 0 will follow the order in SHKShares.plist
 
-// Append 'Shared With 'Signature to Email (and related forms)
-#define SHKSharedWithSignature		0
+
+
 
 /*
  UI Configuration : Advanced

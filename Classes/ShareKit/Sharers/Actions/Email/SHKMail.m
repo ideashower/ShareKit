@@ -157,10 +157,10 @@
 			body = @"";
 		
 		// sig
-		if (SHKSharedWithSignature)
+		if ([SHKConfigValueForKey(SHKConfigSharedWithSignature) boolValue])
 		{
 			body = [body stringByAppendingString:@"<br/><br/>"];
-			body = [body stringByAppendingString:SHKLocalizedString(@"Sent from %@", SHKMyAppName)];
+			body = [body stringByAppendingString:SHKLocalizedString(@"Sent from %@", SHKConfigValueForKey(SHKConfigMyAppName))];
 		}
 		
 		// save changes to body

@@ -77,7 +77,7 @@
 	NSDictionary *formValues = [form formValues];
 	
 	NSString *params = [NSMutableString stringWithFormat:@"apikey=%@&username=%@&password=%@",
-						SHKReadItLaterKey,
+						SHKConfigValueForKey(SHKConfigReadItLaterKey),
 						SHKEncode([formValues objectForKey:@"username"]),
 						SHKEncode([formValues objectForKey:@"password"])
 						];
@@ -143,7 +143,7 @@
 						  SHKEncodeURL(item.URL), SHKEncode(item.tags)];
 		
 		NSString *params = [NSMutableString stringWithFormat:@"apikey=%@&username=%@&password=%@%@%@",
-									SHKReadItLaterKey,
+									SHKConfigValueForKey(SHKConfigReadItLaterKey),
 							SHKEncode([self getAuthValueForKey:@"username"]),
 							SHKEncode([self getAuthValueForKey:@"password"]),
 							new,
