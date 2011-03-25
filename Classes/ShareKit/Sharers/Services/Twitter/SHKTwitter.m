@@ -187,7 +187,13 @@
 {
 	if (item.shareType == SHKShareTypeURL)
 	{
-		[self shortenURL];
+        if (SHKConfigValueForKey(SHKConfigBitLyKey)) {
+			[self shortenURL];
+        } else {
+			NSString* result = [item.URL.absoluteString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];            
+            [item setCustomValue:[NSString stringWithFormat:@"%@ %@", item.text ? item.text : item.title, result] forKey:@"status"];
+        	[self showTwitterForm];
+        }
 	}
 	
 	else if (item.shareType == SHKShareTypeImage)
