@@ -1,0 +1,91 @@
+"Email" = "Email";
+"Username" = "Nome utente";
+"Password" = "Password";
+"Follow %@" = "Iscriviti a %@";
+"Continue" = "Continua";
+"Share" = "Condividi";
+"More..." = "Altro...";
+"Cancel" = "Annulla";
+"Slug" = "Slug";
+"Private" = "Privato";
+"Public" = "Pubblico";
+"Caption" = "Titolo";
+"Title" = "Titolo";
+"Tags" = "Tag";
+"Close" = "Chiudi";
+"Notes" = "Note";
+"Note" = "Nota";
+"Share" = "Condividi";
+"Shared" = "Condiviso";
+"Edit" = "Modifica";
+"Actions" = "Azioni";
+"Services" = "Servizi";
+"Send to %@" = "Invia a %@";
+"Copy" = "Copia";
+"Copied!" = "Copiato!";
+"Saving to %@" = "Sta salvando in %@";
+"Saved!" = "Salvato!";
+"Offline" = "Disconnesso";
+"Error" = "Errore";
+"Login" = "Accesso";
+"Logging In..." = "Sta accedendo...";
+"Login Error" = "Errore di accesso";
+"Connecting..." = "Sta connettendo...";
+
+"Shortening URL..." = "Shortening URL...";
+"Shorten URL Error" = "Shorten URL Error";
+"We could not shorten the URL." = "We could not shorten the URL.";
+
+"Create a free account at %@" = "Crea un account gratis su %@";
+"Create an account at %@" = "Crea un accoun su %@";
+
+"Send to Twitter" = "Invia a Twitter";
+
+"Message is too long" = "Messaggio troppo lungo";
+"Twitter posts can only be 140 characters in length." = "Messaggi su Twitter possono essere soltanto di 140 caratteri di lunghezza.";
+"Message is empty" = "Messaggio vuoto";
+"You must enter a message in order to post." = "Per poter inviare devi scrivere un messaggio.";
+
+"Enter your message:" = "Scrivi il tuo messaggio:";
+
+"Invalid email or password." = "Email o password non validi.";
+"The service encountered an error. Please try again later." = "Il servizio ha riscontrato un errore. Si prega di riprovare più tardi.";
+"There was a sending your post to Tumblr." = "Si è verificato un errore durante l'invio a Tumblr.";
+
+"There was an error saving to Pinboard" = "Si è verificato un errore durante il salvataggio in Pinboard";
+
+"Sorry, Instapaper did not accept your credentials. Please try again." = "Siamo spiacenti, Instapaper non ha accettato le sue credenziali. Provare di nuovo.";
+"Sorry, Instapaper encountered an error. Please try again." = "Siamo spiacenti, Instapaper è verificato un errore. Provare di nuovo.";
+"There was a problem saving to Instapaper." = "Si è verificato un errore durante il salvataggio in Instapaper.";
+
+"Incorrect username and password" = "Nome utente e password sbagliati";
+"There was an error logging into Google Reader" = "C'è stato un errore di accesso a Google Reader";
+"There was a problem authenticating your account." = "C'è stato un problema di autenticazione con il tuo account.";
+"There was a problem saving your note." = "C'è stato un problema di salvataggio della sua nota.";
+
+"There was a problem saving to Delicious." = "C'è stato un problema di salvataggio a Delicious.";
+
+"Open in Safari" = "Apri con Safari";
+"Attached: %@" = "Allegato: %@";
+
+"You must be online to login to %@" = "È necessario essere connessi per accedere su %@";
+
+"Auto Share" = "Auto Condividi";
+"Enable auto share to skip this step in the future." = "Attiva condivisione automatico per saltare questo passo in futuro.";
+
+"You must be online in order to share with %@" = "È necessario essere connessi per condividere con %@";
+"There was an error while sharing" = "Si è verificato un errore durante la condivisione";
+
+"Could not authenticate you. Please relogin." = "Impossibile autenticarti. Si prega di riprovare.";
+"There was a problem requesting authorization from %@" = "C'è stato un problema di richiesta di autorizzazione da %@";
+"Request Error" = "Errore di Richiesta";
+"There was an error while sharing" = "Si è verificato un errore durante la condivisione";
+
+"Authorize Error" = "Errore di autorizzazione";
+"There was an error while authorizing" = "Si è verificato un errore durante l'autorizzazione";
+
+"Authenticating..." = "Autenticazione...";
+"There was a problem requesting access from %@" = "C'è stato un problema nella richiesta di accesso da %@";
+
+"Access Error" = "Errore di accesso";
+"There was an error while sharing" = "Si è verificato un errore durante la condivisione";
