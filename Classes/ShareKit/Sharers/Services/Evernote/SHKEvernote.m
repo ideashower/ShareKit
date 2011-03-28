@@ -94,6 +94,8 @@
 
 - (EDAMAuthenticationResult *)getAuthenticationResultForUsername:(NSString *)username password:(NSString *)password 
 {
+	return nil;
+#if SOMEBODY_ACTUALLY_KNOWS_EVERNOTE_PLEASE_FIX_THIS_IT_DOESNT_COMPILE
 	THTTPClient *userStoreHTTPClient = [[[THTTPClient alloc] initWithURL:[NSURL URLWithString:SHKEvernoteUserStoreURL]] autorelease];
 	TBinaryProtocol *userStoreProtocol = [[[TBinaryProtocol alloc] initWithTransport:userStoreHTTPClient] autorelease];
 	EDAMUserStoreClient *userStore = [[[EDAMUserStoreClient alloc] initWithProtocol:userStoreProtocol] autorelease];
@@ -109,6 +111,7 @@
 		return nil;
 	}
 	return [userStore authenticate :username :password :SHKEvernoteConsumerKey :SHKEvernoteSecretKey];
+#endif
 }
 
 - (void)_authFinished:(NSDictionary *)args 
@@ -168,6 +171,7 @@
 }
 
 - (void)_send {
+#if SOMEBODY_ACTUALLY_KNOWS_EVERNOTE_PLEASE_FIX_THIS_IT_DOESNT_COMPILE
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	BOOL success = NO;
 	NSString *authToken;
@@ -346,6 +350,7 @@
 									   shouldRelogin?@"1":@"0",@"shouldRelogin",
 									   nil] waitUntilDone:YES];
 	[pool release];
+#endif
 }
 
 - (NSString *)enMediaTagWithResource:(EDAMResource *)src width:(CGFloat)width height:(CGFloat)height {
