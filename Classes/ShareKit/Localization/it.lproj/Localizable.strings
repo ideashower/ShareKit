@@ -1,0 +1,96 @@
+"Email" = "Email";
+"Username" = "Nome Utente";
+"Password" = "Password";
+"Follow %@" = "Segui %@";
+"Continue" = "Continua";
+"Share" = "Condividi";
+"More..." = "Altro...";
+"Cancel" = "Annulla";
+"Slug" = "Descrizione";
+"Private" = "Privato";
+"Public" = "Publico";
+"Caption" = "Titolo";
+"Title" = "Titolo";
+"Tags" = "Tags";
+"Close" = "Chiudi";
+"Notes" = "Note";
+"Note" = "Nota";
+"Share" = "Condividi";
+"Shared" = "Condiviso";
+"Edit" = "Modifica";
+"Actions" = "Azioni";
+"Services" = "Servizi";
+"Send to %@" = "Invia a %@";
+"Copy" = "Copia";
+"Copied!" = "Copiato!";
+"Saving to %@" = "Salvataggio su %@";
+"Saved!" = "Salvato!";
+"Offline" = "Offline";
+"Error" = "Errore";
+"Login" = "Login";
+"Logging In..." = "Login in corso...";
+"Login Error" = "Errore di Login";
+"Connecting..." = "Connessione...";
+
+"Shortening URL..." = "Shortening dell'URL...";
+"Shorten URL Error" = "Errore nello shortening dell'URL";
+"We could not shorten the URL." = "Non è stato possibile effettuare lo shortening dell'URL.";
+
+"Create a free account at %@" = "Crea un account gratuito su %@";
+"Create an account at %@" = "Crea un account su %@";
+
+"Send to Twitter" = "Invia su Twitter";
+
+"Message is too long" = "Il messaggio è troppo lungo";
+"Twitter posts can only be 140 characters in length." = "I post su Twitter possono essere lunghi al massimo 140 caratteri.";
+"Message is empty" = "Il messaggio è vuoto";
+"You must enter a message in order to post." = "Devi inserire un messaggio per poter postare.";
+
+"Enter your message:" = "Inserisci il tuo messaggio:";
+
+"Invalid email or password." = "Email o Password invalidi.";
+"The service encountered an error. Please try again later." = "Il sistema ha incontrato un errore. Perfavore, riprova più tardi.";
+"There was a sending your post to Tumblr." = "Non è stato possibile inviare il post su Tumblr.";
+
+"There was an error saving to Pinboard" = "Non è stato possibile salvare su Pinboard.";
+
+"Sorry, Instapaper did not accept your credentials. Please try again." = "Instapaper non ha riconosciuto le tue credenziali. Perfavore, riprova più tardi.";
+"Sorry, Instapaper encountered an error. Please try again." = "Instapaper ha restituito un'errore. Perfavore, riprova più tardi.";
+"There was a problem saving to Instapaper." = "Non è stato possibile effettuare il salvataggio su Tumblr.";
+
+"Incorrect username and password" = "Username o Password invalidi.";
+"There was an error logging into Google Reader" = "Google Reader non ha riconosciuto le tue credenziali.";
+"There was a problem authenticating your account." = "Non è stato possibile autenticare il tuo account.";
+"There was a problem saving your note." = "Non è stato possibile effettuare il salvataggio della nota.";
+
+"There was a problem saving to Delicious." = "Non è stato possibile effettuare il salvataggio su Delicious.";
+
+"Open in Safari" = "Apri in Safari";
+"Attached: %@" = "Allegato: %@";
+
+"You must be online to login to %@" = "Devi essere online per effettuare il login in %@.";
+
+"Auto Share" = "Auto-Share";
+"Enable auto share to skip this step in the future." = "Attiva Auto-Share per saltare questo passaggio in futuro.";
+
+"You must be online in order to share with %@" = "Devi essere online per poter condividere su %@";
+"There was an error while sharing" = "Non è stato possibile condividere.";
+
+"Could not authenticate you. Please relogin." = "Non è stato possibile autenticare il tuo account. Perfavore effettua nuovamente il login.";
+"There was a problem requesting authorization from %@" = "Non è stato possibile richiedere l'autenticazione per %@.";
+"Request Error" = "Errore nella richiesta";
+"There was an error while sharing" = "Non è stato possibile condividere a causa di un'errore.";
+
+"Authorize Error" = "Errore di autorizzazione";
+"There was an error while authorizing" = "Non è stato possibile richiedere l'autorizzazione a causa di un'errore.";
+
+"Authenticating..." = "Autenticazione...";
+"There was a problem requesting access from %@" = "Non è stato possibile richiedere l'accesso per %@.";
+
+"Access Error" = "Errore di accesso";
+
+"Sharing a Link" = "Condividi un Link";
+"Sharing an Image" = "Condividi un'Immagine";
+"Sharing Text" = "Condividi un Testo";
+"Sharing a File" = "Condividi un File";
+"Logout of All Services" = "Effettua il logout da tutti i Servizi";
