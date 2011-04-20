@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07FE2747135FA99000E05A8E /* SHKPosterous.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FE2746135FA99000E05A8E /* SHKPosterous.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -109,6 +110,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07FE2745135FA99000E05A8E /* SHKPosterous.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKPosterous.h; sourceTree = "<group>"; };
+		07FE2746135FA99000E05A8E /* SHKPosterous.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKPosterous.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* ShareKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -330,6 +333,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07FE2744135FA98000E05A8E /* Posterous */ = {
+			isa = PBXGroup;
+			children = (
+				07FE2745135FA99000E05A8E /* SHKPosterous.h */,
+				07FE2746135FA99000E05A8E /* SHKPosterous.m */,
+			);
+			name = Posterous;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -726,6 +738,7 @@
 				43A536DE11DBE3B9004A1712 /* Google Reader */,
 				43150A8A11E78697008C6B68 /* Instapaper */,
 				43A536E111DBE3B9004A1712 /* Pinboard */,
+				07FE2744135FA98000E05A8E /* Posterous */,
 				43A536E411DBE3B9004A1712 /* Read It Later */,
 				43C91DF211EBAE4800F31FAE /* Tumblr */,
 				43A536E711DBE3B9004A1712 /* Twitter */,
@@ -1052,6 +1065,7 @@
 				4379F2C11291AC9700D2A41E /* SHKEvernote.m in Sources */,
 				4379F2EA1291AE5700D2A41E /* NSData+md5.m in Sources */,
 				4379F3B21291C45700D2A41E /* SHKTextMessage.m in Sources */,
+				07FE2747135FA99000E05A8E /* SHKPosterous.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

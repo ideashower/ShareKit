@@ -36,7 +36,8 @@
  leaving that decision up to the user.
  */
 
-
+// Posterous - http://apidocs.posterous.com/
+#define SHKPosterousAPIKey			@""
 
 // Delicious - https://developer.apps.yahoo.com/projects
 #define SHKDeliciousConsumerKey		@""
