@@ -1,0 +1,3 @@
+[submodule "Components/SFHFKeychainUtils"]
+	path = Components/SFHFKeychainUtils
+	url = git@github.com:jayway/SFHFKeychainUtils.git

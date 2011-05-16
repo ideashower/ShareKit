@@ -436,7 +436,7 @@ BOOL SHKinit;
 	// in the simulator.  You should NOT modify in a way that does not use keychain when actually deployed to a device.
 	return [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"%@%@%@",SHK_AUTH_PREFIX,sharerId,key]];
 #else
-	return [SFHFKeychainUtils getPasswordForUsername:key andServiceName:[NSString stringWithFormat:@"%@%@",SHK_AUTH_PREFIX,sharerId] error:nil];
+	return [SFHFKeychainUtils passwordForUsername:key serviceName:[NSString stringWithFormat:@"%@%@",SHK_AUTH_PREFIX,sharerId] error:nil];
 #endif
 }
 
@@ -448,7 +448,7 @@ BOOL SHKinit;
 	// in the simulator.  You should NOT modify in a way that does not use keychain when actually deployed to a device.
 	[[NSUserDefaults standardUserDefaults] setObject:value forKey:[NSString stringWithFormat:@"%@%@%@",SHK_AUTH_PREFIX,sharerId,key]];
 #else
-	[SFHFKeychainUtils storeUsername:key andPassword:value forServiceName:[NSString stringWithFormat:@"%@%@",SHK_AUTH_PREFIX,sharerId] updateExisting:YES error:nil];
+	[SFHFKeychainUtils storeUsername:key password:value forServiceName:[NSString stringWithFormat:@"%@%@",SHK_AUTH_PREFIX,sharerId] updateExisting:YES error:nil];
 #endif
 }
 
@@ -460,7 +460,7 @@ BOOL SHKinit;
 	// in the simulator.  You should NOT modify in a way that does not use keychain when actually deployed to a device.
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:[NSString stringWithFormat:@"%@%@%@",SHK_AUTH_PREFIX,sharerId,key]];
 #else
-	[SFHFKeychainUtils deleteItemForUsername:key andServiceName:[NSString stringWithFormat:@"%@%@",SHK_AUTH_PREFIX,sharerId] error:nil];
+	[SFHFKeychainUtils removePasswordForUsername:key serviceName:[NSString stringWithFormat:@"%@%@",SHK_AUTH_PREFIX,sharerId] error:nil];
 #endif
 }
 

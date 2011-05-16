@@ -20,11 +20,11 @@
 		43C91D1D11EB963600F31FAE /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C91D1C11EB963600F31FAE /* MainWindow-iPad.xib */; };
 		43D1DEF011D5CDD200550D75 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1DEEF11D5CDD200550D75 /* SystemConfiguration.framework */; };
 		43EF406E11D3FFF800B1F700 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EF406D11D3FFF800B1F700 /* Security.framework */; };
+		8B2F9B0113810AE900EC52A8 /* libSFHFKeychainUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2F9B0013810AD200EC52A8 /* libSFHFKeychainUtils.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A685A54A1338E1B700AE7524 /* libShareKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A685A5451338E19F00AE7524 /* libShareKit.a */; };
 		A685A54D1338E1FA00AE7524 /* SHKOAuthSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5367511DBE3B9004A1712 /* SHKOAuthSharer.m */; };
 		A685A54E1338E1FA00AE7524 /* SHKSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5367711DBE3B9004A1712 /* SHKSharer.m */; };
 		A685A54F1338E1FA00AE7524 /* UIWebView+SHK.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5367A11DBE3B9004A1712 /* UIWebView+SHK.m */; };
-		A685A5501338E1FA00AE7524 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5367E11DBE3B9004A1712 /* SFHFKeychainUtils.m */; };
 		A685A5511338E1FA00AE7524 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5368211DBE3B9004A1712 /* NSMutableURLRequest+Parameters.m */; };
 		A685A5521338E1FA00AE7524 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5368411DBE3B9004A1712 /* NSString+URLEncoding.m */; };
 		A685A5531338E1FA00AE7524 /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5368611DBE3B9004A1712 /* NSURL+Base.m */; };
@@ -117,6 +117,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8B2F9AFF13810AD200EC52A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B2F9AF813810AD200EC52A8 /* SFHFKeychainUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libSFHFKeychainUtils.a */;
+			remoteInfo = SFHFKeychainUtils;
+		};
+		8B2F9B0213810AF600EC52A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B2F9AF813810AD200EC52A8 /* SFHFKeychainUtils.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D /* SFHFKeychainUtils */;
+			remoteInfo = SFHFKeychainUtils;
+		};
 		A685A5481338E1B300AE7524 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -200,8 +214,6 @@
 		43A5367711DBE3B9004A1712 /* SHKSharer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKSharer.m; sourceTree = "<group>"; };
 		43A5367911DBE3B9004A1712 /* UIWebView+SHK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+SHK.h"; sourceTree = "<group>"; };
 		43A5367A11DBE3B9004A1712 /* UIWebView+SHK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+SHK.m"; sourceTree = "<group>"; };
-		43A5367D11DBE3B9004A1712 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
-		43A5367E11DBE3B9004A1712 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		43A5368111DBE3B9004A1712 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		43A5368211DBE3B9004A1712 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
 		43A5368311DBE3B9004A1712 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
@@ -335,6 +347,7 @@
 		43EF406D11D3FFF800B1F700 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		43FF9C7312270E9F00ADE53C /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Classes/ShareKit/Localization/en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		43FF9C7512270EB900ADE53C /* de */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = de; path = Classes/ShareKit/Localization/de.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		8B2F9AF813810AD200EC52A8 /* SFHFKeychainUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SFHFKeychainUtils.xcodeproj; path = Components/SFHFKeychainUtils/SFHFKeychainUtils.xcodeproj; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ShareKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShareKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		A685A5451338E19F00AE7524 /* libShareKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShareKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A685A6D81338E39100AE7524 /* ShareKitResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShareKitResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -365,6 +378,7 @@
 				A685A6A51338E2C500AE7524 /* MessageUI.framework in Frameworks */,
 				A685A6A61338E2C500AE7524 /* Security.framework in Frameworks */,
 				A685A6A71338E2C500AE7524 /* SystemConfiguration.framework in Frameworks */,
+				8B2F9B0113810AE900EC52A8 /* libSFHFKeychainUtils.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +407,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				8B2F9AF713810AAE00EC52A8 /* Components */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -622,21 +637,11 @@
 		43A5367B11DBE3B9004A1712 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				43A5367C11DBE3B9004A1712 /* Keychain */,
 				43A5367F11DBE3B9004A1712 /* OAuth */,
 				43A536A411DBE3B9004A1712 /* SHKRequest.h */,
 				43A536A511DBE3B9004A1712 /* SHKRequest.m */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		43A5367C11DBE3B9004A1712 /* Keychain */ = {
-			isa = PBXGroup;
-			children = (
-				43A5367D11DBE3B9004A1712 /* SFHFKeychainUtils.h */,
-				43A5367E11DBE3B9004A1712 /* SFHFKeychainUtils.m */,
-			);
-			path = Keychain;
 			sourceTree = "<group>";
 		};
 		43A5367F11DBE3B9004A1712 /* OAuth */ = {
@@ -934,6 +939,22 @@
 			name = Localization;
 			sourceTree = "<group>";
 		};
+		8B2F9AF713810AAE00EC52A8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8B2F9AF813810AD200EC52A8 /* SFHFKeychainUtils.xcodeproj */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		8B2F9AF913810AD200EC52A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B2F9B0013810AD200EC52A8 /* libSFHFKeychainUtils.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -977,6 +998,7 @@
 			);
 			dependencies = (
 				A685A6E01338E3F000AE7524 /* PBXTargetDependency */,
+				8B2F9B0313810AF600EC52A8 /* PBXTargetDependency */,
 			);
 			name = ShareKit;
 			productName = ShareKit;
@@ -1025,6 +1047,12 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8B2F9AF913810AD200EC52A8 /* Products */;
+					ProjectRef = 8B2F9AF813810AD200EC52A8 /* SFHFKeychainUtils.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A685A6D71338E39000AE7524 /* ShareKitResources */,
@@ -1033,6 +1061,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8B2F9B0013810AD200EC52A8 /* libSFHFKeychainUtils.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSFHFKeychainUtils.a;
+			remoteRef = 8B2F9AFF13810AD200EC52A8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -1083,7 +1121,6 @@
 				A685A54D1338E1FA00AE7524 /* SHKOAuthSharer.m in Sources */,
 				A685A54E1338E1FA00AE7524 /* SHKSharer.m in Sources */,
 				A685A54F1338E1FA00AE7524 /* UIWebView+SHK.m in Sources */,
-				A685A5501338E1FA00AE7524 /* SFHFKeychainUtils.m in Sources */,
 				A685A5511338E1FA00AE7524 /* NSMutableURLRequest+Parameters.m in Sources */,
 				A685A5521338E1FA00AE7524 /* NSString+URLEncoding.m in Sources */,
 				A685A5531338E1FA00AE7524 /* NSURL+Base.m in Sources */,
@@ -1163,6 +1200,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8B2F9B0313810AF600EC52A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SFHFKeychainUtils;
+			targetProxy = 8B2F9B0213810AF600EC52A8 /* PBXContainerItemProxy */;
+		};
 		A685A5491338E1B300AE7524 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A685A5441338E19F00AE7524 /* ShareKit */;
@@ -1289,7 +1331,9 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "Components/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				OTHER_LDFLAGS = "-all_load";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1304,8 +1348,10 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "Components/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-all_load";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
