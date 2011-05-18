@@ -55,7 +55,7 @@
 
 - (id)initWithStyle:(UITableViewStyle)style title:(NSString *)barTitle rightButtonTitle:(NSString *)rightButtonTitle
 {
-	if (self = [super initWithStyle:style])
+	if ((self = [super initWithStyle:style]))
 	{
 		self.title = barTitle;
 		

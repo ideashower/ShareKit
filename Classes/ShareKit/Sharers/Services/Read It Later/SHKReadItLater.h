@@ -32,4 +32,7 @@
 {
 }
 
+- (void)authFinished:(SHKRequest *)aRequest;
+- (void)sendFinished:(SHKRequest *)aRequest;
+
 @end

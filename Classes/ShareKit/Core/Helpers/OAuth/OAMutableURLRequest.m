@@ -45,9 +45,9 @@
             realm:(NSString *)aRealm
 signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
 {
-    if (self = [super initWithURL:aUrl
+    if ((self = [super initWithURL:aUrl
 					  cachePolicy:NSURLRequestReloadIgnoringCacheData
-				  timeoutInterval:10.0])
+				  timeoutInterval:10.0]))
 	{
 		consumer = [aConsumer retain];
 		
@@ -86,9 +86,9 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
             nonce:(NSString *)aNonce
         timestamp:(NSString *)aTimestamp
 {
-	if (self = [super initWithURL:aUrl
+	if ((self = [super initWithURL:aUrl
 					  cachePolicy:NSURLRequestReloadIgnoringCacheData
-				  timeoutInterval:10.0])
+				  timeoutInterval:10.0]))
 	{
 		consumer = [aConsumer retain];
 		

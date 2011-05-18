@@ -98,23 +98,23 @@ static CGFloat kBorderWidth = 10;
   CGContextSetLineWidth(context, 1.0);
     
   {
-    CGPoint points[] = {rect.origin.x+0.5, rect.origin.y-0.5,
-      rect.origin.x+rect.size.width, rect.origin.y-0.5};
+    CGPoint points[] = {{rect.origin.x+0.5, rect.origin.y-0.5},
+      {rect.origin.x+rect.size.width, rect.origin.y-0.5}};
     CGContextStrokeLineSegments(context, points, 2);
   }
   {
-    CGPoint points[] = {rect.origin.x+0.5, rect.origin.y+rect.size.height-0.5,
-      rect.origin.x+rect.size.width-0.5, rect.origin.y+rect.size.height-0.5};
+    CGPoint points[] = {{rect.origin.x+0.5, rect.origin.y+rect.size.height-0.5},
+      {rect.origin.x+rect.size.width-0.5, rect.origin.y+rect.size.height-0.5}};
     CGContextStrokeLineSegments(context, points, 2);
   }
   {
-    CGPoint points[] = {rect.origin.x+rect.size.width-0.5, rect.origin.y,
-      rect.origin.x+rect.size.width-0.5, rect.origin.y+rect.size.height};
+    CGPoint points[] = {{rect.origin.x+rect.size.width-0.5, rect.origin.y},
+      {rect.origin.x+rect.size.width-0.5, rect.origin.y+rect.size.height}};
     CGContextStrokeLineSegments(context, points, 2);
   }
   {
-    CGPoint points[] = {rect.origin.x+0.5, rect.origin.y,
-      rect.origin.x+0.5, rect.origin.y+rect.size.height};
+    CGPoint points[] = {{rect.origin.x+0.5, rect.origin.y},
+      {rect.origin.x+0.5, rect.origin.y+rect.size.height}};
     CGContextStrokeLineSegments(context, points, 2);
   }
   
@@ -302,7 +302,7 @@ static CGFloat kBorderWidth = 10;
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
 - (id)initWithSession:(FBSession*)session {
-  if (self = [super initWithFrame:CGRectZero]) {
+  if ((self = [super initWithFrame:CGRectZero])) {
     _delegate = nil;
     _session = [session retain];
     _loadingURL = nil;

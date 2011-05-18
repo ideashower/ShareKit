@@ -35,7 +35,7 @@ static NSString* kStreamURL = @"http://www.facebook.com/connect/prompt_feed.php"
 // NSObject
 
 - (id)initWithSession:(FBSession*)session {
-	if (self = [super initWithSession:session]) {
+	if ((self = [super initWithSession:session])) {
 		_attachment        = @"";
 		_actionLinks       = @"";
 		_targetId          = @"";

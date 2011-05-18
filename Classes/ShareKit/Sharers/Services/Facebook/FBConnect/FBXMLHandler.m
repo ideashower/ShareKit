@@ -75,7 +75,7 @@
 // NSObject
 
 - (id)init {
-  if (self = [super init]) {
+  if ((self = [super init])) {
     _stack = [[NSMutableArray alloc] init];
     _nameStack = [[NSMutableArray alloc] init];
     _rootObject = nil;

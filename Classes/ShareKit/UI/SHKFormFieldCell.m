@@ -153,9 +153,10 @@
 		case SHKFormFieldTypeSwitch:
 			return toggle.on ? SHKFormFieldSwitchOn : SHKFormFieldSwitchOff;
 			break;
+		default:
+			return textField.text;
+			break;
 	}
-	
-	return textField.text;
 }
 
 @end
