@@ -53,6 +53,12 @@
 // Read It Later - http://readitlaterlist.com/api/?shk
 #define SHKReadItLaterKey			@""
 
+// Evernote - https://www.evernote.com/about/developer/api/#key
+#define SHKEvernoteSecretKey        @""
+#define SHKEvernoteConsumerKey      @""
+#define SHKEvernoteUserStoreURL     @""
+#define SHKEvernoteNetStoreURLBase  @""
+
 // Twitter - http://dev.twitter.com/apps/new
 /*
  Important Twitter settings to get right:

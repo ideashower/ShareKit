@@ -335,6 +335,12 @@
 	return [[NSUserDefaults standardUserDefaults] setBool:b forKey:[NSString stringWithFormat:@"%@_shouldAutoShare", [self sharerId]]];
 }
 
+-(void)postAuthorizationNotification {
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:[self sharerId] forKey:@"sharerId"];
+    NSNotification *note = [NSNotification notificationWithName:@"SHKLogin" object:self userInfo:userInfo];
+    [[NSNotificationCenter defaultCenter] postNotification:note];
+} 
+
 #pragma mark Authorization Form
 
 - (void)authorizationFormShow
@@ -385,9 +391,12 @@
 		value = [formValues objectForKey:field.key];
 		[SHK setAuthValue:value forKey:field.key forSharer:sharerId];
 	}	
-		
-	// -- Try to share again
-	[self share];
+	
+    [self postAuthorizationNotification];    
+    
+    // -- Try to share again
+    if ([self validateItem])  //only share if we have an item -  wont have item if only logging in
+        [self share];
 }
 
 - (NSArray *)authorizationFormFields

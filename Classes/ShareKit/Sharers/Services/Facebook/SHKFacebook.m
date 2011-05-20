@@ -230,6 +230,8 @@
 	// Try to share again
 	if (pendingFacebookAction == SHKFacebookPendingLogin)
 	{
+        [self postAuthorizationNotification];   
+        
 		self.pendingFacebookAction = SHKFacebookPendingNone;
 		[self share];
 	}

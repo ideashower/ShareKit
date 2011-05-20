@@ -258,6 +258,8 @@
 	[SHK setAuthValue:accessToken.sessionHandle
 			   forKey:@"sessionHandle"
 			forSharer:[self sharerId]];
+    
+    [self postAuthorizationNotification];
 }
 
 + (void)deleteStoredAccessToken
