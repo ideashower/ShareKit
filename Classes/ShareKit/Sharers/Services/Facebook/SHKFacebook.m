@@ -181,7 +181,11 @@ static NSString *const SHKFacebookPendingItem = @"SHKFacebookPendingItem";
 		[[NSUserDefaults standardUserDefaults] removeObjectForKey:SHKFacebookPendingItem];
 	}
 	
-	[self share];
+    [self postAuthorizationNotification];    
+    
+    // -- Try to share again
+    if ([self validateItem])  //only share if we have an item -  wont have item if only logging in
+        [self share];
 }
 
 - (void)fbDidNotLogin:(BOOL)cancelled {
