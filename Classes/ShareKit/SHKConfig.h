@@ -79,6 +79,9 @@
 #define SHKBitLyLogin				@""
 #define SHKBitLyKey					@""
 
+// Plurk (a twitter-like web service) - go to "Get an API key" in http://www.plurk.com/API
+#define SHKPlurkAPIKey				@""
+
 // ShareMenu Ordering
 #define SHKShareMenuAlphabeticalOrder 1 // Setting this to 1 will show list in Alphabetical Order, setting to 0 will follow the order in SHKShares.plist
 
