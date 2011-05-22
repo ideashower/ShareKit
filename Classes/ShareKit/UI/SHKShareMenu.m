@@ -250,9 +250,10 @@
 		UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 		
 		UISwitch *toggle = (UISwitch *)[cell editingAccessoryView];
-		[toggle setOn:!toggle.on animated:YES];
+		BOOL nowOn = !toggle.on;
+		[toggle setOn:nowOn animated:YES];
 		
-		if (toggle.on)
+		if (nowOn)
 			[exclusions removeObjectForKey:[rowData objectForKey:@"className"]];
 		
 		else 
