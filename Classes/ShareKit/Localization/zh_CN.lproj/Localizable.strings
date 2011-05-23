@@ -97,4 +97,10 @@
 "Facebook" = "脸书";
 "401 Forbidden" = "401 存取被拒";
 "Sent from %@" = "从 %@ 寄来";
-
+"Requires login" = "需要先登入";
+"Invalid plurk data" = "无效的噗浪内容";
+"This plurk data was already sent" = "相同的噗浪内容已经送过了";
+"There was an error sending your post to %@." = "发送至 %@ 的过程中出错。";
+"Invalid username or password." = "使用者名称或密码不正确";
+"URL is from spam domain" = "网址来自垃圾网域名";
+"Too many new Plurks" = "已经发太多新噗了";

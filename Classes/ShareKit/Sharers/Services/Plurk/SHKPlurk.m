@@ -118,19 +118,78 @@ static NSString * const kPlurkAddURL = @"http://www.plurk.com/API/Timeline/plurk
 
 #pragma mark -
 #pragma mark UI Implementation
+- (void)shortenURL
+{	
+	if (![SHK connected])
+	{
+		[item setCustomValue:[NSString stringWithFormat:@"%@%@", [item.URL absoluteString], [item.title length] > 0 ? [NSString stringWithFormat:@" (%@) ", item.title] : @" "] 
+					  forKey:@"status"];
+		//[item setCustomValue:[NSString stringWithFormat:@"%@ %@", item.title, [item.URL.absoluteString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] forKey:@"status"];
+		[self showPlurkForm];		
+		return;
+	}
+	
+	if (!quiet)
+		[[SHKActivityIndicator currentIndicator] displayActivity:SHKLocalizedString(@"Shortening URL...")];
+	
+	self.request = [[[SHKRequest alloc] initWithURL:[NSURL URLWithString:[NSMutableString stringWithFormat:@"http://api.bit.ly/v3/shorten?login=%@&apikey=%@&longUrl=%@&format=txt",
+																		  SHKBitLyLogin,
+																		  SHKBitLyKey,																		  
+																		  SHKEncodeURL(item.URL)
+																		  ]]
+											 params:nil
+										   delegate:self
+								 isFinishedSelector:@selector(shortenURLFinished:)
+											 method:@"GET"
+										  autostart:YES] autorelease];
+}
+
+- (void)shortenURLFinished:(SHKRequest *)aRequest
+{
+	[[SHKActivityIndicator currentIndicator] hide];
+	
+	NSString *result = [[aRequest getResult] stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+	
+	if (result == nil || [NSURL URLWithString:result] == nil)
+	{
+		// TODO - better error message
+		[[[[UIAlertView alloc] initWithTitle:SHKLocalizedString(@"Shorten URL Error")
+									 message:SHKLocalizedString(@"We could not shorten the URL.")
+									delegate:nil
+						   cancelButtonTitle:SHKLocalizedString(@"Continue")
+						   otherButtonTitles:nil] autorelease] show];
+		
+		[item setCustomValue:[NSString stringWithFormat:@"%@%@", [item.URL absoluteString], [item.title length] > 0 ? [NSString stringWithFormat:@" (%@) ", item.title] : @" "] 
+					  forKey:@"status"];
+		//[item setCustomValue:[NSString stringWithFormat:@"%@ %@", item.text ? item.text : item.title, [item.URL.absoluteString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] forKey:@"status"];
+	}
+	
+	else
+	{		
+		///if already a bitly login, use url instead
+		if ([result isEqualToString:@"ALREADY_A_BITLY_LINK"])
+			result = [item.URL.absoluteString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+		
+		[item setCustomValue:[NSString stringWithFormat:@"%@%@", result, [item.title length] > 0 ? [NSString stringWithFormat:@" (%@) ", item.title] : @" "] 
+					  forKey:@"status"];
+		//[item setCustomValue:[NSString stringWithFormat:@"%@ %@", item.text ? item.text : item.title, result] forKey:@"status"];
+	}
+	
+	[self showPlurkForm];
+}
 
 - (void)show
 {
 	if (item.shareType == SHKShareTypeURL)
 	{
-		[item setCustomValue:[NSString stringWithFormat:@"%@ ", [item.URL absoluteString]] forKey:@"status"];
+		[self shortenURL];
 	}
 	else if (item.shareType == SHKShareTypeText)
 	{
 		[item setCustomValue:item.text forKey:@"status"];
+		[self showPlurkForm];
 		
 	}
-	[self showPlurkForm];
 }
 
 - (void)showPlurkForm
@@ -187,7 +246,7 @@ static NSString * const kPlurkAddURL = @"http://www.plurk.com/API/Timeline/plurk
 
 - (BOOL)validate
 {
-	NSString *status = [item customValueForKey:@"status"];
+	NSString *status = [[item customValueForKey:@"status"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 	return status != nil && status.length >= 0 && status.length <= PLURK_DATA_MAX;
 }
 
@@ -269,35 +328,42 @@ static NSString *URLencode(NSString *str){
 	if (!aRequest.success) {
 		if (aRequest.response.statusCode == 400) {
 			NSDictionary *dict = [[JSONDecoder decoder] objectWithData:aRequest.data];
-			NSLog(@"error happened %@", [[dict valueForKey:@"error_text"] class]);
-			NSLog(@"   %@", [dict valueForKey:@"error_text"]);
+			NSLog(@"dict=%@", dict);
+			NSString *error_text = [dict valueForKey:@"error_text"];
+			NSLog(@"error happened %@, %@", [[dict valueForKey:@"error_text"] class], error_text);
 
-			if([(NSString *)[dict valueForKey:@"error_text"] isEqualToString:@"Requires login"]){
+			if([error_text isEqualToString:@"Requires login"]){
 				[self sendDidFailWithError:[SHK error:SHKLocalizedString(@"Requires login")] shouldRelogin:YES];
-				NSLog(@"1 dict=%@", dict);
 				return;
 			}
-			else if([(NSString *)[dict valueForKey:@"error_text"] isEqualToString:@"Invalid data"] ||
-					[(NSString *)[dict valueForKey:@"error_text"] isEqualToString:@"Content is empty"]){
+			else if([error_text isEqualToString:@"Invalid data"]){
 				[self sendDidFailWithError:[SHK error:SHKLocalizedString(@"Invalid plurk data")]];
-				NSLog(@"2 dict=%@", dict);
 				return;
 			}
-			else if([(NSString *)[dict valueForKey:@"error_text"] isEqualToString:@"Content too long"]){
+			else if([error_text isEqualToString:@"Content too long"]){
 				[self sendDidFailWithError:[SHK error:SHKLocalizedString(@"Message is too long")]];
-				NSLog(@"3 dict=%@", dict);
 				return;
 			}
-			else if([(NSString *)[dict valueForKey:@"error_text"] isEqualToString:@"anti-flood-same-content"] ||
-					[(NSString *)[dict valueForKey:@"error_text"] isEqualToString:@"anti-flood-too-many-new"] ||
-					[(NSString *)[dict valueForKey:@"error_text"] isEqualToString:@"anti-flood-spam-domain"]){
+			else if([error_text isEqualToString:@"Plurk content can't be empty"] ||
+					[error_text isEqualToString:@"Content is empty"]){
+				[self sendDidFailWithError:[SHK error:SHKLocalizedString(@"Message is empty")]];
+				return;
+			}
+			else if([error_text isEqualToString:@"anti-flood-same-content"]){
 				[self sendDidFailWithError:[SHK error:SHKLocalizedString(@"This plurk data was already sent")]];
-				NSLog(@"4 dict=%@", dict);
+				return;
+			}
+			else if([error_text isEqualToString:@"anti-flood-spam-domain"]){
+				[self sendDidFailWithError:[SHK error:SHKLocalizedString(@"URL is from spam domain")]];
+				return;
+			}
+			else if([error_text isEqualToString:@"anti-flood-too-many-new"]){
+				[self sendDidFailWithError:[SHK error:SHKLocalizedString(@"Too many new Plurks")]];
 				return;
 			}
 		}
         
-		[self sendDidFailWithError:[SHK error:SHKLocalizedString(@"There was an error sending your post to Plurk.")]];
+		[self sendDidFailWithError:[SHK error:SHKLocalizedString(@"There was an error sending your post to %@.", SHKLocalizedString(@"Plurk"))]];
 		return;
 	}
     

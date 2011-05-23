@@ -30,7 +30,7 @@
 																							  target:self
 																							  action:@selector(cancel)];
 		
-		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Send to Plurk"
+		self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:SHKLocalizedString(@"Send to %@", SHKLocalizedString(@"Plurk"))
 																				  style:UIBarButtonItemStyleDone
 																				 target:self
 																				 action:@selector(save)];

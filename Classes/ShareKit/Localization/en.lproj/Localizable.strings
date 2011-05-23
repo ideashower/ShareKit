@@ -97,4 +97,10 @@
 "Facebook" = "Facebook";
 "401 Forbidden" = "401 Forbidden";
 "Sent from %@" = "Sent from %@";
-
+"Requires login" = "Require login";
+"Invalid plurk data" = "Invalid plurk data";
+"This plurk data was already sent" = "This plurk data was already sent";
+"There was an error sending your post to %@." = "There was an error sending your post to %@.";
+"Invalid username or password." = "Invalid username or password.";
+"URL is from spam domain" = "URL is from spam domain";
+"Too many new Plurks" = "Too many new Plurks";

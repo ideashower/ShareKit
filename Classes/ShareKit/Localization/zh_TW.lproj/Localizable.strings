@@ -27,9 +27,9 @@
 "Saved!" = "已儲存！";
 "Offline" = "離線";
 "Error" = "錯誤";
-"Login" = "登錄";
-"Logging In..." = "登錄中…";
-"Login Error" = "登錄出錯";
+"Login" = "登入";
+"Logging In..." = "登入中…";
+"Login Error" = "登入出錯";
 "Connecting..." = "連線中…";
 
 "Shortening URL..." = "縮短網址…";
@@ -59,7 +59,7 @@
 "There was a problem saving to Instapaper." = "儲存到 Instapaper 的過程中出錯。";
 
 "Incorrect username and password" = "用戶名或密碼不正確";
-"There was an error logging into Google Reader" = "登錄到 Google Reader 的過程中出错";
+"There was an error logging into Google Reader" = "登入到 Google Reader 的過程中出错";
 "There was a problem authenticating your account." = "驗證您帳號的過程中出錯。";
 "There was a problem saving your note." = "儲存您筆記的過程中出錯。";
 
@@ -68,7 +68,7 @@
 "Open in Safari" = "在 Safari 中開啟";
 "Attached: %@" = "附檔： %@";
 
-"You must be online to login to %@" = "要登錄到 %@ 上您必須在線上";
+"You must be online to login to %@" = "要登入到 %@ 上您必須在線上";
 
 "Auto Share" = "自動分享";
 "Enable auto share to skip this step in the future." = "啟動自動分享，之後即會跳過此步驟。";
@@ -76,7 +76,7 @@
 "You must be online in order to share with %@" = "要分享 %@ 的話您必須在線上。";
 "There was an error while sharing" = "分享過程中出錯";
 
-"Could not authenticate you. Please relogin." = "無法驗證，請重新登錄。";
+"Could not authenticate you. Please relogin." = "無法驗證，請重新登入。";
 "There was a problem requesting authorization from %@" = "在向 %@ 請求驗證的過程中出錯";
 "Request Error" = "請求錯誤";
 "There was an error while sharing" = "分享過程中出錯";
@@ -97,4 +97,10 @@
 "Facebook" = "臉書";
 "401 Forbidden" = "401 存取被拒";
 "Sent from %@" = "從 %@ 寄來";
-
+"Requires login" = "需要先登入";
+"Invalid plurk data" = "無效的噗浪內容";
+"This plurk data was already sent" = "相同的噗浪內容已經送過了";
+"There was an error sending your post to %@." = "發送至 %@ 的過程中出錯。";
+"Invalid username or password." = "使用者名稱或密碼不正確";
+"URL is from spam domain" = "網址來自垃圾網域名";
+"Too many new Plurks" = "已經發太多新噗了";
