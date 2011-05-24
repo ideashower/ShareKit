@@ -19,7 +19,7 @@ typedef enum
 	SHKFacebookPendingLink
 } SHKFacebookPendingAction;
 
-@interface SHKFacebook : SHKSharer <FBSessionDelegate, FBRequestDelegate> {
+@interface SHKFacebook : SHKSharer <FBSessionDelegate, FBRequestDelegate, FBDialogDelegate> {
 	Facebook *facebook;
 	SHKFacebookPendingAction pendingFacebookAction;
 	NSArray *permissions;

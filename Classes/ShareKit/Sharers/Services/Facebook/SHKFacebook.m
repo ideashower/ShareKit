@@ -19,7 +19,7 @@ static NSString *const SHKFacebookExpirationDate = @"SHKFacebookExpirationDate";
 static NSString *const SHKFacebookPendingItem = @"SHKFacebookPendingItem";
 
 - (id)init {
-	if (self = [super init]) {
+	if ((self = [super init])) {
 		permissions = [[NSArray alloc] initWithObjects:@"publish_stream", @"offline_access", nil];
 	}
 	
@@ -69,7 +69,7 @@ static NSString *const SHKFacebookPendingItem = @"SHKFacebookPendingItem";
 #pragma mark Configuration : Dynamic Enable
 
 - (BOOL)shouldAutoShare {
-	return YES; // FBConnect presents its own dialog
+	return NO;
 }
 
 #pragma mark -
@@ -112,11 +112,17 @@ static NSString *const SHKFacebookPendingItem = @"SHKFacebookPendingItem";
 		if ([item customValueForKey:@"image"]) {
 			[params setObject:[item customValueForKey:@"image"] forKey:@"picture"];
 		}
-		
-		[self.facebook requestWithGraphPath:@"me/feed" 
-								  andParams:params 
-							  andHttpMethod:@"POST" 
-								andDelegate:self];
+
+        if([self shouldAutoShare]) {
+            [self.facebook requestWithGraphPath:@"me/feed" 
+                                      andParams:params 
+                                  andHttpMethod:@"POST" 
+                                    andDelegate:self];
+            [self sendDidStart];
+        } else {
+            [self.facebook dialog:@"feed" andParams:params andDelegate:self];
+        }
+
 	}
 	else if (item.shareType == SHKShareTypeText) {
 		NSString *actionLinks = [NSString stringWithFormat:@"{\"name\":\"Get %@\", \"link\":\"%@\"}",
@@ -128,10 +134,15 @@ static NSString *const SHKFacebookPendingItem = @"SHKFacebookPendingItem";
 									   actionLinks, @"actions",
 									   nil];
 		
-		[self.facebook requestWithGraphPath:@"me/feed" 
-								  andParams:params 
-							  andHttpMethod:@"POST" 
-								andDelegate:self];
+        if([self shouldAutoShare]) {
+            [self.facebook requestWithGraphPath:@"me/feed" 
+                                      andParams:params 
+                                  andHttpMethod:@"POST" 
+                                    andDelegate:self];
+            [self sendDidStart];
+        } else {
+            [self.facebook dialog:@"feed" andParams:params andDelegate:self];
+        }
 	}
 	else if (item.shareType == SHKShareTypeImage) {
 		NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
@@ -139,15 +150,18 @@ static NSString *const SHKFacebookPendingItem = @"SHKFacebookPendingItem";
 									   item.title, @"message",
 									   nil];
 		
-		[self.facebook requestWithGraphPath:@"me/photos" 
-								  andParams:params 
-							  andHttpMethod:@"POST" 
-								andDelegate:self];
+        [self.facebook requestWithGraphPath:@"me/photos" 
+                              andParams:params 
+                          andHttpMethod:@"POST" 
+                            andDelegate:self];
+        [self sendDidStart];
 	}
 	
-	[self sendDidStart];
-	
 	return YES;
+}
+
+- (void) show {
+    [self tryToSend];
 }
 
 - (void)dialogDidComplete:(FBDialog *)dialog {
