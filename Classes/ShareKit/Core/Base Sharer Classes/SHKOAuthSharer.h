@@ -35,6 +35,7 @@
 	NSString *consumerKey;
 	NSString *secretKey;
 	NSURL *authorizeCallbackURL;
+	NSString *realm;
 	
 	NSURL *authorizeURL;
 	NSURL *accessURL;
@@ -52,6 +53,7 @@
 @property (nonatomic, retain) NSString *consumerKey;
 @property (nonatomic, retain) NSString *secretKey;
 @property (nonatomic, retain) NSURL *authorizeCallbackURL;
+@property (nonatomic, retain) NSString *realm;
 
 @property (nonatomic, retain) NSURL *authorizeURL;
 @property (nonatomic, retain) NSURL *accessURL;

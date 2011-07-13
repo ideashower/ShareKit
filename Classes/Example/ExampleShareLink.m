@@ -27,6 +27,7 @@
 
 #import "ExampleShareLink.h"
 #import "SHK.h"
+#import "UIWebView+SHKPlus.h"
 
 @implementation ExampleShareLink
 
@@ -40,7 +41,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
+	if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]))
 	{
 		self.toolbarItems = [NSArray arrayWithObjects:
 								[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease],
@@ -56,6 +57,9 @@
 - (void)share
 {
 	SHKItem *item = [SHKItem URL:webView.request.URL title:[webView pageTitle]];
+	
+	[item setCustomValue:[webView pageDescription] forKey:@"linkDescription"];
+	
 	SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
 	[actionSheet showFromToolbar:self.navigationController.toolbar]; 
 }

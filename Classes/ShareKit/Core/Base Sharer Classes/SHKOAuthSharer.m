@@ -32,7 +32,7 @@
 
 @implementation SHKOAuthSharer
 
-@synthesize consumerKey, secretKey, authorizeCallbackURL;
+@synthesize consumerKey, secretKey, authorizeCallbackURL, realm;
 @synthesize authorizeURL, requestURL, accessURL;
 @synthesize consumer, requestToken, accessToken;
 @synthesize signatureProvider;
@@ -44,6 +44,8 @@
 	[consumerKey release];
 	[secretKey release];
 	[authorizeCallbackURL release];
+	self.realm = nil;
+	
 	[authorizeURL release];
 	[requestURL release];
 	[accessURL release];
@@ -81,7 +83,7 @@
     OAMutableURLRequest *oRequest = [[OAMutableURLRequest alloc] initWithURL:requestURL
                                                                    consumer:consumer
                                                                       token:nil   // we don't have a Token yet
-                                                                      realm:nil   // our service provider doesn't specify a realm
+                                                                      realm:self.realm   // our service provider doesn't specify a realm
 														   signatureProvider:signatureProvider];
 																
 	
@@ -189,7 +191,7 @@
     OAMutableURLRequest *oRequest = [[OAMutableURLRequest alloc] initWithURL:accessURL
                                                                    consumer:consumer
 																	   token:(refresh ? accessToken : requestToken)
-                                                                      realm:nil   // our service provider doesn't specify a realm
+                                                                      realm:self.realm   // our service provider doesn't specify a realm
                                                           signatureProvider:signatureProvider]; // use the default method, HMAC-SHA1
 	
     [oRequest setHTTPMethod:@"POST"];

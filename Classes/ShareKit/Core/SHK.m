@@ -158,6 +158,13 @@ BOOL SHKinit;
 			vc.modalTransitionStyle = [SHK modalTransitionStyle];
 		
 		[topViewController presentModalViewController:vc animated:YES];
+
+/////	This is where you'd resize any view presented by the Sharer (JRS)
+//		The view size is determined by the modal view controller settings (and device)
+//
+//		vc.view.superview.frame = CGRectMake(0, 0, 300, 300);//it's important to do this after presentModalViewController
+//		vc.view.superview.center = topViewController.view.center;
+		
 		[(UINavigationController *)vc navigationBar].barStyle = 
 		[(UINavigationController *)vc toolbar].barStyle = [SHK barStyle];
 		self.currentView = vc;

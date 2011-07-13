@@ -81,7 +81,6 @@
 		43A5372D11DBE3B9004A1712 /* SHKPinboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536E311DBE3B9004A1712 /* SHKPinboard.m */; };
 		43A5372E11DBE3B9004A1712 /* SHKReadItLater.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536E611DBE3B9004A1712 /* SHKReadItLater.m */; };
 		43A5372F11DBE3B9004A1712 /* SHKTwitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536E911DBE3B9004A1712 /* SHKTwitter.m */; };
-		43A5373011DBE3B9004A1712 /* SHKTwitterForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536EB11DBE3B9004A1712 /* SHKTwitterForm.m */; };
 		43A5373111DBE3B9004A1712 /* SHKActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536EF11DBE3B9004A1712 /* SHKActionSheet.m */; };
 		43A5373211DBE3B9004A1712 /* SHKActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536F111DBE3B9004A1712 /* SHKActivityIndicator.m */; };
 		43A5373311DBE3B9004A1712 /* SHKFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A536F311DBE3B9004A1712 /* SHKFormController.m */; };
@@ -106,6 +105,17 @@
 		43D1DEF011D5CDD200550D75 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1DEEF11D5CDD200550D75 /* SystemConfiguration.framework */; };
 		43EF406E11D3FFF800B1F700 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EF406D11D3FFF800B1F700 /* Security.framework */; };
 		43FF9C7412270E9F00ADE53C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43FF9C7212270E9F00ADE53C /* Localizable.strings */; };
+		694D231913B56B7C00BF0F4C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 694D231813B56B7C00BF0F4C /* QuartzCore.framework */; };
+		699073AC13C6629E009E3524 /* SHKLinkedInField.m in Sources */ = {isa = PBXBuildFile; fileRef = 699073A313C6629E009E3524 /* SHKLinkedInField.m */; };
+		699073AD13C6629E009E3524 /* SHKLinkedInForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 699073A513C6629E009E3524 /* SHKLinkedInForm.m */; };
+		699073AE13C6629E009E3524 /* SHKLinkedInFormStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 699073A713C6629E009E3524 /* SHKLinkedInFormStyle.m */; };
+		699073AF13C6629E009E3524 /* SHKLinkedInMultilineTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 699073A913C6629E009E3524 /* SHKLinkedInMultilineTextField.m */; };
+		699073B013C6629E009E3524 /* SHKLinkedInTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 699073AB13C6629E009E3524 /* SHKLinkedInTextField.m */; };
+		699073B913C7BB55009E3524 /* SHKLinkedInURLField.m in Sources */ = {isa = PBXBuildFile; fileRef = 699073B813C7BB52009E3524 /* SHKLinkedInURLField.m */; };
+		699073C513C7BBE3009E3524 /* SHKItem+KVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 699073C213C7BBE3009E3524 /* SHKItem+KVC.m */; };
+		699073C613C7BBE3009E3524 /* UIWebView+SHKPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 699073C413C7BBE3009E3524 /* UIWebView+SHKPlus.m */; };
+		6994F89E13B008C3005BC46B /* SHKLinkedIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 6994F89D13B008C3005BC46B /* SHKLinkedIn.m */; };
+		69A0C3BF13B1C6120018837B /* SHKTwitterForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A0C3BE13B1C6120018837B /* SHKTwitterForm.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -264,8 +274,6 @@
 		43A536E611DBE3B9004A1712 /* SHKReadItLater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKReadItLater.m; sourceTree = "<group>"; };
 		43A536E811DBE3B9004A1712 /* SHKTwitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKTwitter.h; sourceTree = "<group>"; };
 		43A536E911DBE3B9004A1712 /* SHKTwitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKTwitter.m; sourceTree = "<group>"; };
-		43A536EA11DBE3B9004A1712 /* SHKTwitterForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKTwitterForm.h; sourceTree = "<group>"; };
-		43A536EB11DBE3B9004A1712 /* SHKTwitterForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKTwitterForm.m; sourceTree = "<group>"; };
 		43A536EC11DBE3B9004A1712 /* SHKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKConfig.h; sourceTree = "<group>"; };
 		43A536EE11DBE3B9004A1712 /* SHKActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKActionSheet.h; sourceTree = "<group>"; };
 		43A536EF11DBE3B9004A1712 /* SHKActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKActionSheet.m; sourceTree = "<group>"; };
@@ -310,6 +318,27 @@
 		43EF406D11D3FFF800B1F700 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		43FF9C7312270E9F00ADE53C /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Classes/ShareKit/Localization/en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		43FF9C7512270EB900ADE53C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Classes/ShareKit/Localization/de.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		694D231813B56B7C00BF0F4C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		699073A213C6629E009E3524 /* SHKLinkedInField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHKLinkedInField.h; path = LinkedIn/UI/SHKLinkedInField.h; sourceTree = "<group>"; };
+		699073A313C6629E009E3524 /* SHKLinkedInField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHKLinkedInField.m; path = LinkedIn/UI/SHKLinkedInField.m; sourceTree = "<group>"; };
+		699073A413C6629E009E3524 /* SHKLinkedInForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHKLinkedInForm.h; path = LinkedIn/UI/SHKLinkedInForm.h; sourceTree = "<group>"; };
+		699073A513C6629E009E3524 /* SHKLinkedInForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHKLinkedInForm.m; path = LinkedIn/UI/SHKLinkedInForm.m; sourceTree = "<group>"; };
+		699073A613C6629E009E3524 /* SHKLinkedInFormStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHKLinkedInFormStyle.h; path = LinkedIn/UI/SHKLinkedInFormStyle.h; sourceTree = "<group>"; };
+		699073A713C6629E009E3524 /* SHKLinkedInFormStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHKLinkedInFormStyle.m; path = LinkedIn/UI/SHKLinkedInFormStyle.m; sourceTree = "<group>"; };
+		699073A813C6629E009E3524 /* SHKLinkedInMultilineTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHKLinkedInMultilineTextField.h; path = LinkedIn/UI/SHKLinkedInMultilineTextField.h; sourceTree = "<group>"; };
+		699073A913C6629E009E3524 /* SHKLinkedInMultilineTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHKLinkedInMultilineTextField.m; path = LinkedIn/UI/SHKLinkedInMultilineTextField.m; sourceTree = "<group>"; };
+		699073AA13C6629E009E3524 /* SHKLinkedInTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHKLinkedInTextField.h; path = LinkedIn/UI/SHKLinkedInTextField.h; sourceTree = "<group>"; };
+		699073AB13C6629E009E3524 /* SHKLinkedInTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHKLinkedInTextField.m; path = LinkedIn/UI/SHKLinkedInTextField.m; sourceTree = "<group>"; };
+		699073B713C7BB4E009E3524 /* SHKLinkedInURLField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHKLinkedInURLField.h; path = LinkedIn/UI/SHKLinkedInURLField.h; sourceTree = "<group>"; };
+		699073B813C7BB52009E3524 /* SHKLinkedInURLField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHKLinkedInURLField.m; path = LinkedIn/UI/SHKLinkedInURLField.m; sourceTree = "<group>"; };
+		699073C113C7BBE3009E3524 /* SHKItem+KVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SHKItem+KVC.h"; sourceTree = "<group>"; };
+		699073C213C7BBE3009E3524 /* SHKItem+KVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SHKItem+KVC.m"; sourceTree = "<group>"; };
+		699073C313C7BBE3009E3524 /* UIWebView+SHKPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+SHKPlus.h"; sourceTree = "<group>"; };
+		699073C413C7BBE3009E3524 /* UIWebView+SHKPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+SHKPlus.m"; sourceTree = "<group>"; };
+		6994F89C13B008C3005BC46B /* SHKLinkedIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHKLinkedIn.h; path = LinkedIn/SHKLinkedIn.h; sourceTree = "<group>"; };
+		6994F89D13B008C3005BC46B /* SHKLinkedIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHKLinkedIn.m; path = LinkedIn/SHKLinkedIn.m; sourceTree = "<group>"; };
+		69A0C3BD13B1C6120018837B /* SHKTwitterForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKTwitterForm.h; sourceTree = "<group>"; };
+		69A0C3BE13B1C6120018837B /* SHKTwitterForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKTwitterForm.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ShareKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShareKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -324,6 +353,7 @@
 				4312CF7C11CB33E200E61D7A /* MessageUI.framework in Frameworks */,
 				43EF406E11D3FFF800B1F700 /* Security.framework in Frameworks */,
 				43D1DEF011D5CDD200550D75 /* SystemConfiguration.framework in Frameworks */,
+				694D231913B56B7C00BF0F4C /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +414,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				694D231813B56B7C00BF0F4C /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
@@ -725,6 +756,7 @@
 				43A536C411DBE3B9004A1712 /* Facebook */,
 				43A536DE11DBE3B9004A1712 /* Google Reader */,
 				43150A8A11E78697008C6B68 /* Instapaper */,
+				6994F89913B00767005BC46B /* LinkedIn */,
 				43A536E111DBE3B9004A1712 /* Pinboard */,
 				43A536E411DBE3B9004A1712 /* Read It Later */,
 				43C91DF211EBAE4800F31FAE /* Tumblr */,
@@ -815,8 +847,8 @@
 			children = (
 				43A536E811DBE3B9004A1712 /* SHKTwitter.h */,
 				43A536E911DBE3B9004A1712 /* SHKTwitter.m */,
-				43A536EA11DBE3B9004A1712 /* SHKTwitterForm.h */,
-				43A536EB11DBE3B9004A1712 /* SHKTwitterForm.m */,
+				69A0C3BD13B1C6120018837B /* SHKTwitterForm.h */,
+				69A0C3BE13B1C6120018837B /* SHKTwitterForm.m */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
@@ -830,10 +862,10 @@
 				43A536F111DBE3B9004A1712 /* SHKActivityIndicator.m */,
 				43A536F211DBE3B9004A1712 /* SHKFormController.h */,
 				43A536F311DBE3B9004A1712 /* SHKFormController.m */,
-				43A536F411DBE3B9004A1712 /* SHKFormFieldCell.h */,
-				43A536F511DBE3B9004A1712 /* SHKFormFieldCell.m */,
 				43A536F611DBE3B9004A1712 /* SHKFormFieldSettings.h */,
 				43A536F711DBE3B9004A1712 /* SHKFormFieldSettings.m */,
+				43A536F411DBE3B9004A1712 /* SHKFormFieldCell.h */,
+				43A536F511DBE3B9004A1712 /* SHKFormFieldCell.m */,
 				43A536FC11DBE3B9004A1712 /* SHKShareMenu.h */,
 				43A536FD11DBE3B9004A1712 /* SHKShareMenu.m */,
 				43A536FA11DBE3B9004A1712 /* SHKOAuthView.h */,
@@ -889,6 +921,48 @@
 				43FF9C7212270E9F00ADE53C /* Localizable.strings */,
 			);
 			name = Localization;
+			sourceTree = "<group>";
+		};
+		6990734113C507AD009E3524 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				699073A413C6629E009E3524 /* SHKLinkedInForm.h */,
+				699073A513C6629E009E3524 /* SHKLinkedInForm.m */,
+				699073A613C6629E009E3524 /* SHKLinkedInFormStyle.h */,
+				699073A713C6629E009E3524 /* SHKLinkedInFormStyle.m */,
+				699073A213C6629E009E3524 /* SHKLinkedInField.h */,
+				699073A313C6629E009E3524 /* SHKLinkedInField.m */,
+				699073B713C7BB4E009E3524 /* SHKLinkedInURLField.h */,
+				699073B813C7BB52009E3524 /* SHKLinkedInURLField.m */,
+				699073AA13C6629E009E3524 /* SHKLinkedInTextField.h */,
+				699073AB13C6629E009E3524 /* SHKLinkedInTextField.m */,
+				699073A813C6629E009E3524 /* SHKLinkedInMultilineTextField.h */,
+				699073A913C6629E009E3524 /* SHKLinkedInMultilineTextField.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		699073C013C7BBC1009E3524 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				699073C113C7BBE3009E3524 /* SHKItem+KVC.h */,
+				699073C213C7BBE3009E3524 /* SHKItem+KVC.m */,
+				699073C313C7BBE3009E3524 /* UIWebView+SHKPlus.h */,
+				699073C413C7BBE3009E3524 /* UIWebView+SHKPlus.m */,
+			);
+			name = Categories;
+			path = LinkedIn/Categories;
+			sourceTree = "<group>";
+		};
+		6994F89913B00767005BC46B /* LinkedIn */ = {
+			isa = PBXGroup;
+			children = (
+				699073C013C7BBC1009E3524 /* Categories */,
+				6990734113C507AD009E3524 /* UI */,
+				6994F89C13B008C3005BC46B /* SHKLinkedIn.h */,
+				6994F89D13B008C3005BC46B /* SHKLinkedIn.m */,
+			);
+			name = LinkedIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1014,7 +1088,6 @@
 				43A5372D11DBE3B9004A1712 /* SHKPinboard.m in Sources */,
 				43A5372E11DBE3B9004A1712 /* SHKReadItLater.m in Sources */,
 				43A5372F11DBE3B9004A1712 /* SHKTwitter.m in Sources */,
-				43A5373011DBE3B9004A1712 /* SHKTwitterForm.m in Sources */,
 				43A5373111DBE3B9004A1712 /* SHKActionSheet.m in Sources */,
 				43A5373211DBE3B9004A1712 /* SHKActivityIndicator.m in Sources */,
 				43A5373311DBE3B9004A1712 /* SHKFormController.m in Sources */,
@@ -1052,6 +1125,16 @@
 				4379F2C11291AC9700D2A41E /* SHKEvernote.m in Sources */,
 				4379F2EA1291AE5700D2A41E /* NSData+md5.m in Sources */,
 				4379F3B21291C45700D2A41E /* SHKTextMessage.m in Sources */,
+				6994F89E13B008C3005BC46B /* SHKLinkedIn.m in Sources */,
+				69A0C3BF13B1C6120018837B /* SHKTwitterForm.m in Sources */,
+				699073AC13C6629E009E3524 /* SHKLinkedInField.m in Sources */,
+				699073AD13C6629E009E3524 /* SHKLinkedInForm.m in Sources */,
+				699073AE13C6629E009E3524 /* SHKLinkedInFormStyle.m in Sources */,
+				699073AF13C6629E009E3524 /* SHKLinkedInMultilineTextField.m in Sources */,
+				699073B013C6629E009E3524 /* SHKLinkedInTextField.m in Sources */,
+				699073B913C7BB55009E3524 /* SHKLinkedInURLField.m in Sources */,
+				699073C513C7BBE3009E3524 /* SHKItem+KVC.m in Sources */,
+				699073C613C7BBE3009E3524 /* UIWebView+SHKPlus.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1083,6 +1166,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1101,6 +1188,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ShareKit_Prefix.pch;
 				INFOPLIST_FILE = "ShareKit-Info.plist";
