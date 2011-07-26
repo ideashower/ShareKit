@@ -1,4 +1,5 @@
+build/*
+Releases/build-*
 *.pbxuser
-*.perspectivev3
 *.mode1v3
-build
+*.perspectivev3
