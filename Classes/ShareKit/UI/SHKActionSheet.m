@@ -69,7 +69,9 @@
 	}
 	
 	// Add More button
-	[as addButtonWithTitle:SHKLocalizedString(@"More...")];
+    if(![SHK isMoreButtonDisabled]) {
+        [as addButtonWithTitle:SHKLocalizedString(@"More...")];
+    }
 	
 	// Add Cancel button
 	[as addButtonWithTitle:SHKLocalizedString(@"Cancel")];
@@ -94,7 +96,7 @@
 	}
 	
 	// More
-	else if (buttonIndex == sharers.count)
+	else if (buttonIndex == sharers.count && !([SHK isMoreButtonDisabled]))
 	{
 		SHKShareMenu *shareMenu = [[SHKCustomShareMenu alloc] initWithStyle:UITableViewStyleGrouped];
 		shareMenu.item = item;
