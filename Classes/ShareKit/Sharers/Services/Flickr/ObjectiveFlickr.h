@@ -25,7 +25,7 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "LFWebAPIKit.h"
+#import "LFHTTPRequest.h"
 #import "OFUtilities.h"
 #import "OFXMLMapper.h"
 

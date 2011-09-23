@@ -119,7 +119,7 @@ NSString *kSetImagePropertiesStep = @"kSetImagePropertiesStep";
 	NSData *JPEGData = UIImageJPEGRepresentation(item.image, 1.0);
 	
 	self.flickrRequest.sessionInfo = kUploadImageStep;
-	[self.flickrRequest uploadImageStream:[NSInputStream inputStreamWithData:JPEGData] suggestedFilename:item.title MIMEType:@"image/jpeg" arguments:[NSDictionary dictionaryWithObjectsAndKeys:@"0", @"is_public", nil]];	
+	[self.flickrRequest uploadImageStream:[NSInputStream inputStreamWithData:JPEGData] suggestedFilename:item.title MIMEType:@"image/jpeg" arguments: nil];	
 }
 
 - (NSURL *)authorizeCallbackURL {
