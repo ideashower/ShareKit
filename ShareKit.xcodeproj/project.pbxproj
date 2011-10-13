@@ -20,7 +20,6 @@
 		43C91D1D11EB963600F31FAE /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C91D1C11EB963600F31FAE /* MainWindow-iPad.xib */; };
 		43D1DEF011D5CDD200550D75 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D1DEEF11D5CDD200550D75 /* SystemConfiguration.framework */; };
 		43EF406E11D3FFF800B1F700 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43EF406D11D3FFF800B1F700 /* Security.framework */; };
-		8B2F9B0113810AE900EC52A8 /* libSFHFKeychainUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2F9B0013810AD200EC52A8 /* libSFHFKeychainUtils.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A685A54A1338E1B700AE7524 /* libShareKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A685A5451338E19F00AE7524 /* libShareKit.a */; };
 		A685A54D1338E1FA00AE7524 /* SHKOAuthSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5367511DBE3B9004A1712 /* SHKOAuthSharer.m */; };
 		A685A54E1338E1FA00AE7524 /* SHKSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A5367711DBE3B9004A1712 /* SHKSharer.m */; };
@@ -117,20 +116,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8B2F9AFF13810AD200EC52A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8B2F9AF813810AD200EC52A8 /* SFHFKeychainUtils.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libSFHFKeychainUtils.a */;
-			remoteInfo = SFHFKeychainUtils;
-		};
-		8B2F9B0213810AF600EC52A8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8B2F9AF813810AD200EC52A8 /* SFHFKeychainUtils.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* SFHFKeychainUtils */;
-			remoteInfo = SFHFKeychainUtils;
-		};
 		A685A5481338E1B300AE7524 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -144,6 +129,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = A685A6D71338E39000AE7524;
 			remoteInfo = ShareKitResources;
+		};
+		B14A81AA143A3EC9003EF170 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B2F9AF813810AD200EC52A8 /* SFHFKeychainUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = SFHFKeychainUtils;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -347,7 +339,7 @@
 		43EF406D11D3FFF800B1F700 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		43FF9C7312270E9F00ADE53C /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Classes/ShareKit/Localization/en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		43FF9C7512270EB900ADE53C /* de */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = de; path = Classes/ShareKit/Localization/de.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
-		8B2F9AF813810AD200EC52A8 /* SFHFKeychainUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SFHFKeychainUtils.xcodeproj; path = Components/SFHFKeychainUtils/SFHFKeychainUtils.xcodeproj; sourceTree = "<group>"; };
+		8B2F9AF813810AD200EC52A8 /* SFHFKeychainUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SFHFKeychainUtils.xcodeproj; path = ../SFHFKeychainUtils/SFHFKeychainUtils.xcodeproj; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ShareKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShareKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		A685A5451338E19F00AE7524 /* libShareKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShareKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A685A6D81338E39100AE7524 /* ShareKitResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShareKitResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -378,7 +370,6 @@
 				A685A6A51338E2C500AE7524 /* MessageUI.framework in Frameworks */,
 				A685A6A61338E2C500AE7524 /* Security.framework in Frameworks */,
 				A685A6A71338E2C500AE7524 /* SystemConfiguration.framework in Frameworks */,
-				8B2F9B0113810AE900EC52A8 /* libSFHFKeychainUtils.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -947,10 +938,10 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
-		8B2F9AF913810AD200EC52A8 /* Products */ = {
+		B14A81A7143A3EC9003EF170 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8B2F9B0013810AD200EC52A8 /* libSFHFKeychainUtils.a */,
+				B14A81AB143A3EC9003EF170 /* libSFHFKeychainUtils.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -998,7 +989,6 @@
 			);
 			dependencies = (
 				A685A6E01338E3F000AE7524 /* PBXTargetDependency */,
-				8B2F9B0313810AF600EC52A8 /* PBXTargetDependency */,
 			);
 			name = ShareKit;
 			productName = ShareKit;
@@ -1049,7 +1039,7 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 8B2F9AF913810AD200EC52A8 /* Products */;
+					ProductGroup = B14A81A7143A3EC9003EF170 /* Products */;
 					ProjectRef = 8B2F9AF813810AD200EC52A8 /* SFHFKeychainUtils.xcodeproj */;
 				},
 			);
@@ -1063,11 +1053,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		8B2F9B0013810AD200EC52A8 /* libSFHFKeychainUtils.a */ = {
+		B14A81AB143A3EC9003EF170 /* libSFHFKeychainUtils.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libSFHFKeychainUtils.a;
-			remoteRef = 8B2F9AFF13810AD200EC52A8 /* PBXContainerItemProxy */;
+			remoteRef = B14A81AA143A3EC9003EF170 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1200,11 +1190,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8B2F9B0313810AF600EC52A8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SFHFKeychainUtils;
-			targetProxy = 8B2F9B0213810AF600EC52A8 /* PBXContainerItemProxy */;
-		};
 		A685A5491338E1B300AE7524 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A685A5441338E19F00AE7524 /* ShareKit */;
@@ -1331,7 +1316,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "Components/**";
+				HEADER_SEARCH_PATHS = "../SFHFKeychainUtils/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				OTHER_LDFLAGS = "-all_load";
 				PREBINDING = NO;
@@ -1348,7 +1333,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "Components/**";
+				HEADER_SEARCH_PATHS = "../SFHFKeychainUtils/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-all_load";
