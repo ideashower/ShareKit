@@ -127,7 +127,13 @@ BOOL SHKinit;
 	if (currentView != nil)
 	{
 		self.pendingView = vc;
-		[[currentView parentViewController] dismissModalViewControllerAnimated:YES];
+		if ([currentView respondsToSelector:@selector(presentingViewController)]) {
+			[[currentView presentingViewController] dismissModalViewControllerAnimated:YES];
+		}
+		else
+		{
+			[[currentView parentViewController] dismissModalViewControllerAnimated:YES];
+		}
 		return;
 	}
 		
@@ -179,7 +185,11 @@ BOOL SHKinit;
 	if (currentView != nil)
 	{
 		// Dismiss the modal view
-		if ([currentView parentViewController] != nil)
+		if ([currentView respondsToSelector:@selector(presentingViewController)] && [currentView presentingViewController] != nil) {
+			self.isDismissingView = YES;
+			[[currentView presentingViewController] dismissModalViewControllerAnimated:animated];
+		}
+		else if ([currentView parentViewController] != nil)
 		{
 			self.isDismissingView = YES;
 			[[currentView parentViewController] dismissModalViewControllerAnimated:animated];
