@@ -227,7 +227,9 @@
 
 - (void)session:(FBSession*)session didLogin:(FBUID)uid 
 {
-	// Try to share again
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"SHKDidLogin" object:nil];
+	
+  // Try to share again
 	if (pendingFacebookAction == SHKFacebookPendingLogin)
 	{
 		self.pendingFacebookAction = SHKFacebookPendingNone;
@@ -238,6 +240,11 @@
 - (void)session:(FBSession*)session willLogout:(FBUID)uid 
 {
 	// Not handling this
+}
+
+- (void)sessionDidNotLogin:(FBSession *)session
+{
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"SHKDidNotLogin" object:nil];
 }
 
 
