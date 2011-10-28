@@ -31,7 +31,6 @@
 		4379F2BE1291AC9700D2A41E /* TMemoryBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2AA1291AC9700D2A41E /* TMemoryBuffer.m */; };
 		4379F2BF1291AC9700D2A41E /* TTransportException.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2AD1291AC9700D2A41E /* TTransportException.m */; };
 		4379F2C01291AC9700D2A41E /* TSharedProcessorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2AF1291AC9700D2A41E /* TSharedProcessorFactory.m */; };
-		4379F2C11291AC9700D2A41E /* SHKEvernote.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2B11291AC9700D2A41E /* SHKEvernote.m */; };
 		4379F2C21291AC9700D2A41E /* SHKEvernote.md in Resources */ = {isa = PBXBuildFile; fileRef = 4379F2B21291AC9700D2A41E /* SHKEvernote.md */; };
 		4379F2EA1291AE5700D2A41E /* NSData+md5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F2E91291AE5700D2A41E /* NSData+md5.m */; };
 		4379F3B21291C45700D2A41E /* SHKTextMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4379F3B11291C45700D2A41E /* SHKTextMessage.m */; };
@@ -929,6 +928,9 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ShareKit" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
@@ -1062,7 +1064,6 @@
 				4379F2BE1291AC9700D2A41E /* TMemoryBuffer.m in Sources */,
 				4379F2BF1291AC9700D2A41E /* TTransportException.m in Sources */,
 				4379F2C01291AC9700D2A41E /* TSharedProcessorFactory.m in Sources */,
-				4379F2C11291AC9700D2A41E /* SHKEvernote.m in Sources */,
 				4379F2EA1291AE5700D2A41E /* NSData+md5.m in Sources */,
 				4379F3B21291C45700D2A41E /* SHKTextMessage.m in Sources */,
 				07FE2747135FA99000E05A8E /* SHKPosterous.m in Sources */,

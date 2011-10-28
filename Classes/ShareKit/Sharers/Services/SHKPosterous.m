@@ -8,6 +8,7 @@
 #include "Base64Transcoder.h"
 
 static NSString * const kPosterousPostURL = @"http://posterous.com/api/2/sites/primary/posts";
+static NSString * const kPosterousAPIToken = @"eqjjDcyIHvglBuIiqvHHnenwyyIyalas";
 
 @implementation SHKPosterous
 
@@ -34,6 +35,15 @@ static NSString * const kPosterousPostURL = @"http://posterous.com/api/2/sites/p
 + (BOOL)canShareImage {
     return YES;
 }
+
+//+ (BOOL)canShareURL{
+//	return YES;
+//}
+
+//+ (BOOL)canShareFile
+//{
+//	return YES;
+//}
 
 #pragma mark -
 #pragma mark Authorization
@@ -85,13 +95,14 @@ static NSString * const kPosterousPostURL = @"http://posterous.com/api/2/sites/p
 
 - (BOOL)send {	
 	if ([self validateItem]) {
-		NSMutableURLRequest *aRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:kPosterousPostURL] cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:90];
+        NSURL *URLWithToken = [NSURL URLWithString:[NSString stringWithFormat:@"%@?api_token=%@", kPosterousPostURL, kPosterousAPIToken]];
+		NSMutableURLRequest *aRequest = [[NSMutableURLRequest alloc] initWithURL:URLWithToken cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:90];
 		
 		NSString *username = [self getAuthValueForKey:@"username"];
 		NSString *password = [self getAuthValueForKey:@"password"];
 		NSString *boundary = @"0xKhTmLbOuNdArY";
 		
-		NSMutableDictionary *headers = [NSMutableDictionary dictionaryWithDictionary: self.request.headerFields];
+		NSMutableDictionary *headers = [NSMutableDictionary dictionary];
 		[headers setObject:[self httpAuthBasicHeaderWith:username andPass:password] forKey:@"Authorization"];
 		[headers setObject:[NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary] forKey:@"Content-Type"];
 		
@@ -142,6 +153,7 @@ static NSString * const kPosterousPostURL = @"http://posterous.com/api/2/sites/p
 #pragma mark NSURLConnection delegate methods
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSHTTPURLResponse *)theResponse {
     [URLResponse release];
+    URLResponse = nil;
 	URLResponse = [theResponse retain];
 	
 	[photoData setLength:0];
@@ -163,7 +175,7 @@ static NSString * const kPosterousPostURL = @"http://posterous.com/api/2/sites/p
     if (URLResponse.statusCode == 200 || URLResponse.statusCode == 201) {
 		[self sendDidFinish];
     } else {
-        if (URLResponse.statusCode == 403) {
+        if (URLResponse.statusCode == 403 || URLResponse.statusCode == 401) {
             [self sendDidFailWithError:[SHK error:SHKLocalizedString(@"Invalid username or password.")] shouldRelogin:YES];
         } else if (URLResponse.statusCode == 500) {
             [self sendDidFailWithError:[SHK error:SHKLocalizedString(@"The service encountered an error. Please try again later.")]];
