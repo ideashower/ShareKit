@@ -36,9 +36,9 @@ static NSString * const kPosterousAPIToken = @"eqjjDcyIHvglBuIiqvHHnenwyyIyalas"
     return YES;
 }
 
-//+ (BOOL)canShareURL{
-//	return YES;
-//}
++ (BOOL)canShareURL{
+	return YES;
+}
 
 //+ (BOOL)canShareFile
 //{
@@ -126,6 +126,11 @@ static NSString * const kPosterousAPIToken = @"eqjjDcyIHvglBuIiqvHHnenwyyIyalas"
 			[body appendData:[@"Content-Disposition: form-data; name=\"post[body]\"\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
 			[body appendData:[item.text dataUsingEncoding:NSUTF8StringEncoding]];
 		}
+        else if ([item URL]) {
+			[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+			[body appendData:[@"Content-Disposition: form-data; name=\"post[body]\"\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+			[body appendData:[[item.URL absoluteString] dataUsingEncoding:NSUTF8StringEncoding]];        
+        }
 		
 		if ([item image]) {
             [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
