@@ -37,7 +37,7 @@
  */
 
 // Posterous - http://apidocs.posterous.com/
-#define SHKPosterousAPIKey			@"eqjjDcyIHvglBuIiqvHHnenwyyIyalas"
+#define SHKPosterousAPIKey			@""
 
 // Delicious - https://developer.apps.yahoo.com/projects
 #define SHKDeliciousConsumerKey		@""
