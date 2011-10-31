@@ -8,7 +8,6 @@
 #include "Base64Transcoder.h"
 
 static NSString * const kPosterousPostURL = @"http://posterous.com/api/2/sites/primary/posts";
-static NSString * const kPosterousAPIToken = @"eqjjDcyIHvglBuIiqvHHnenwyyIyalas";
 
 @implementation SHKPosterous
 
@@ -95,7 +94,7 @@ static NSString * const kPosterousAPIToken = @"eqjjDcyIHvglBuIiqvHHnenwyyIyalas"
 
 - (BOOL)send {	
 	if ([self validateItem]) {
-        NSURL *URLWithToken = [NSURL URLWithString:[NSString stringWithFormat:@"%@?api_token=%@", kPosterousPostURL, kPosterousAPIToken]];
+        NSURL *URLWithToken = [NSURL URLWithString:[NSString stringWithFormat:@"%@?api_token=%@", kPosterousPostURL, SHKPosterousAPIKey]];
 		NSMutableURLRequest *aRequest = [[NSMutableURLRequest alloc] initWithURL:URLWithToken cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:90];
 		
 		NSString *username = [self getAuthValueForKey:@"username"];
