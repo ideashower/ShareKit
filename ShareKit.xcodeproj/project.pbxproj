@@ -311,6 +311,7 @@
 		43FF9C7312270E9F00ADE53C /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Classes/ShareKit/Localization/en.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		43FF9C7512270EB900ADE53C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Classes/ShareKit/Localization/de.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* ShareKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShareKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		97CADFAD147E4B920066ECE9 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -934,6 +935,7 @@
 				eu,
 				fr,
 				ko,
+				"zh-Hant",
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -1070,6 +1072,7 @@
 				4379F2D71291AD0F00D2A41E /* zh_CN */,
 				4379F3251291B86500D2A41E /* fr */,
 				4379F3EA1291CA1700D2A41E /* ko */,
+				97CADFAD147E4B920066ECE9 /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1087,6 +1090,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ShareKit_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "ShareKit-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PRODUCT_NAME = ShareKit;
@@ -1103,6 +1107,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ShareKit_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "ShareKit-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PRODUCT_NAME = ShareKit;
