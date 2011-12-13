@@ -289,7 +289,7 @@
 - (BOOL)validate
 {
 	NSString *status = [item customValueForKey:@"status"];
-	return status != nil && status.length >= 0 && status.length <= 140;
+	return status != nil && status.length > 0 && status.length <= 140;
 }
 
 - (BOOL)send
