@@ -250,9 +250,8 @@ static SHKActivityIndicator *currentIndicator = nil;
 	[self setProperRotation:YES];
 }
 
-- (void)setProperRotation:(BOOL)animated
-{
-	UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+- (void)setProperRotation:(BOOL)animated {
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
 	
 	if (animated)
 	{
@@ -260,17 +259,17 @@ static SHKActivityIndicator *currentIndicator = nil;
 		[UIView setAnimationDuration:0.3];
 	}
 	
-	if (orientation == UIDeviceOrientationPortraitUpsideDown)
+	if (orientation == UIInterfaceOrientationPortraitUpsideDown)
 		self.transform = CGAffineTransformRotate(CGAffineTransformIdentity, SHKdegreesToRadians(180));	
-		
-	else if (orientation == UIDeviceOrientationPortrait)
+    
+	else if (orientation == UIInterfaceOrientationPortrait)
 		self.transform = CGAffineTransformRotate(CGAffineTransformIdentity, SHKdegreesToRadians(0)); 
 	
-	else if (orientation == UIDeviceOrientationLandscapeLeft)
-		self.transform = CGAffineTransformRotate(CGAffineTransformIdentity, SHKdegreesToRadians(90));	
+	else if (orientation == UIInterfaceOrientationLandscapeLeft)
+		self.transform = CGAffineTransformRotate(CGAffineTransformIdentity, SHKdegreesToRadians(-90));	
 	
-	else if (orientation == UIDeviceOrientationLandscapeRight)
-		self.transform = CGAffineTransformRotate(CGAffineTransformIdentity, SHKdegreesToRadians(-90));
+	else if (orientation == UIInterfaceOrientationLandscapeRight)
+		self.transform = CGAffineTransformRotate(CGAffineTransformIdentity, SHKdegreesToRadians(90));
 	
 	if (animated)
 		[UIView commitAnimations];
