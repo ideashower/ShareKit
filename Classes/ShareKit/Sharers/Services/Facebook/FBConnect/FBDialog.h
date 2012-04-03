@@ -32,6 +32,8 @@
   BOOL _showingKeyboard;
 }
 
+- (void)deviceOrientationDidChange:(void*)object;
+
 /**
  * The delegate.
  */

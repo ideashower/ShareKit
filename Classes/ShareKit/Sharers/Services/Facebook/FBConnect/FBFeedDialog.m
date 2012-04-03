@@ -52,7 +52,7 @@ static NSString* kFeedURL = @"http://www.facebook.com/connect/prompt_feed.php";
 // NSObject
 
 - (id)initWithSession:(FBSession*)session {
-  if (self = [super initWithSession:session]) {
+  if ((self = [super initWithSession:session])) {
     _templateBundleId = 0;
     _templateData = nil;
     _bodyGeneral = nil;

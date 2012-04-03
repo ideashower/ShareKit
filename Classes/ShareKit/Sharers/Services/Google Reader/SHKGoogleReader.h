@@ -38,7 +38,9 @@
 @property (nonatomic) BOOL sendAfterLogin;
 
 - (void)sendWithToken:(NSString *)token;
+- (void)tokenFinished:(SHKRequest *)aRequest;
 - (void)getSession:(NSString *)email password:(NSString *)password;
 - (void)signRequest:(SHKRequest *)aRequest;
-
+- (void)authFinished:(SHKRequest *)aRequest;
+- (void)sendFinished:(SHKRequest *)aRequest;
 @end

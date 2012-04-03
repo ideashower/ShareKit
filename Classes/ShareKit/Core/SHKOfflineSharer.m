@@ -47,7 +47,7 @@
 
 - (id)initWithItem:(SHKItem *)i forSharer:(NSString *)s uid:(NSString *)u
 {
-	if (self = [super init])
+	if ((self = [super init]))
 	{
 		self.item = i;
 		self.sharerId = s;

@@ -52,7 +52,7 @@
 
 - (id)initWithURL:(NSURL *)u params:(NSString *)p delegate:(id)d isFinishedSelector:(SEL)s method:(NSString *)m autostart:(BOOL)autostart
 {
-	if (self = [super init])
+	if ((self = [super init]))
 	{
 		self.url = u;
 		self.params = p;

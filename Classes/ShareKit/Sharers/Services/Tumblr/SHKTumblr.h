@@ -15,4 +15,7 @@
     NSHTTPURLResponse *response;
 }
 
+- (void)sendFinished:(SHKRequest *)aRequest;
+- (void)authFinished:(SHKRequest *)aRequest;
+
 @end

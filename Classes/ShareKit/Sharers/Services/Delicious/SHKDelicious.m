@@ -41,7 +41,7 @@
 
 - (id)init
 {
-	if (self = [super init])
+	if ((self = [super init]))
 	{		
 		self.consumerKey = SHKDeliciousConsumerKey;		
 		self.secretKey = SHKDeliciousSecretKey;

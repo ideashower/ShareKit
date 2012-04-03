@@ -86,7 +86,8 @@ static NSString * const kTumblrWriteURL = @"https://www.tumblr.com/api/write";
 	self.pendingForm = form;
 }
 
-- (void)authFinished:(SHKRequest *)aRequest{		
+- (void)authFinished:(SHKRequest *)aRequest
+{		
 	[[SHKActivityIndicator currentIndicator] hide];
 	if (aRequest.success)
 		[pendingForm saveForm];
@@ -307,7 +308,8 @@ static NSString * const kTumblrWriteURL = @"https://www.tumblr.com/api/write";
 	return NO;
 }
 
-- (void)sendFinished:(SHKRequest *)aRequest{
+- (void)sendFinished:(SHKRequest *)aRequest
+{
 	if (!aRequest.success) {
 		if (aRequest.response.statusCode == 403) {
 			[self sendDidFailWithError:[SHK error:SHKLocalizedString(@"Invalid email or password.")] shouldRelogin:YES];

@@ -35,7 +35,7 @@
 
 - (id)init 
 {
-	if (self = [super init])
+	if ((self = [super init]))
 	{
 		self.key = @"";
 		self.secret = @"";
@@ -46,7 +46,7 @@
 
 - (id)initWithKey:(NSString *)aKey secret:(NSString *)aSecret 
 {
-	if (self = [super init])
+	if ((self = [super init]))
 	{
 		self.key = aKey;
 		self.secret = aSecret;
@@ -56,7 +56,7 @@
 
 - (id)initWithHTTPResponseBody:(NSString *)body 
 {
-	if (self = [super init])
+	if ((self = [super init]))
 	{
 		NSArray *pairs = [body componentsSeparatedByString:@"&"];
 		
@@ -76,7 +76,7 @@
 
 - (id)initWithUserDefaultsUsingServiceProviderName:(NSString *)provider prefix:(NSString *)prefix
 {
-	if (self = [super init])
+	if ((self = [super init]))
 	{
 		NSString *theKey = [[NSUserDefaults standardUserDefaults] stringForKey:[NSString stringWithFormat:@"OAUTH_%@_%@_KEY", prefix, provider]];
 		NSString *theSecret = [[NSUserDefaults standardUserDefaults] stringForKey:[NSString stringWithFormat:@"OAUTH_%@_%@_SECRET", prefix, provider]];
