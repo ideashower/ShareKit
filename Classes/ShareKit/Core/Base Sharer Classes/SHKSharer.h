@@ -134,6 +134,7 @@ typedef enum
 - (BOOL)authorize;
 - (void)promptAuthorization;
 - (NSString *)getAuthValueForKey:(NSString *)key;
+- (void)postAuthorizationNotification;
 
 #pragma mark Authorization Form
 
