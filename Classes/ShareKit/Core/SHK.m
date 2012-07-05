@@ -107,7 +107,16 @@ BOOL SHKinit;
 			}
 		}
 		
-		UIView *rootView = [[topWindow subviews] objectAtIndex:0];	
+		UIView *rootView = nil;
+		for (UIView *subView in [topWindow subviews]) {
+			if(strcmp(class_getName([subView class]),"UILayoutContainerView") == 0) {
+				rootView = subView;
+				break;
+			}
+		}
+		if (!rootView) {
+			rootView = [[topWindow subviews] objectAtIndex:0]; 
+		}
 		id nextResponder = [rootView nextResponder];
 		
 		if ([nextResponder isKindOfClass:[UIViewController class]])
