@@ -79,6 +79,12 @@
 #define SHKBitLyLogin				@""
 #define SHKBitLyKey					@""
 
+// Evernote - http://www.evernote.com/about/developer/api/
+#define SHKEvernoteUserStoreURL     @""
+#define SHKEvernoteSecretKey        @""
+#define SHKEvernoteConsumerKey      @""
+#define SHKEvernoteNetStoreURLBase  @""
+
 // ShareMenu Ordering
 #define SHKShareMenuAlphabeticalOrder 1 // Setting this to 1 will show list in Alphabetical Order, setting to 0 will follow the order in SHKShares.plist
 
