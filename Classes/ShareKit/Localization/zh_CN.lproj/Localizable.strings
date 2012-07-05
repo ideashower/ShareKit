@@ -32,24 +32,23 @@
 "Login Error" = "登录出错";
 "Connecting..." = "连接中…";
 
-
 "Shortening URL..." = "缩短网址…";
 "Shorten URL Error" = "缩短网址出错";
 "We could not shorten the URL." = "我们无法缩短网址。";
 
-"Create a free account at %@" = "在 %@ 上创建一个免费账户";
-"Create an account at %@" = "在 %@ 上创建一个账户";
+"Create a free account at %@" = "在 %@ 上创建免费账户";
+"Create an account at %@" = "在 %@ 上创建账户";
 
-"Send to Twitter" = "发送到 Twitter";
+"Send to Twitter" = "发送到推特";
 
 "Message is too long" = "消息太长了";
-"Twitter posts can only be 140 characters in length." = "Twitter 消息不能超过 140 个字符。";
+"Twitter posts can only be 140 characters in length." = "推特消息不能超过 140 个字符。";
 "Message is empty" = "消息为空";
 "You must enter a message in order to post." = "你必须先输入一条消息。";
 
 "Enter your message:" = "输入你的消息：";
 
-"Invalid email or password." = "Email 或密码不正确。";
+"Invalid email or password." = "电子邮件或密码不正确。";
 "The service encountered an error. Please try again later." = "此服务碰到了一点错误，请稍后重试。";
 "There was an error sending your post to Tumblr." = "发送至 Tumblr 的过程中出错。";
 
@@ -92,3 +91,16 @@
 "There was an error while sharing" = "在分享的过程中出错";
 
 "Save to Photo Album" = "保存到相簿";
+
+"Plurk" = "噗浪";
+"Twitter" = "推特";
+"Facebook" = "脸书";
+"401 Forbidden" = "401 存取被拒";
+"Sent from %@" = "从 %@ 寄来";
+"Requires login" = "需要先登入";
+"Invalid plurk data" = "无效的噗浪内容";
+"This plurk data was already sent" = "相同的噗浪内容已经送过了";
+"There was an error sending your post to %@." = "发送至 %@ 的过程中出错。";
+"Invalid username or password." = "使用者名称或密码不正确";
+"URL is from spam domain" = "网址来自垃圾网域名";
+"Too many new Plurks" = "已经发太多新噗了";

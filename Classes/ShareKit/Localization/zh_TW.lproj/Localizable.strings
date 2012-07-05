@@ -1,0 +1,106 @@
+"Email" = "電子郵件";
+"Username" = "用戶名";
+"Password" = "密碼";
+"Follow %@" = "追蹤%@";
+"Continue" = "繼續";
+"Share" = "分享";
+"More..." = "更多…";
+"Cancel" = "取消";
+"Slug" = "Slug";
+"Private" = "私密";
+"Public" = "公開";
+"Caption" = "標題";
+"Title" = "標題";
+"Tags" = "標籤";
+"Close" = "關閉";
+"Notes" = "筆記";
+"Note" = "筆記";
+"Share" = "分享";
+"Shared" = "已分享";
+"Edit" = "編輯";
+"Actions" = "動作";
+"Services" = "服務";
+"Send to %@" = "發送至 %@";
+"Copy" = "複製";
+"Copied!" = "已複製！";
+"Saving to %@" = "儲存至%@";
+"Saved!" = "已儲存！";
+"Offline" = "離線";
+"Error" = "錯誤";
+"Login" = "登入";
+"Logging In..." = "登入中…";
+"Login Error" = "登入出錯";
+"Connecting..." = "連線中…";
+
+"Shortening URL..." = "縮短網址…";
+"Shorten URL Error" = "縮短網址出錯";
+"We could not shorten the URL." = "我們無法縮短網址。";
+
+"Create a free account at %@" = "在 %@ 上建立免費帳號";
+"Create an account at %@" = "在 %@ 上建立帳號";
+
+"Send to Twitter" = "發送到推特";
+
+"Message is too long" = "訊息太長了";
+"Twitter posts can only be 140 characters in length." = "推特訊息不能超過 140 個字。";
+"Message is empty" = "訊息是空的";
+"You must enter a message in order to post." = "你必須先輸入一條訊息。";
+
+"Enter your message:" = "輸入你的訊息：";
+
+"Invalid email or password." = "電子郵件或密碼不正確。";
+"The service encountered an error. Please try again later." = "此服務碰到了一點錯誤，請稍後重試。";
+"There was an error sending your post to Tumblr." = "發送至 Tumblr 的過程中出錯。";
+
+"There was an error saving to Pinboard" = "儲存到 Pinboard 的過程中出錯";
+
+"Sorry, Instapaper did not accept your credentials. Please try again." = "抱歉，Instapaper 無法驗證您的帳號，請重試。";
+"Sorry, Instapaper encountered an error. Please try again." = "抱歉，Instapaper 碰到了一個問題，請重試。";
+"There was a problem saving to Instapaper." = "儲存到 Instapaper 的過程中出錯。";
+
+"Incorrect username and password" = "用戶名或密碼不正確";
+"There was an error logging into Google Reader" = "登入到 Google Reader 的過程中出错";
+"There was a problem authenticating your account." = "驗證您帳號的過程中出錯。";
+"There was a problem saving your note." = "儲存您筆記的過程中出錯。";
+
+"There was a problem saving to Delicious." = "儲存到 Delicious 的過程中出錯。";
+
+"Open in Safari" = "在 Safari 中開啟";
+"Attached: %@" = "附檔： %@";
+
+"You must be online to login to %@" = "要登入到 %@ 上您必須在線上";
+
+"Auto Share" = "自動分享";
+"Enable auto share to skip this step in the future." = "啟動自動分享，之後即會跳過此步驟。";
+
+"You must be online in order to share with %@" = "要分享 %@ 的話您必須在線上。";
+"There was an error while sharing" = "分享過程中出錯";
+
+"Could not authenticate you. Please relogin." = "無法驗證，請重新登入。";
+"There was a problem requesting authorization from %@" = "在向 %@ 請求驗證的過程中出錯";
+"Request Error" = "請求錯誤";
+"There was an error while sharing" = "分享過程中出錯";
+
+"Authorize Error" = "驗證錯誤";
+"There was an error while authorizing" = "驗證的過程中出錯";
+
+"Authenticating..." = "驗證中…";
+"There was a problem requesting access from %@" = "向 %@ 要求存取時出錯";
+
+"Access Error" = "存取錯誤s";
+"There was an error while sharing" = "在分享的過程中出錯";
+
+"Save to Photo Album" = "儲存到相簿";
+
+"Plurk" = "噗浪";
+"Twitter" = "推特";
+"Facebook" = "臉書";
+"401 Forbidden" = "401 存取被拒";
+"Sent from %@" = "從 %@ 寄來";
+"Requires login" = "需要先登入";
+"Invalid plurk data" = "無效的噗浪內容";
+"This plurk data was already sent" = "相同的噗浪內容已經送過了";
+"There was an error sending your post to %@." = "發送至 %@ 的過程中出錯。";
+"Invalid username or password." = "使用者名稱或密碼不正確";
+"URL is from spam domain" = "網址來自垃圾網域名";
+"Too many new Plurks" = "已經發太多新噗了";

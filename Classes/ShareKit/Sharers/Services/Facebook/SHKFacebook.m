@@ -48,7 +48,7 @@
 
 + (NSString *)sharerTitle
 {
-	return @"Facebook";
+	return SHKLocalizedString(@"Facebook");
 }
 
 + (BOOL)canShareURL
