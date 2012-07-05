@@ -86,6 +86,13 @@
 #define SHKSharedWithSignature		0
 
 
+//Evernote settings
+#define SHKEvernoteUserStoreURL		@""
+#define SHKEvernoteConsumerKey		@""
+#define SHKEvernoteSecretKey		@""
+#define SHKEvernoteNetStoreURLBase	@""
+
+
 
 /*
  UI Configuration : Basic
@@ -117,6 +124,8 @@
 
 // Append 'Shared With 'Signature to Email (and related forms)
 #define SHKSharedWithSignature		0
+
+
 
 /*
  UI Configuration : Advanced

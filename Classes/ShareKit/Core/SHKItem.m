@@ -26,6 +26,7 @@
 //
 
 #import "SHKItem.h"
+#import "SHKSharer.h"
 #import "SHK.h"
 
 
@@ -37,7 +38,7 @@
 @implementation SHKItem
 
 @synthesize shareType;
-@synthesize URL, image, title, text, tags, data, mimeType, filename;
+@synthesize URL, image, title, text, tags, data, mimeType, filename, currentOwner;
 @synthesize custom;
 
 - (void)dealloc
@@ -133,6 +134,21 @@
 - (BOOL)customBoolForSwitchKey:(NSString *)key
 {
 	return [[custom objectForKey:key] isEqualToString:SHKFormFieldSwitchOn];
+}
+
+#pragma mark -
+
+//Special getter for convenience in sharers
+//It "magically" gets alternate text set for particular sharer
+- (NSString *)text {
+	NSString *sharerTitle = [(SHKSharer *)currentOwner sharerTitle];
+	NSString *alternateText = [self customValueForKey:[NSString stringWithFormat:@"alternateTextFor%@",sharerTitle]];
+	return (alternateText == nil) ? text : alternateText;
+}
+
+//Adds ability to add custom text for each sharer by name
+- (void)setAlternateText:(NSString *)alternateText toShareOn:(NSString *)sharer {
+	[self setCustomValue:alternateText forKey:[NSString stringWithFormat:@"alternateTextFor%@",sharer]];
 }
 
 
