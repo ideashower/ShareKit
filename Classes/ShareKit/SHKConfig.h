@@ -43,11 +43,17 @@
 #define SHKDeliciousSecretKey		@""
 
 // Facebook - http://www.facebook.com/developers
-// If SHKFacebookUseSessionProxy is enabled then SHKFacebookSecret is ignored and should be left blank
-
+// SHKFacebookAppID is the Application ID provided by Facebook
+// SHKFacebookLocalAppID is used if you need to differentiate between several iOS apps running against a single Facebook app. Leave it blank unless you are sure of what you are doing. 
+// The CFBundleURLSchemes in your App-Info.plist should be "fb" + the concatenation of these two IDs.
+// Example: 
+//    SHKFacebookAppID = 555
+//    SHKFacebookLocalAppID = funk
+// 
+//    Your CFBundleURLSchemes entry: fb555funk
 #define SHKFacebookUseSessionProxy  NO 
-#define SHKFacebookKey				@""
-#define SHKFacebookSecret			@""
+#define SHKFacebookAppID      @""
+//#define SHKFacebookLocalAppID      @""
 #define SHKFacebookSessionProxyURL  @""
 
 // Read It Later - http://readitlaterlist.com/api/?shk
@@ -78,6 +84,13 @@
 // Bit.ly (for shortening URLs on Twitter) - http://bit.ly/account/register - after signup: http://bit.ly/a/your_api_key
 #define SHKBitLyLogin				@""
 #define SHKBitLyKey					@""
+
+
+// Evernote
+#define SHKEvernoteUserStoreURL @""
+#define SHKEvernoteConsumerKey @""
+#define SHKEvernoteSecretKey @""
+#define SHKEvernoteNetStoreURLBase @""
 
 // ShareMenu Ordering
 #define SHKShareMenuAlphabeticalOrder 1 // Setting this to 1 will show list in Alphabetical Order, setting to 0 will follow the order in SHKShares.plist
