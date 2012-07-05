@@ -1,13 +1,8 @@
 
 
 
-
-
 // PLEASE SEE INSTALL/CONFIG INSTRUCTIONS:
 // http://getsharekit.com/install
-
-
-
 
 
 
@@ -36,6 +31,13 @@
  leaving that decision up to the user.
  */
 
+
+// LinkedIn -  http://developer.linkedin.com/
+// Please note that LinkedIn does enforce application throttling limits, 
+// Developer Login (app/secret keys) https://www.linkedin.com/secure/developer 
+//
+#define SHKLinkedInConsumerKey	@""
+#define SHKLinkedInSecretKey	@""
 
 
 // Delicious - https://developer.apps.yahoo.com/projects
@@ -79,13 +81,19 @@
 #define SHKBitLyLogin				@""
 #define SHKBitLyKey					@""
 
+
+// Evernote
+#define SHKEvernoteConsumerKey		@""
+#define SHKEvernoteSecretKey		@""
+#define SHKEvernoteUserStoreURL		@""
+#define SHKEvernoteNetStoreURLBase	@""
+
+
 // ShareMenu Ordering
 #define SHKShareMenuAlphabeticalOrder 1 // Setting this to 1 will show list in Alphabetical Order, setting to 0 will follow the order in SHKShares.plist
 
 // Append 'Shared With 'Signature to Email (and related forms)
 #define SHKSharedWithSignature		0
-
-
 
 /*
  UI Configuration : Basic
@@ -130,23 +138,21 @@
 /*
  Debugging
  ------
- To show debug output in the console:
- 1. uncomment section A below
- 2. comment out section B below
+ To show debug output in the console, setSHKDebugShowLogs to TRUE
+
+ The #if block that follows should be left alone unless modifying the behavior of enabling/disabling SHKLog
+
+*/
  
- To hide debug output in the console:
- 1. uncomment section B below
- 2. comment out section A below
- */
+#define SHKDebugShowLogs			(TRUE)
 
-// A : show debug output
-//#define SHKDebugShowLogs			1
-//#define SHKLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
-
-// B : hide debug output
-#define SHKDebugShowLogs			0
+///////////////////////////////////////////
+#if(SHKDebugShowLogs)
+#define SHKLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
 #define SHKLog( s, ... ) 
-
+#endif
+///////////////////////////////////////////
 
 
 /*

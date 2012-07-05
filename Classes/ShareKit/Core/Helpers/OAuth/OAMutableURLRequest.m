@@ -36,7 +36,7 @@
 
 @implementation OAMutableURLRequest
 @synthesize signature, nonce;
-
+@synthesize callback;
 #pragma mark init
 
 - (id)initWithURL:(NSURL *)aUrl
@@ -45,35 +45,8 @@
             realm:(NSString *)aRealm
 signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
 {
-    if (self = [super initWithURL:aUrl
-					  cachePolicy:NSURLRequestReloadIgnoringCacheData
-				  timeoutInterval:10.0])
-	{
-		consumer = [aConsumer retain];
-		
-		// empty token for Unauthorized Request Token transaction
-		if (aToken == nil)
-			token = [[OAToken alloc] init];
-		else
-			token = [aToken retain];
-		
-		if (aRealm == nil)
-			realm = [[NSString alloc] initWithString:@""];
-		else
-			realm = [aRealm retain];
-		
-		// default to HMAC-SHA1
-		if (aProvider == nil)
-			signatureProvider = [[OAHMAC_SHA1SignatureProvider alloc] init];
-		else
-			signatureProvider = [aProvider retain];
-		
-		[self _generateTimestamp];
-		[self _generateNonce];
-		
-		didPrepare = NO;
-	}
-    return self;
+	
+	return [self initWithURL:aUrl consumer:aConsumer token:aToken realm:aRealm signatureProvider:aProvider nonce:nil timestamp:nil];
 }
 
 // Setting a timestamp and nonce to known
@@ -86,9 +59,9 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
             nonce:(NSString *)aNonce
         timestamp:(NSString *)aTimestamp
 {
-	if (self = [super initWithURL:aUrl
+	if ((self = [super initWithURL:aUrl
 					  cachePolicy:NSURLRequestReloadIgnoringCacheData
-				  timeoutInterval:10.0])
+				  timeoutInterval:10.0]))
 	{
 		consumer = [aConsumer retain];
 		
@@ -103,14 +76,25 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
 		else
 			realm = [aRealm retain];
 		
+		
+		self.callback = nil;
+		
 		// default to HMAC-SHA1
 		if (aProvider == nil)
 			signatureProvider = [[OAHMAC_SHA1SignatureProvider alloc] init];
 		else
 			signatureProvider = [aProvider retain];
 		
-		timestamp = [aTimestamp retain];
-		nonce = [aNonce retain];
+		
+		if(timestamp)
+			timestamp = [aTimestamp retain];
+		else
+			[self _generateTimestamp];
+
+		if(nonce)
+			nonce = [aNonce retain];
+		else
+			[self _generateNonce];
 		
 		didPrepare = NO;
 	}
@@ -121,6 +105,9 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
 {
 	[consumer release];
 	[token release];
+	
+	self.callback = nil;
+	
 	[realm release];
 	[signatureProvider release];
 	[timestamp release];
@@ -148,43 +135,54 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
 	if (didPrepare) {
 		return;
 	}
+	
 	didPrepare = YES;
-    // sign
+    
+	// sign
 	// Secrets must be urlencoded before concatenated with '&'
 	// TODO: if later RSA-SHA1 support is added then a little code redesign is needed
+	
     signature = [signatureProvider signClearText:[self _signatureBaseString]
                                       withSecret:[NSString stringWithFormat:@"%@&%@",
 												  [consumer.secret URLEncodedString],
                                                   [token.secret URLEncodedString]]];
     
     // set OAuth headers
-    NSString *oauthToken;
-    if ([token.key isEqualToString:@""])
-        oauthToken = @""; // not used on Request Token transactions
-    else
-        oauthToken = [NSString stringWithFormat:@"oauth_token=\"%@\", ", [token.key URLEncodedString]];
+    NSString *oauthToken = nil;
+    if (!([token.key isEqualToString:@""]))
+        oauthToken = [NSString stringWithFormat:@"oauth_token=\"%@\"", [token.key URLEncodedString]];
 	
 	NSMutableString *extraParameters = [NSMutableString string];
 	
-	// Adding the optional parameters in sorted order isn't required by the OAuth spec, but it makes it possible to hard-code expected values in the unit tests.
+	// Adding the optional parameters in sorted order isn't required by the OAuth spec, but it makes it possible to hard-code expected values in the unit tests
 	for(NSString *parameterName in [[extraOAuthParameters allKeys] sortedArrayUsingSelector:@selector(compare:)])
 	{
-		[extraParameters appendFormat:@", %@=\"%@\"",
-		 [parameterName URLEncodedString],
-		 [[extraOAuthParameters objectForKey:parameterName] URLEncodedString]];
+		[extraParameters appendFormat:@", %@=\"%@\"", [parameterName URLEncodedString], [[extraOAuthParameters objectForKey:parameterName] URLEncodedString] ];
 	}
+
+	NSMutableArray *parameters = [NSMutableArray array];
+	
+	[parameters addObject:[NSString stringWithFormat:@"realm=\"%@\"", [realm URLEncodedString]]];
     
-    NSString *oauthHeader = [NSString stringWithFormat:@"OAuth realm=\"%@\", oauth_consumer_key=\"%@\", %@oauth_signature_method=\"%@\", oauth_signature=\"%@\", oauth_timestamp=\"%@\", oauth_nonce=\"%@\", oauth_version=\"1.0\"%@",
-                             [realm URLEncodedString],
-                             [consumer.key URLEncodedString],
-                             oauthToken,
-                             [[signatureProvider name] URLEncodedString],
-                             [signature URLEncodedString],
-                             timestamp,
-                             nonce,
-							 extraParameters];
-    
+    if ([callback length] > 0)
+        [parameters addObject:[NSString stringWithFormat:@"oauth_callback=\"%@\"", [callback URLEncodedString]]];
+
+	if(oauthToken)
+		[parameters addObject:oauthToken];
+
+	[parameters addObject:[NSString stringWithFormat:@"oauth_consumer_key=\"%@\"", [consumer.key URLEncodedString]]];
+	
+	[parameters addObject:[NSString stringWithFormat:@"oauth_signature_method=\"%@\"", [[signatureProvider name] URLEncodedString]]];
+	[parameters addObject:[NSString stringWithFormat:@"oauth_signature=\"%@\"", [signature URLEncodedString]]];
+	[parameters addObject:[NSString stringWithFormat:@"oauth_timestamp=\"%@\"", timestamp]];
+	[parameters addObject:[NSString stringWithFormat:@"oauth_nonce=\"%@\"", nonce]];
+	[parameters	addObject:@"oauth_version=\"1.0\""];	
+	
+	NSString *oauthHeader = [NSString stringWithFormat:@"OAuth %@%@", [parameters componentsJoinedByString:@", "], extraParameters];
     [self setValue:oauthHeader forHTTPHeaderField:@"Authorization"];
+
+	SHKLog(@"Auth Header: %@", oauthHeader);
+
 }
 
 #pragma mark -
@@ -201,7 +199,6 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
     CFStringRef string = CFUUIDCreateString(NULL, theUUID);
     NSMakeCollectable(theUUID);
     nonce = (NSString *)string;
-	CFRelease(theUUID);
 }
 
 - (NSString *)_signatureBaseString
@@ -216,6 +213,12 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
 	[parameterPairs addObject:[[OARequestParameter requestParameterWithName:@"oauth_nonce" value:nonce] URLEncodedNameValuePair]];
 	[parameterPairs addObject:[[OARequestParameter requestParameterWithName:@"oauth_version" value:@"1.0"] URLEncodedNameValuePair]];
     
+	
+    if ([callback length] > 0)
+    {
+		[parameterPairs addObject:[[OARequestParameter requestParameterWithName:@"oauth_callback" value:callback] URLEncodedNameValuePair]];
+    }		
+	
     if (![token.key isEqualToString:@""]) {
         [parameterPairs addObject:[[OARequestParameter requestParameterWithName:@"oauth_token" value:token.key] URLEncodedNameValuePair]];
     }
@@ -240,7 +243,7 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
 					 [[[self URL] URLStringWithoutQuery] URLEncodedString],
 					 [normalizedRequestParameters URLEncodedString]];
 	
-	SHKLog(@"OAMutableURLRequest parameters %@", normalizedRequestParameters);
+	SHKLog(@"OAMutableURLRequest Parameter Pairs:  %@", normalizedRequestParameters);
 	
 	return ret;
 }
