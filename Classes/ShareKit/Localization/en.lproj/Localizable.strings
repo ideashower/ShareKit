@@ -40,6 +40,7 @@
 "Create an account at %@" = "Create an account at %@";
 
 "Send to Twitter" = "Send to Twitter";
+"Send to TwitPic" = "Send to TwitPic";
 
 "Message is too long" = "Message is too long";
 "Twitter posts can only be 140 characters in length." = "Twitter posts can only be 140 characters in length.";

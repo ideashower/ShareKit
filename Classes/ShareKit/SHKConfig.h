@@ -79,13 +79,20 @@
 #define SHKBitLyLogin				@""
 #define SHKBitLyKey					@""
 
+// Evernote http://www.evernote.com/about/developer/api/
+#define SHKEvernoteConsumerKey      @""
+#define SHKEvernoteSecretKey        @""
+#define SHKEvernoteUserStoreURL     @""
+#define SHKEvernoteNetStoreURLBase  @""
+
 // ShareMenu Ordering
 #define SHKShareMenuAlphabeticalOrder 1 // Setting this to 1 will show list in Alphabetical Order, setting to 0 will follow the order in SHKShares.plist
 
 // Append 'Shared With 'Signature to Email (and related forms)
 #define SHKSharedWithSignature		0
 
-
+// TwitPic http://dev.twitpic.com/
+#define SHKTwitPicAPIKey            @""
 
 /*
  UI Configuration : Basic
