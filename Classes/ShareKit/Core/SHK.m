@@ -357,6 +357,16 @@ BOOL SHKinit;
 	return [[NSUserDefaults standardUserDefaults] setObject:exclusions forKey:[NSString stringWithFormat:@"%@Exclusions", SHK_FAVS_PREFIX_KEY]];	
 }
 
+#pragma mark -
+
++ (BOOL)isMoreButtonDisabled {
+	return [[[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"%MoreButtonDisabled", SHK_FAVS_PREFIX_KEY]] boolValue];    
+}
+
++ (void)setIsMoreButtonDisabled:(BOOL)yesNo {
+    return [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%i", yesNo] 
+                                                     forKey:[NSString stringWithFormat:@"%MoreButtonDisabled", SHK_FAVS_PREFIX_KEY]];	
+}
 
 
 #pragma mark -
