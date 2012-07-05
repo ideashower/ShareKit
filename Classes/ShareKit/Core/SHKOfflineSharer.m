@@ -79,6 +79,7 @@
 	// create sharer
 	self.sharer = [[NSClassFromString(sharerId) alloc] init];
 	sharer.item = item;
+	sharer.item.currentOwner = sharer;
 	sharer.quiet = YES;
 	sharer.shareDelegate = self;
 	
