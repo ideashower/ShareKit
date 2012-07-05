@@ -56,6 +56,7 @@
 - (void)share
 {
 	SHKItem *item = [SHKItem URL:webView.request.URL title:[webView pageTitle]];
+	[item setAlternateText:[NSString stringWithFormat:@"%@ #channel",[webView pageTitle]] toShareOn:@"Twitter"];
 	SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
 	[actionSheet showFromToolbar:self.navigationController.toolbar]; 
 }

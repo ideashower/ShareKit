@@ -166,6 +166,7 @@
 	{
 		self.shareDelegate = self;
 		self.item = [[[SHKItem alloc] init] autorelease];
+		self.item.currentOwner = self;
 				
 		if ([self respondsToSelector:@selector(modalPresentationStyle)])
 			self.modalPresentationStyle = [SHK modalPresentationStyle];
@@ -187,6 +188,8 @@
 	// Create controller and set share options
 	SHKSharer *controller = [[self alloc] init];
 	controller.item = i;
+	controller.item.currentOwner = controller;
+
 	
 	// share and/or show UI
 	[controller share];
