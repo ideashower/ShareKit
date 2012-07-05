@@ -11,6 +11,12 @@
 #import "TBinaryProtocol.h"
 #import "NSData+md5.h"
 
+// These defines should be filled in
+#define SHKEvernoteUserStoreURL    @""
+#define SHKEvernoteConsumerKey     @""
+#define SHKEvernoteSecretKey       @""
+#define SHKEvernoteNetStoreURLBase @""
+
 @implementation SHKEvernoteItem
 @synthesize note;
 

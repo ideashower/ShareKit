@@ -4,6 +4,7 @@
 *.perspective
 *.perspectivev3
 *.mode1v3
+*.mode2v3
 build
 .DS_Store
 Classes/ShareKit/SHKConfig.h
