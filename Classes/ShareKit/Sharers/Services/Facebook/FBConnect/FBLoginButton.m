@@ -40,12 +40,12 @@ static UIAccessibilityTraits *traitImage = nil, *traitButton = nil;
 
 - (UIImage*)buttonImage {
   if (_session.isConnected) {
-    return [UIImage imageNamed:@"FBConnect.bundle/images/logout.png"];
+    return [UIImage imageNamed:@"ShareKitResources.bundle/FBConnect.bundle/images/logout.png"];
   } else {
     if (_style == FBLoginButtonStyleNormal) {
-      return [UIImage imageNamed:@"FBConnect.bundle/images/login.png"];
+      return [UIImage imageNamed:@"ShareKitResources.bundle/FBConnect.bundle/images/login.png"];
     } else if (_style == FBLoginButtonStyleWide) {
-      return [UIImage imageNamed:@"FBConnect.bundle/images/login2.png"];
+      return [UIImage imageNamed:@"ShareKitResources.bundle/FBConnect.bundle/images/login2.png"];
     } else {
       return nil;
     }
@@ -54,12 +54,12 @@ static UIAccessibilityTraits *traitImage = nil, *traitButton = nil;
 
 - (UIImage*)buttonHighlightedImage {
   if (_session.isConnected) {
-    return [UIImage imageNamed:@"FBConnect.bundle/images/logout_down.png"];
+    return [UIImage imageNamed:@"ShareKitResources.bundle/FBConnect.bundle/images/logout_down.png"];
   } else {
     if (_style == FBLoginButtonStyleNormal) {
-      return [UIImage imageNamed:@"FBConnect.bundle/images/login_down.png"];
+      return [UIImage imageNamed:@"ShareKitResources.bundle/FBConnect.bundle/images/login_down.png"];
     } else if (_style == FBLoginButtonStyleWide) {
-      return [UIImage imageNamed:@"FBConnect.bundle/images/login2_down.png"];
+      return [UIImage imageNamed:@"ShareKitResources.bundle/FBConnect.bundle/images/login2_down.png"];
     } else {
       return nil;
     }

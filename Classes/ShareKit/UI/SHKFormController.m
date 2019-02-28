@@ -134,8 +134,9 @@
 {
 	[super viewDidLoad];
 	
-	if (SHKFormBgColorRed != -1)		
-		self.tableView.backgroundColor = [UIColor colorWithRed:SHKFormBgColorRed/255 green:SHKFormBgColorGreen/255 blue:SHKFormBgColorBlue/255 alpha:1];
+    UIColor* color = SHKConfigValueForKey(SHKConfigFormBackgroundColor);
+	if (color)		
+		self.tableView.backgroundColor = color;
 }
 
 
@@ -162,8 +163,9 @@
         cell = [[[SHKCustomFormFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 		cell.form = self;
 		
-		if (SHKFormFontColorRed != -1)		
-			cell.textLabel.textColor = [UIColor colorWithRed:SHKFormFontColorRed/255 green:SHKFormFontColorGreen/255 blue:SHKFormFontColorBlue/255 alpha:1];
+        UIColor* color = SHKConfigValueForKey(SHKConfigFormFontColor);
+		if (color)		
+			cell.textLabel.textColor = color;
 	}
 	
 	// Since we are reusing table cells, make sure to save any existing values before overwriting

@@ -31,10 +31,101 @@
 #import "SHKActionSheet.h"
 #import "SHKOfflineSharer.h"
 #import "SFHFKeychainUtils.h"
-#import "Reachability.h"
+#import "SHKReachability.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import <MessageUI/MessageUI.h>
+
+
+NSString* const SHKConfigMyAppName = @"SHKConfigMyAppName";
+NSString* const SHKConfigMyAppURL = @"SHKConfigMyAppURL";
+NSString* const SHKConfigDeliciousConsumerKey = @"SHKConfigDeliciousConsumerKey";
+NSString* const SHKConfigDeliciousSecretKey = @"SHKConfigDeliciousSecretKey";
+NSString* const SHKConfigFacebookUseSessionProxy = @"SHKConfigFacebookUseSessionProxy";
+NSString* const SHKConfigFacebookKey = @"SHKConfigFacebookKey";
+NSString* const SHKConfigFacebookSecret = @"SHKConfigFacebookSecret";
+NSString* const SHKConfigFacebookSessionProxyURL = @"SHKConfigFacebookSessionProxyURL";
+NSString* const SHKConfigReadItLaterKey = @"SHKConfigReadItLaterKey";
+NSString* const SHKConfigTwitterConsumerKey = @"SHKConfigTwitterConsumerKey";
+NSString* const SHKConfigTwitterSecret = @"SHKConfigTwitterSecret";
+NSString* const SHKConfigTwitterCallbackURL = @"SHKConfigTwitterCallbackURL"; // You need to set this if using OAuth, see note above (xAuth users can skip it)
+NSString* const SHKConfigTwitterUseXAuth = @"SHKConfigTwitterUseXAuth"; // To use xAuth, set to YES
+NSString* const SHKConfigTwitterUsername = @"SHKConfigTwitterUsername"; // Enter your app's twitter account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
+NSString* const SHKConfigBitLyLogin = @"SHKConfigBitLyLogin";
+NSString* const SHKConfigBitLyKey = @"SHKConfigBitLyKey";
+NSString* const SHKConfigEvernoteUserStoreURL = @"SHKConfigEvernoteUserStoreURL";
+NSString* const SHKConfigEvernoteConsumerKey = @"SHKConfigEvernoteConsumerKey";
+NSString* const SHKConfigEvernoteSecretKey = @"SHKConfigEvernoteSecretKey";
+NSString* const SHKConfigEvernoteNetStoreURLBase = @"SHKConfigEvernoteNetStoreURLBase";
+NSString* const SHKConfigShareMenuAlphabeticalOrder = @"SHKConfigShareMenuAlphabeticalOrder";
+NSString* const SHKConfigSharedWithSignature = @"SHKConfigSharedWithSignature";
+NSString* const SHKConfigBarStyle = @"SHKConfigBarStyle";
+NSString* const SHKConfigBarTintColor = @"SHKConfigBarTintColor";
+NSString* const SHKConfigFormFontColor = @"SHKConfigFormFontColor";
+NSString* const SHKConfigFormBackgroundColor = @"SHKConfigFormBackgroundColor";
+NSString* const SHKConfigModalPresentationStyle = @"SHKConfigModalPresentationStyle";
+NSString* const SHKConfigModalTransitionStyle = @"SHKConfigModalTransitionStyle";
+
+
+static NSDictionary* shk_registeredConfigValues = nil;
+
+id SHKConfigValueForKey(NSString* key) {
+	id value = [shk_registeredConfigValues objectForKey:key];
+    if (!value) {
+    	value = [[[NSBundle mainBundle] infoDictionary] objectForKey:key];
+    }
+    if (!value) {
+        if ([key isEqualToString:SHKConfigMyAppName]) {
+        	value = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
+        } else if ([key isEqualToString:SHKConfigMyAppURL]) {
+        	return @"http:/example.com";
+        } else if ([key isEqualToString:SHKConfigShareMenuAlphabeticalOrder]) {
+        	return [NSNumber numberWithBool:YES];
+        } else if ([key isEqualToString:SHKConfigSharedWithSignature]) {
+        	return [NSNumber numberWithBool:YES];
+        } else if ([key isEqualToString:SHKConfigBarStyle]) {
+        	return [NSNumber numberWithInteger:UIBarStyleDefault];
+        } else if ([key isEqualToString:SHKConfigModalPresentationStyle]) {
+        	return [NSNumber numberWithInteger:UIModalPresentationFormSheet];
+        } else if ([key isEqualToString:SHKConfigModalTransitionStyle]) {
+        	return [NSNumber numberWithInteger:UIModalTransitionStyleCoverVertical];
+        }
+    } else if (![value isKindOfClass:[NSString class]] && [key hasSuffix:@"Color"]) {
+    	float rgba[4] = {0.f, 0.f, 0.f, 1.f};
+        NSInteger length = [value length];
+		switch (length) {
+         	case 3: // RGB
+            case 4: // RGBA
+            	for (int i = 0; i < length; i++) {
+                    unsigned c = 0;
+                    [[NSScanner scannerWithString:[value substringWithRange:NSMakeRange(i, 1)]] scanHexInt:&c];
+                    rgba[i] = c / 15.0f;
+                }
+                break;
+            case 6: // RGB
+            case 8: // RGBA
+            	for (int i = 0; i < length; i += 2) {
+                    unsigned c = 0;
+                    [[NSScanner scannerWithString:[value substringWithRange:NSMakeRange(i, 2)]] scanHexInt:&c];
+                    rgba[i / 2] = c / 255.0f;
+                }
+                break;
+            default:
+                return nil;
+        }
+        return [UIColor colorWithRed:rgba[0] green:rgba[1] blue:rgba[2] alpha:rgba[3]];
+    }
+    
+    return value;
+}
+
+
+// Keys are the string key for the values,
+void SHKRegisterConfigValuesWithDictionary(NSDictionary* configValues) {
+    [shk_registeredConfigValues release];
+    shk_registeredConfigValues = [configValues copy];
+}
+
 
 
 @implementation SHK
@@ -227,44 +318,17 @@ BOOL SHKinit;
 			
 + (UIBarStyle)barStyle
 {
-	if ([SHKBarStyle isEqualToString:@"UIBarStyleBlack"])		
-		return UIBarStyleBlack;
-	
-	else if ([SHKBarStyle isEqualToString:@"UIBarStyleBlackOpaque"])		
-		return UIBarStyleBlackOpaque;
-	
-	else if ([SHKBarStyle isEqualToString:@"UIBarStyleBlackTranslucent"])		
-		return UIBarStyleBlackTranslucent;
-	
-	return UIBarStyleDefault;
+    return [SHKConfigValueForKey(SHKConfigBarStyle) intValue];
 }
 
 + (UIModalPresentationStyle)modalPresentationStyle
 {
-	if ([SHKModalPresentationStyle isEqualToString:@"UIModalPresentationFullScreen"])		
-		return UIModalPresentationFullScreen;
-	
-	else if ([SHKModalPresentationStyle isEqualToString:@"UIModalPresentationPageSheet"])		
-		return UIModalPresentationPageSheet;
-	
-	else if ([SHKModalPresentationStyle isEqualToString:@"UIModalPresentationFormSheet"])		
-		return UIModalPresentationFormSheet;
-	
-	return UIModalPresentationCurrentContext;
+    return [SHKConfigValueForKey(SHKConfigModalPresentationStyle) intValue];
 }
 
 + (UIModalTransitionStyle)modalTransitionStyle
 {
-	if ([SHKModalTransitionStyle isEqualToString:@"UIModalTransitionStyleFlipHorizontal"])		
-		return UIModalTransitionStyleFlipHorizontal;
-	
-	else if ([SHKModalTransitionStyle isEqualToString:@"UIModalTransitionStyleCrossDissolve"])		
-		return UIModalTransitionStyleCrossDissolve;
-	
-	else if ([SHKModalTransitionStyle isEqualToString:@"UIModalTransitionStylePartialCurl"])		
-		return UIModalTransitionStylePartialCurl;
-	
-	return UIModalTransitionStyleCoverVertical;
+    return [SHKConfigValueForKey(SHKConfigModalTransitionStyle) intValue];
 }
 
 
@@ -372,7 +436,7 @@ BOOL SHKinit;
 	// in the simulator.  You should NOT modify in a way that does not use keychain when actually deployed to a device.
 	return [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"%@%@%@",SHK_AUTH_PREFIX,sharerId,key]];
 #else
-	return [SFHFKeychainUtils getPasswordForUsername:key andServiceName:[NSString stringWithFormat:@"%@%@",SHK_AUTH_PREFIX,sharerId] error:nil];
+	return [SFHFKeychainUtils passwordForUsername:key serviceName:[NSString stringWithFormat:@"%@%@",SHK_AUTH_PREFIX,sharerId] error:nil];
 #endif
 }
 
@@ -384,7 +448,7 @@ BOOL SHKinit;
 	// in the simulator.  You should NOT modify in a way that does not use keychain when actually deployed to a device.
 	[[NSUserDefaults standardUserDefaults] setObject:value forKey:[NSString stringWithFormat:@"%@%@%@",SHK_AUTH_PREFIX,sharerId,key]];
 #else
-	[SFHFKeychainUtils storeUsername:key andPassword:value forServiceName:[NSString stringWithFormat:@"%@%@",SHK_AUTH_PREFIX,sharerId] updateExisting:YES error:nil];
+	[SFHFKeychainUtils storeUsername:key password:value forServiceName:[NSString stringWithFormat:@"%@%@",SHK_AUTH_PREFIX,sharerId] updateExisting:YES error:nil];
 #endif
 }
 
@@ -396,7 +460,7 @@ BOOL SHKinit;
 	// in the simulator.  You should NOT modify in a way that does not use keychain when actually deployed to a device.
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:[NSString stringWithFormat:@"%@%@%@",SHK_AUTH_PREFIX,sharerId,key]];
 #else
-	[SFHFKeychainUtils deleteItemForUsername:key andServiceName:[NSString stringWithFormat:@"%@%@",SHK_AUTH_PREFIX,sharerId] error:nil];
+	[SFHFKeychainUtils removePasswordForUsername:key serviceName:[NSString stringWithFormat:@"%@%@",SHK_AUTH_PREFIX,sharerId] error:nil];
 #endif
 }
 
@@ -419,8 +483,30 @@ static NSDictionary *sharersDictionary = nil;
 
 + (NSDictionary *)sharersDictionary
 {
-	if (sharersDictionary == nil)
+	if (sharersDictionary == nil) {
 		sharersDictionary = [[NSDictionary dictionaryWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"SHKSharers.plist"]] retain];
+    	if (!sharersDictionary) {
+        	NSArray* actions = [NSArray arrayWithObjects:@"SHKPhotoAlbum", @"SHKCopy", @"SHKMail", @"SHKSafari", @"SHKTextMessage", nil];
+        	NSMutableArray* services = [NSMutableArray arrayWithCapacity:4];
+            if (SHKConfigValueForKey(SHKConfigEvernoteSecretKey)) {
+            	[services addObject:@"SHKEvernote"];
+            }
+            if (SHKConfigValueForKey(SHKConfigTwitterSecret)) {
+            	[services addObject:@"SHKTwitter"];
+            }
+            if (SHKConfigValueForKey(SHKConfigDeliciousSecretKey)) {
+            	[services addObject:@"SHKDelicious"];
+            }
+            if (SHKConfigValueForKey(SHKConfigFacebookSecret)) {
+            	[services addObject:@"SHKFacebook"];
+            }
+            if (SHKConfigValueForKey(SHKConfigReadItLaterKey)) {
+            	[services addObject:@"SHKReadItLater"];
+            }
+            sharersDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                 actions, @"actions", services, @"services", nil];
+        }
+    }
 	
 	return sharersDictionary;
 }
@@ -547,7 +633,7 @@ static NSDictionary *sharersDictionary = nil;
 + (BOOL)connected 
 {
 	//return NO; // force for offline testing
-	Reachability *hostReach = [Reachability reachabilityForInternetConnection];	
+	SHKReachability *hostReach = [SHKReachability reachabilityForInternetConnection];	
 	NetworkStatus netStatus = [hostReach currentReachabilityStatus];	
 	return !(netStatus == NotReachable);
 }
@@ -600,8 +686,12 @@ void SHKSwizzle(Class c, SEL orig, SEL newClassName)
 
 NSString* SHKLocalizedString(NSString* key, ...) 
 {
+    static NSBundle* resourceBundle = nil;
+    if (!resourceBundle) {
+    	resourceBundle = [[NSBundle alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"ShareKitResources" ofType:@"bundle"]];
+    }
 	// Localize the format
-	NSString *localizedStringFormat = NSLocalizedString(key, key);
+	NSString *localizedStringFormat = NSLocalizedStringFromTableInBundle(key, nil, resourceBundle, key);
 	
 	va_list args;
     va_start(args, key);

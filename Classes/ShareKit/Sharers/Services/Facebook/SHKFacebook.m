@@ -87,14 +87,14 @@
 	if (session == nil)
 	{
 		
-		if(!SHKFacebookUseSessionProxy){
-			self.session = [FBSession sessionForApplication:SHKFacebookKey
-													 secret:SHKFacebookSecret
+		if(![SHKConfigValueForKey(SHKConfigFacebookUseSessionProxy) boolValue]){
+			self.session = [FBSession sessionForApplication:SHKConfigValueForKey(SHKConfigFacebookKey)
+													 secret:SHKConfigValueForKey(SHKConfigFacebookSecret)
 												   delegate:self];
 			
 		}else {
-			self.session = [FBSession sessionForApplication:SHKFacebookKey
-											getSessionProxy:SHKFacebookSessionProxyURL
+			self.session = [FBSession sessionForApplication:SHKConfigValueForKey(SHKConfigFacebookKey)
+											getSessionProxy:SHKConfigValueForKey(SHKConfigFacebookSessionProxyURL)
 												   delegate:self];
 		}
 
@@ -121,14 +121,14 @@
 {
 	FBSession *fbSession; 
 	
-	if(!SHKFacebookUseSessionProxy){
-		fbSession = [FBSession sessionForApplication:SHKFacebookKey
-												 secret:SHKFacebookSecret
+	if(![SHKConfigValueForKey(SHKConfigFacebookUseSessionProxy) boolValue]){
+		fbSession = [FBSession sessionForApplication:SHKConfigValueForKey(SHKConfigFacebookKey)
+												 secret:SHKConfigValueForKey(SHKConfigFacebookSecret)
 											   delegate:self];
 		
 	}else {
-		fbSession = [FBSession sessionForApplication:SHKFacebookKey
-										getSessionProxy:SHKFacebookSessionProxyURL
+		fbSession = [FBSession sessionForApplication:SHKConfigValueForKey(SHKConfigFacebookKey)
+										getSessionProxy:SHKConfigValueForKey(SHKConfigFacebookSessionProxyURL)
 											   delegate:self];
 	}
 
@@ -157,8 +157,8 @@
 							 ];
 		dialog.defaultStatus = item.text;
 		dialog.actionLinks = [NSString stringWithFormat:@"[{\"text\":\"Get %@\",\"href\":\"%@\"}]",
-							  SHKEncode(SHKMyAppName),
-							  SHKEncode(SHKMyAppURL)];
+							  SHKEncode(SHKConfigValueForKey(SHKConfigMyAppName)),
+							  SHKEncode(SHKConfigValueForKey(SHKConfigMyAppURL))];
 		[dialog show];
 		
 	}
@@ -172,8 +172,8 @@
 		dialog.userMessagePrompt = SHKLocalizedString(@"Enter your message:");
 		dialog.defaultStatus = item.text;
 		dialog.actionLinks = [NSString stringWithFormat:@"[{\"text\":\"Get %@\",\"href\":\"%@\"}]",
-							  SHKEncode(SHKMyAppName),
-							  SHKEncode(SHKMyAppURL)];
+							  SHKEncode(SHKConfigValueForKey(SHKConfigMyAppName)),
+							  SHKEncode(SHKConfigValueForKey(SHKConfigMyAppURL))];
 		[dialog show];
 		
 	}

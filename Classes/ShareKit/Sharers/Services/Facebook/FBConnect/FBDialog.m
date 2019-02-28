@@ -314,8 +314,8 @@ static CGFloat kBorderWidth = 10;
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.contentMode = UIViewContentModeRedraw;
     
-    UIImage* iconImage = [UIImage imageNamed:@"FBConnect.bundle/images/fbicon.png"];
-    UIImage* closeImage = [UIImage imageNamed:@"FBConnect.bundle/images/close.png"];
+    UIImage* iconImage = [UIImage imageNamed:@"ShareKitResources.bundle/FBConnect.bundle/images/fbicon.png"];
+    UIImage* closeImage = [UIImage imageNamed:@"ShareKitResources.bundle/FBConnect.bundle/images/close.png"];
     
     _iconView = [[UIImageView alloc] initWithImage:iconImage];
     [self addSubview:_iconView];

@@ -94,7 +94,7 @@
 
 - (EDAMAuthenticationResult *)getAuthenticationResultForUsername:(NSString *)username password:(NSString *)password 
 {
-	THTTPClient *userStoreHTTPClient = [[[THTTPClient alloc] initWithURL:[NSURL URLWithString:SHKEvernoteUserStoreURL]] autorelease];
+	THTTPClient *userStoreHTTPClient = [[[THTTPClient alloc] initWithURL:[NSURL URLWithString:SHKConfigValueForKey(SHKConfigEvernoteUserStoreURL)]] autorelease];
 	TBinaryProtocol *userStoreProtocol = [[[TBinaryProtocol alloc] initWithTransport:userStoreHTTPClient] autorelease];
 	EDAMUserStoreClient *userStore = [[[EDAMUserStoreClient alloc] initWithProtocol:userStoreProtocol] autorelease];
 
@@ -108,7 +108,7 @@
 						   otherButtonTitles:nil] autorelease] show];
 		return nil;
 	}
-	return [userStore authenticate :username :password :SHKEvernoteConsumerKey :SHKEvernoteSecretKey];
+	return [userStore authenticate :username :password :SHKConfigValueForKey(SHKConfigEvernoteConsumerKey) :SHKConfigValueForKey(SHKConfigEvernoteSecretKey)];
 }
 
 - (void)_authFinished:(NSDictionary *)args 
@@ -181,7 +181,7 @@
 		EDAMAuthenticationResult *authResult = [self getAuthenticationResultForUsername:[self getAuthValueForKey:@"username"] password:[self getAuthValueForKey:@"password"]];
     EDAMUser *user = [authResult user];
     authToken    = [authResult authenticationToken];
-    noteStoreURL = [NSURL URLWithString:[SHKEvernoteNetStoreURLBase stringByAppendingString:[user shardId]]];
+    noteStoreURL = [NSURL URLWithString:[SHKConfigValueForKey(SHKConfigEvernoteNetStoreURLBase) stringByAppendingString:[user shardId]]];
 
   	////////////////////////////////////////////////
     // Make clients
